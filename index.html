@@ -4,29 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TrialMitra — Clinical Trials, Made Understandable</title>
-<meta name="description" content="Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra.">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#0f7a74">
-<meta name="application-name" content="TrialMitra">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="TrialMitra">
-<meta property="og:title" content="TrialMitra — Clinical Trials, Made Understandable">
-<meta property="og:description" content="Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra.">
-<meta property="og:locale" content="en_IN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TrialMitra — Clinical Trials, Made Understandable">
-<meta name="twitter:description" content="Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra.">
-<!-- Deployment SEO note: add a rel="canonical" URL, an og:url value, and an og:image URL only after the permanent public domain and hosted share image are known. -->
-<!-- Google Search Console verification: add the verification meta tag supplied by Search Console after choosing your domain. -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "TrialMitra",
-  "description": "Educational information about clinical trials, study phases, participant rights, and preparing to contact a research team.",
-  "inLanguage": ["en", "hi", "kn"]
-}
-</script>
 <style>
 :root{color-scheme:light;--bg:#ffffff;--card:#fff;--ink:#1d3633;--mut:#4a6360;--teal:#0f7a74;--teal2:#0b5f5a;--mint:#edf8f5;--blue:#2a68a8;--line:#d5eae5;--warn:#fff8e1;--warnb:#c58b00;--sh:0 4px 16px rgba(15,122,116,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .hdr{display:flex;align-items:center;gap:14px;margin-bottom:14px}.hdr h2{margin:0}
@@ -77,7 +54,7 @@ section{padding:46px 0}
 .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;align-items:end}
 label{font-weight:650;font-size:.92rem;display:block;margin-bottom:4px}
 .tag{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--mint);color:var(--teal2);font-size:.82rem;font-weight:650;margin:0 6px 6px 0}
-.tag.fic{background:var(--warn);color:var(--ink);border:1px solid var(--warnb)}
+.tag.open{background:#e2f6e9;color:#14532d;border:1px solid #8bcf9f}.tag.closed{background:#eceff1;color:#37474f;border:1px solid #b0bec5}.tag.fic{background:var(--warn);color:var(--ink);border:1px solid var(--warnb)}
 .res{margin-top:22px}
 .hl{animation:pulse 1.2s 3;outline:3px solid var(--blue)}
 @keyframes pulse{50%{box-shadow:0 0 0 10px rgba(47,111,176,.25)}}
@@ -91,11 +68,6 @@ dl dt{font-weight:700;color:var(--teal);margin-top:10px}dl dd{margin:0}
 footer{background:var(--mint);color:var(--ink);padding:34px 0;border-top:4px solid var(--teal)}footer a{color:var(--teal2);font-weight:700}
 footer .wrap>*{max-width:820px}
 #msg{margin:8px 0;font-weight:600;color:var(--blue)}
-.seo-resources{margin-top:18px}
-.seo-resources .card{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
-.seo-resources .card p{margin:0 0 8px}
-.seo-resources .card .btn{margin-top:auto}
-.seo-intro{max-width:850px}
 @media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero svg{max-width:260px;margin:auto}}
 @media print{header,.hero,#learn,#find,#rights,footer,.tools,.noprint,#msg{display:none!important}section{padding:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -105,7 +77,7 @@ footer .wrap>*{max-width:820px}
 <header>
  <div class="hd">
   <a class="logo" href="#home"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#0b6e69"/><path d="M20 9v22M9 20h22" stroke="#dff4ee" stroke-width="5" stroke-linecap="round"/></svg><span>TrialMitra</span></a>
-  <nav aria-label="Main"><a href="#home" data-i="n_home"></a><a href="#learn" data-i="n_learn"></a><a href="#resources" data-i="n_resources"></a><a href="#find" data-i="n_find"></a><a href="#check" data-i="n_check"></a></nav>
+  <nav aria-label="Main"><a href="#home" data-i="n_home"></a><a href="#learn" data-i="n_learn"></a><a href="#find" data-i="n_find"></a><a href="#check" data-i="n_check"></a></nav>
   <label for="lang" class="sr" style="position:absolute;left:-9999px" data-i="lang_l"></label>
   <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option></select>
   <a class="btn" href="#find" data-i="n_cta"></a>
@@ -161,36 +133,6 @@ footer .wrap>*{max-width:820px}
  </div>
 </section>
 
-<section id="resources">
- <div class="wrap">
-  <div class="hdr"><span class="hico" data-ico="chart" aria-hidden="true"></span><h2 data-i="seo_h"></h2></div>
-  <p class="seo-intro" data-i="seo_intro"></p>
-  <div class="grid seo-resources">
-   <article class="card">
-    <h3 data-i="seo_trial_h"></h3>
-    <p data-i="seo_trial_p"></p>
-    <a class="btn alt" href="#learn" data-i="seo_trial_link"></a>
-   </article>
-   <article class="card">
-    <h3 data-i="seo_registry_h"></h3>
-    <p data-i="seo_registry_p"></p>
-    <a class="btn alt" href="https://ctri.nic.in/" target="_blank" rel="noopener noreferrer" data-i="seo_registry_link"></a>
-   </article>
-   <article class="card">
-    <h3 data-i="seo_rights_h"></h3>
-    <p data-i="seo_rights_p"></p>
-    <a class="btn alt" href="#rights" data-i="seo_rights_link"></a>
-   </article>
-   <article class="card">
-    <h3 data-i="seo_check_h"></h3>
-    <p data-i="seo_check_p"></p>
-    <a class="btn alt" href="#check" data-i="seo_check_link"></a>
-   </article>
-  </div>
-  <p class="note" style="margin-top:18px" data-i="seo_demo_note"></p>
- </div>
-</section>
-
 <section id="find" style="background:var(--mint)">
  <div class="wrap">
   <div class="hdr"><span class="hico" data-ico="magnifier" aria-hidden="true"></span><h2 data-i="f_h"></h2></div>
@@ -236,13 +178,6 @@ footer .wrap>*{max-width:820px}
  </div>
  <p class="note" style="margin-top:18px" data-i="h_w"></p>
 </div></section>
-<!-- Deployment checklist for the site owner:
-     1. Once the permanent public domain is known, add its canonical URL and og:url in the head.
-     2. Verify the domain in Google Search Console and submit /sitemap.xml.
-     3. Publish a robots.txt that allows public pages to be crawled and points to the deployed sitemap.
-     4. Add Google Analytics 4 only after creating a real property/measurement ID; never use a placeholder ID.
-     5. For complete multilingual SEO, deploy separate indexable URLs for English, Hindi, and Kannada and add matching hreflang links. The current language selector switches text on one URL only.
--->
 <script>/* link the number only once a real one is entered */
 (function(){var a=document.getElementById("helpTel"),d=a.textContent.replace(/[^\d+]/g,"");if(/\d{6,}/.test(d))a.href="tel:"+d})();
 </script>
@@ -263,8 +198,7 @@ footer .wrap>*{max-width:820px}
 
 <script>
 const L={
-en:{lang_l:"Language",h_h:"Helpline",h_p:"Have a question about using TrialMitra or understanding clinical trials? Write to our helpline team.",h_nl:"Helpline number",h_n:"TrialMitra Helpline",h_el:"Email ID",h_w:"This helpline cannot give medical advice or confirm eligibility for a study. For emergencies, contact your doctor or local emergency services.",reading:"Reading aloud…",try:"Try:",chips:["diabetes","asthma","breast cancer","healthy volunteers"],d_inc:"May be a fit if:",d_exc:"May not be a fit if:",d_eligw:"Illustrative criteria for this fictional record only — not from a real study. Only a real study team can confirm eligibility.",n_home:"Home",n_learn:"Learn About Trials",n_resources:"Resources",n_find:"Find Trials",n_check:"Participant Checklist",n_cta:"Find a Trial",
-seo_h:"Clinical Trial Resources",seo_intro:"Explore clear, practical guides about clinical research, registered study information, participant rights, and questions to ask before contacting a research team.",seo_trial_h:"Understand clinical trials",seo_trial_p:"Learn what clinical trials are, why they are conducted, and how phases I–IV are commonly described. The design can differ by study type.",seo_trial_link:"Learn the basics",seo_registry_h:"Look for registered study information",seo_registry_p:"Use the official Clinical Trials Registry–India (CTRI) website to look for registry information. Always confirm a study’s registration and current status from the official source or study team.",seo_registry_link:"Visit official CTRI",seo_rights_h:"Know your participant rights",seo_rights_p:"Before deciding, ask about informed consent, possible risks and benefits, visits, costs, alternatives, and arrangements for study-related injury.",seo_rights_link:"Read about rights",seo_check_h:"Prepare questions for the study team",seo_check_p:"Use a checklist to organize questions about eligibility, procedures, duration, current medicines, contacts, and withdrawing from a study.",seo_check_link:"Open checklist",seo_demo_note:"Transparency: the trial records in this prototype are fictional examples, not verified or live CTRI records. Do not use them to make healthcare decisions.",
+en:{lang_l:"Language",h_h:"Helpline",h_p:"Have a question about using TrialMitra or understanding clinical trials? Write to our helpline team.",h_nl:"Helpline number",h_n:"TrialMitra Helpline",h_el:"Email ID",h_w:"This helpline cannot give medical advice or confirm eligibility for a study. For emergencies, contact your doctor or local emergency services.",reading:"Reading aloud…",try:"Try:",chips:["diabetes","asthma","breast cancer","healthy volunteers"],d_inc:"May be a fit if:",d_exc:"May not be a fit if:",d_eligw:"Illustrative criteria for this fictional record only — not from a real study. Only a real study team can confirm eligibility.",n_home:"Home",n_learn:"Learn About Trials",n_find:"Find Trials",n_check:"Participant Checklist",n_cta:"Find a Trial",
 h1:"Clinical Trials, Made Understandable.",h1p:"Explore clinical research in simple language. Learn what participation means, discover studies, and prepare the right questions before contacting a research team.",
 b_exp:"Explore Clinical Trials",b_und:"Understand Clinical Trials",b_demo:"Start Demo",
 trust:"TrialMitra is an educational discovery prototype. It does not provide medical advice and cannot guarantee eligibility for any study.",
@@ -294,12 +228,8 @@ src:"All study information on this prototype is collected from the Clinical Tria
 s_fic:"Transparency note: the trial records shown in this prototype are fictional demonstration data. They are not verified CTRI records.",
 s_future:"Future plan: a real version could load CTRI records through an official export or permitted data agreement, store them in a database, and show the CTRI number and source for each verified record. This prototype has no live connection.",
 demoMsg:"Demo: searching the fictional sample data for “diabetes”. No live data is being used.",
-T:[{t:"Lifestyle support for adults with type 2 diabetes",c:"Type 2 diabetes",w:"Researchers would study whether a coached daily-walking and meal-planning programme helps adults keep blood sugar steadier."},
-{t:"A new add-on inhaler for asthma",c:"Asthma",w:"Researchers would study whether adding an investigational inhaler to usual asthma care reduces attacks, while watching safety."},
-{t:"Supportive care during breast cancer treatment",c:"Breast cancer",w:"Researchers would study whether a counselling and exercise programme eases tiredness and stress during treatment."},
-{t:"Safety study in healthy volunteers",c:"Healthy volunteers (no condition)",w:"Researchers would study how a new investigational product is tolerated by healthy adults at different doses."}]},
-hi:{lang_l:"भाषा",h_h:"हेल्पलाइन",h_p:"TrialMitra के उपयोग या क्लिनिकल ट्रायल को समझने के बारे में कोई सवाल है? हमारी हेल्पलाइन टीम को लिखें।",h_nl:"हेल्पलाइन नंबर",h_n:"TrialMitra हेल्पलाइन",h_el:"ईमेल आईडी",h_w:"यह हेल्पलाइन चिकित्सा सलाह नहीं दे सकती और किसी अध्ययन की पात्रता की पुष्टि नहीं कर सकती। आपात स्थिति में अपने डॉक्टर या स्थानीय आपातकालीन सेवाओं से संपर्क करें।",reading:"पढ़कर सुनाया जा रहा है…",try:"आज़माएँ:",chips:["डायबिटीज़","दमा","स्तन कैंसर","स्वस्थ स्वयंसेवक"],d_inc:"पात्र हो सकते हैं यदि:",d_exc:"पात्र नहीं हो सकते यदि:",d_eligw:"ये मानदंड केवल इस काल्पनिक रिकॉर्ड के लिए उदाहरण हैं — किसी असली अध्ययन से नहीं। पात्रता केवल असली अध्ययन टीम ही तय कर सकती है।",n_home:"होम",n_learn:"ट्रायल के बारे में जानें",n_resources:"संसाधन",n_find:"ट्रायल खोजें",n_check:"प्रतिभागी चेकलिस्ट",n_cta:"ट्रायल खोजें",
-seo_h:"क्लिनिकल ट्रायल के संसाधन",seo_intro:"क्लिनिकल रिसर्च, पंजीकृत अध्ययन की जानकारी, प्रतिभागियों के अधिकारों और शोध टीम से संपर्क करने से पहले पूछे जाने वाले सवालों के बारे में सरल मार्गदर्शिकाएँ देखें।",seo_trial_h:"क्लिनिकल ट्रायल समझें",seo_trial_p:"जानें कि क्लिनिकल ट्रायल क्या हैं, क्यों किए जाते हैं और फेज़ I–IV को आम तौर पर कैसे समझा जाता है। अध्ययन के प्रकार के अनुसार डिज़ाइन अलग हो सकता है।",seo_trial_link:"बुनियादी जानकारी पढ़ें",seo_registry_h:"पंजीकृत अध्ययन की जानकारी देखें",seo_registry_p:"रजिस्ट्री की जानकारी खोजने के लिए भारत की आधिकारिक क्लिनिकल ट्रायल्स रजिस्ट्री (CTRI) वेबसाइट का उपयोग करें। अध्ययन का पंजीकरण और वर्तमान स्थिति आधिकारिक स्रोत या शोध टीम से अवश्य जाँचें।",seo_registry_link:"आधिकारिक CTRI देखें",seo_rights_h:"प्रतिभागी के अधिकार जानें",seo_rights_p:"निर्णय लेने से पहले सूचित सहमति, संभावित जोखिम और लाभ, विज़िट, खर्च, विकल्प और अध्ययन से जुड़ी चोट की व्यवस्था के बारे में पूछें।",seo_rights_link:"अधिकारों के बारे में पढ़ें",seo_check_h:"शोध टीम से पूछने के सवाल तैयार करें",seo_check_p:"पात्रता, प्रक्रियाओं, अवधि, मौजूदा दवाओं, संपर्क और अध्ययन छोड़ने से जुड़े सवालों को व्यवस्थित करने के लिए चेकलिस्ट का उपयोग करें।",seo_check_link:"चेकलिस्ट खोलें",seo_demo_note:"पारदर्शिता: इस प्रोटोटाइप में दिखाए गए ट्रायल रिकॉर्ड काल्पनिक उदाहरण हैं, सत्यापित या लाइव CTRI रिकॉर्ड नहीं। स्वास्थ्य संबंधी निर्णय लेने के लिए इनका उपयोग न करें।",
+T:[]},
+hi:{lang_l:"भाषा",h_h:"हेल्पलाइन",h_p:"TrialMitra के उपयोग या क्लिनिकल ट्रायल को समझने के बारे में कोई सवाल है? हमारी हेल्पलाइन टीम को लिखें।",h_nl:"हेल्पलाइन नंबर",h_n:"TrialMitra हेल्पलाइन",h_el:"ईमेल आईडी",h_w:"यह हेल्पलाइन चिकित्सा सलाह नहीं दे सकती और किसी अध्ययन की पात्रता की पुष्टि नहीं कर सकती। आपात स्थिति में अपने डॉक्टर या स्थानीय आपातकालीन सेवाओं से संपर्क करें।",reading:"पढ़कर सुनाया जा रहा है…",try:"आज़माएँ:",chips:["डायबिटीज़","दमा","स्तन कैंसर","स्वस्थ स्वयंसेवक"],d_inc:"पात्र हो सकते हैं यदि:",d_exc:"पात्र नहीं हो सकते यदि:",d_eligw:"ये मानदंड केवल इस काल्पनिक रिकॉर्ड के लिए उदाहरण हैं — किसी असली अध्ययन से नहीं। पात्रता केवल असली अध्ययन टीम ही तय कर सकती है।",n_home:"होम",n_learn:"ट्रायल के बारे में जानें",n_find:"ट्रायल खोजें",n_check:"प्रतिभागी चेकलिस्ट",n_cta:"ट्रायल खोजें",
 h1:"क्लिनिकल ट्रायल, अब आसान भाषा में।",h1p:"क्लिनिकल शोध को सरल भाषा में समझें। जानें कि भाग लेने का क्या मतलब है, अध्ययन खोजें, और शोध टीम से संपर्क करने से पहले सही सवाल तैयार करें।",
 b_exp:"क्लिनिकल ट्रायल देखें",b_und:"क्लिनिकल ट्रायल समझें",b_demo:"डेमो शुरू करें",
 trust:"TrialMitra एक शैक्षिक प्रोटोटाइप है। यह चिकित्सा सलाह नहीं देता और किसी अध्ययन के लिए पात्रता की गारंटी नहीं दे सकता।",
@@ -329,12 +259,8 @@ src:"इस प्रोटोटाइप की सारी अध्यय�
 s_fic:"पारदर्शिता सूचना: इस प्रोटोटाइप में दिखाए गए ट्रायल रिकॉर्ड काल्पनिक प्रदर्शन डेटा हैं। वे सत्यापित CTRI रिकॉर्ड नहीं हैं।",
 s_future:"भविष्य की योजना: असली संस्करण आधिकारिक निर्यात या अनुमत डेटा समझौते से CTRI रिकॉर्ड लोड कर सकता है, उन्हें डेटाबेस में रख सकता है, और हर सत्यापित रिकॉर्ड के लिए CTRI संख्या और स्रोत दिखा सकता है। इस प्रोटोटाइप में कोई लाइव कनेक्शन नहीं है।",
 demoMsg:"डेमो: काल्पनिक नमूना डेटा में “डायबिटीज़” खोजा जा रहा है। कोई लाइव डेटा इस्तेमाल नहीं हो रहा।",
-T:[{t:"टाइप 2 डायबिटीज़ वाले वयस्कों के लिए जीवनशैली सहायता",c:"टाइप 2 डायबिटीज़",w:"शोधकर्ता देखेंगे कि कोच की मदद से रोज़ टहलने और भोजन योजना का कार्यक्रम वयस्कों का ब्लड शुगर अधिक स्थिर रखने में मदद करता है या नहीं।"},
-{t:"दमा के लिए नया अतिरिक्त इन्हेलर",c:"दमा (अस्थमा)",w:"शोधकर्ता देखेंगे कि सामान्य दमा देखभाल में एक प्रायोगिक इन्हेलर जोड़ने से दौरे कम होते हैं या नहीं, और सुरक्षा पर नज़र रखेंगे।"},
-{t:"स्तन कैंसर के इलाज के दौरान सहायक देखभाल",c:"स्तन कैंसर",w:"शोधकर्ता देखेंगे कि परामर्श और व्यायाम कार्यक्रम इलाज के दौरान थकान और तनाव कम करता है या नहीं।"},
-{t:"स्वस्थ स्वयंसेवकों में सुरक्षा अध्ययन",c:"स्वस्थ स्वयंसेवक (कोई बीमारी नहीं)",w:"शोधकर्ता देखेंगे कि एक नया प्रायोगिक उत्पाद अलग-अलग खुराक पर स्वस्थ वयस्कों द्वारा कितना सहन किया जाता है।"}]},
-kn:{lang_l:"ಭಾಷೆ",h_h:"ಸಹಾಯವಾಣಿ",h_p:"TrialMitra ಬಳಸುವ ಬಗ್ಗೆ ಅಥವಾ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಇದೆಯೇ? ನಮ್ಮ ಸಹಾಯವಾಣಿ ತಂಡಕ್ಕೆ ಬರೆಯಿರಿ.",h_nl:"ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ",h_n:"TrialMitra ಸಹಾಯವಾಣಿ",h_el:"ಇಮೇಲ್ ಐಡಿ",h_w:"ಈ ಸಹಾಯವಾಣಿ ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡಲು ಅಥವಾ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ತುರ್ತು ಸ್ಥಿತಿಯಲ್ಲಿ ನಿಮ್ಮ ವೈದ್ಯರು ಅಥವಾ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",reading:"ಗಟ್ಟಿಯಾಗಿ ಓದಲಾಗುತ್ತಿದೆ…",try:"ಪ್ರಯತ್ನಿಸಿ:",chips:["ಮಧುಮೇಹ","ಆಸ್ತಮಾ","ಸ್ತನ ಕ್ಯಾನ್ಸರ್","ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ"],d_inc:"ಹೊಂದಿಕೆಯಾಗಬಹುದು, ಒಂದು ವೇಳೆ:",d_exc:"ಹೊಂದಿಕೆಯಾಗದಿರಬಹುದು, ಒಂದು ವೇಳೆ:",d_eligw:"ಈ ಮಾನದಂಡಗಳು ಈ ಕಾಲ್ಪನಿಕ ದಾಖಲೆಗೆ ಮಾತ್ರ ಉದಾಹರಣೆ — ನಿಜವಾದ ಅಧ್ಯಯನದಿಂದಲ್ಲ. ಅರ್ಹತೆಯನ್ನು ನಿಜವಾದ ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",n_home:"ಮುಖಪುಟ",n_learn:"ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",n_resources:"ಸಂಪನ್ಮೂಲಗಳು",n_find:"ಪ್ರಯೋಗ ಹುಡುಕಿ",n_check:"ಭಾಗಿದಾರರ ಪರಿಶೀಲನಾಪಟ್ಟಿ",n_cta:"ಪ್ರಯೋಗ ಹುಡುಕಿ",
-seo_h:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳ ಸಂಪನ್ಮೂಲಗಳು",seo_intro:"ಕ್ಲಿನಿಕಲ್ ಸಂಶೋಧನೆ, ನೋಂದಾಯಿತ ಅಧ್ಯಯನಗಳ ಮಾಹಿತಿ, ಭಾಗವಹಿಸುವವರ ಹಕ್ಕುಗಳು ಮತ್ತು ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಕೇಳಬೇಕಾದ ಪ್ರಶ್ನೆಗಳ ಕುರಿತು ಸರಳ ಮಾರ್ಗದರ್ಶಿಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.",seo_trial_h:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",seo_trial_p:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು ಯಾವುವು, ಅವುಗಳನ್ನು ಏಕೆ ನಡೆಸಲಾಗುತ್ತದೆ ಮತ್ತು I–IV ಹಂತಗಳನ್ನು ಸಾಮಾನ್ಯವಾಗಿ ಹೇಗೆ ವಿವರಿಸಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ. ಅಧ್ಯಯನದ ಪ್ರಕಾರಕ್ಕೆ ಅನುಗುಣವಾಗಿ ವಿನ್ಯಾಸ ಬದಲಾಗಬಹುದು.",seo_trial_link:"ಮೂಲಭೂತ ಮಾಹಿತಿ ತಿಳಿಯಿರಿ",seo_registry_h:"ನೋಂದಾಯಿತ ಅಧ್ಯಯನಗಳ ಮಾಹಿತಿ ಹುಡುಕಿ",seo_registry_p:"ರಿಜಿಸ್ಟ್ರಿ ಮಾಹಿತಿಯನ್ನು ಹುಡುಕಲು ಭಾರತದ ಅಧಿಕೃತ ಕ್ಲಿನಿಕಲ್ ಟ್ರಯಲ್ಸ್ ರಿಜಿಸ್ಟ್ರಿ (CTRI) ವೆಬ್‌ಸೈಟ್ ಬಳಸಿ. ಅಧ್ಯಯನದ ನೋಂದಣಿ ಮತ್ತು ಪ್ರಸ್ತುತ ಸ್ಥಿತಿಯನ್ನು ಅಧಿಕೃತ ಮೂಲ ಅಥವಾ ಸಂಶೋಧನಾ ತಂಡದಿಂದ ದೃಢೀಕರಿಸಿ.",seo_registry_link:"ಅಧಿಕೃತ CTRI ತೆರೆಯಿರಿ",seo_rights_h:"ಭಾಗವಹಿಸುವವರ ಹಕ್ಕುಗಳನ್ನು ತಿಳಿಯಿರಿ",seo_rights_p:"ನಿರ್ಧಾರ ಮಾಡುವ ಮೊದಲು ತಿಳಿದ ಒಪ್ಪಿಗೆ, ಸಾಧ್ಯ ಅಪಾಯಗಳು ಮತ್ತು ಪ್ರಯೋಜನಗಳು, ಭೇಟಿಗಳು, ವೆಚ್ಚಗಳು, ಪರ್ಯಾಯಗಳು ಮತ್ತು ಅಧ್ಯಯನ ಸಂಬಂಧಿತ ಗಾಯದ ವ್ಯವಸ್ಥೆಗಳ ಬಗ್ಗೆ ಕೇಳಿ.",seo_rights_link:"ಹಕ್ಕುಗಳ ಬಗ್ಗೆ ಓದಿ",seo_check_h:"ಸಂಶೋಧನಾ ತಂಡಕ್ಕೆ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ",seo_check_p:"ಅರ್ಹತೆ, ಪ್ರಕ್ರಿಯೆಗಳು, ಅವಧಿ, ಈಗಿನ ಔಷಧಗಳು, ಸಂಪರ್ಕ ಮತ್ತು ಅಧ್ಯಯನದಿಂದ ಹಿಂದೆ ಸರಿಯುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಲು ಪರಿಶೀಲನಾಪಟ್ಟಿಯನ್ನು ಬಳಸಿ.",seo_check_link:"ಪರಿಶೀಲನಾಪಟ್ಟಿ ತೆರೆಯಿರಿ",seo_demo_note:"ಪಾರದರ್ಶಕತೆ: ಈ ಮಾದರಿ ಯೋಜನೆಯಲ್ಲಿ ತೋರಿಸಿದ ಪ್ರಯೋಗ ದಾಖಲೆಗಳು ಕಾಲ್ಪನಿಕ ಉದಾಹರಣೆಗಳು; ಅವು ಪರಿಶೀಲಿತ ಅಥವಾ ಲೈವ್ CTRI ದಾಖಲೆಗಳಲ್ಲ. ಆರೋಗ್ಯ ನಿರ್ಧಾರಗಳಿಗೆ ಅವುಗಳನ್ನು ಬಳಸಬೇಡಿ.",
+T:[]},
+kn:{lang_l:"ಭಾಷೆ",h_h:"ಸಹಾಯವಾಣಿ",h_p:"TrialMitra ಬಳಸುವ ಬಗ್ಗೆ ಅಥವಾ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಇದೆಯೇ? ನಮ್ಮ ಸಹಾಯವಾಣಿ ತಂಡಕ್ಕೆ ಬರೆಯಿರಿ.",h_nl:"ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ",h_n:"TrialMitra ಸಹಾಯವಾಣಿ",h_el:"ಇಮೇಲ್ ಐಡಿ",h_w:"ಈ ಸಹಾಯವಾಣಿ ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡಲು ಅಥವಾ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ತುರ್ತು ಸ್ಥಿತಿಯಲ್ಲಿ ನಿಮ್ಮ ವೈದ್ಯರು ಅಥವಾ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",reading:"ಗಟ್ಟಿಯಾಗಿ ಓದಲಾಗುತ್ತಿದೆ…",try:"ಪ್ರಯತ್ನಿಸಿ:",chips:["ಮಧುಮೇಹ","ಆಸ್ತಮಾ","ಸ್ತನ ಕ್ಯಾನ್ಸರ್","ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ"],d_inc:"ಹೊಂದಿಕೆಯಾಗಬಹುದು, ಒಂದು ವೇಳೆ:",d_exc:"ಹೊಂದಿಕೆಯಾಗದಿರಬಹುದು, ಒಂದು ವೇಳೆ:",d_eligw:"ಈ ಮಾನದಂಡಗಳು ಈ ಕಾಲ್ಪನಿಕ ದಾಖಲೆಗೆ ಮಾತ್ರ ಉದಾಹರಣೆ — ನಿಜವಾದ ಅಧ್ಯಯನದಿಂದಲ್ಲ. ಅರ್ಹತೆಯನ್ನು ನಿಜವಾದ ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",n_home:"ಮುಖಪುಟ",n_learn:"ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",n_find:"ಪ್ರಯೋಗ ಹುಡುಕಿ",n_check:"ಭಾಗಿದಾರರ ಪರಿಶೀಲನಾಪಟ್ಟಿ",n_cta:"ಪ್ರಯೋಗ ಹುಡುಕಿ",
 h1:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು, ಸರಳವಾಗಿ ಅರ್ಥವಾಗುವಂತೆ.",h1p:"ಕ್ಲಿನಿಕಲ್ ಸಂಶೋಧನೆಯನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ತಿಳಿಯಿರಿ. ಭಾಗವಹಿಸುವುದು ಎಂದರೇನು ಎಂದು ತಿಳಿಯಿರಿ, ಅಧ್ಯಯನಗಳನ್ನು ಹುಡುಕಿ, ಮತ್ತು ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಸರಿಯಾದ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ.",
 b_exp:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ನೋಡಿ",b_und:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",b_demo:"ಡೆಮೊ ಪ್ರಾರಂಭಿಸಿ",
 trust:"TrialMitra ಒಂದು ಶೈಕ್ಷಣಿಕ ಮಾದರಿ ಯೋಜನೆ. ಇದು ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡುವುದಿಲ್ಲ ಮತ್ತು ಯಾವುದೇ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯ ಖಾತರಿ ನೀಡಲು ಸಾಧ್ಯವಿಲ್ಲ.",
@@ -364,51 +290,116 @@ src:"ಈ ಮಾದರಿ ಯೋಜನೆಯ ಎಲ್ಲಾ ಅಧ್ಯಯನ �
 s_fic:"ಪಾರದರ್ಶಕತೆ ಸೂಚನೆ: ಈ ಮಾದರಿಯಲ್ಲಿ ತೋರಿಸಿರುವ ಪ್ರಯೋಗ ದಾಖಲೆಗಳು ಕಾಲ್ಪನಿಕ ಪ್ರದರ್ಶನ ಡೇಟಾ. ಅವು ಪರಿಶೀಲಿತ CTRI ದಾಖಲೆಗಳಲ್ಲ.",
 s_future:"ಭವಿಷ್ಯದ ಯೋಜನೆ: ನಿಜವಾದ ಆವೃತ್ತಿ ಅಧಿಕೃತ ರಫ್ತು ಅಥವಾ ಅನುಮತಿಸಿದ ಡೇಟಾ ಒಪ್ಪಂದದ ಮೂಲಕ CTRI ದಾಖಲೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಿ, ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಇಟ್ಟು, ಪ್ರತಿ ಪರಿಶೀಲಿತ ದಾಖಲೆಗೆ CTRI ಸಂಖ್ಯೆ ಮತ್ತು ಮೂಲವನ್ನು ತೋರಿಸಬಹುದು. ಈ ಮಾದರಿಯಲ್ಲಿ ಲೈವ್ ಸಂಪರ್ಕವಿಲ್ಲ.",
 demoMsg:"ಡೆಮೊ: ಕಾಲ್ಪನಿಕ ಮಾದರಿ ಡೇಟಾದಲ್ಲಿ “ಮಧುಮೇಹ” ಹುಡುಕಲಾಗುತ್ತಿದೆ. ಯಾವುದೇ ಲೈವ್ ಡೇಟಾ ಬಳಸಿಲ್ಲ.",
-T:[{t:"ಟೈಪ್ 2 ಮಧುಮೇಹ ಇರುವ ವಯಸ್ಕರಿಗೆ ಜೀವನಶೈಲಿ ಬೆಂಬಲ",c:"ಟೈಪ್ 2 ಮಧುಮೇಹ",w:"ತರಬೇತುದಾರರ ನೆರವಿನ ದೈನಂದಿನ ನಡಿಗೆ ಮತ್ತು ಆಹಾರ ಯೋಜನೆ ಕಾರ್ಯಕ್ರಮ ವಯಸ್ಕರ ರಕ್ತದ ಸಕ್ಕರೆಯನ್ನು ಸ್ಥಿರವಾಗಿಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆಯೇ ಎಂದು ಸಂಶೋಧಕರು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."},
-{t:"ಆಸ್ತಮಾಗೆ ಹೊಸ ಹೆಚ್ಚುವರಿ ಇನ್ಹೇಲರ್",c:"ಆಸ್ತಮಾ",w:"ಸಾಮಾನ್ಯ ಆಸ್ತಮಾ ಆರೈಕೆಗೆ ಪ್ರಾಯೋಗಿಕ ಇನ್ಹೇಲರ್ ಸೇರಿಸುವುದರಿಂದ ಆಕ್ರಮಣಗಳು ಕಡಿಮೆಯಾಗುತ್ತವೆಯೇ ಎಂದು ಸಂಶೋಧಕರು ಸುರಕ್ಷತೆಯ ಮೇಲೆ ಗಮನವಿಟ್ಟು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."},
-{t:"ಸ್ತನ ಕ್ಯಾನ್ಸರ್ ಚಿಕಿತ್ಸೆ ವೇಳೆ ಬೆಂಬಲ ಆರೈಕೆ",c:"ಸ್ತನ ಕ್ಯಾನ್ಸರ್",w:"ಸಲಹೆ ಮತ್ತು ವ್ಯಾಯಾಮ ಕಾರ್ಯಕ್ರಮ ಚಿಕಿತ್ಸೆಯ ವೇಳೆ ಆಯಾಸ ಮತ್ತು ಒತ್ತಡ ಕಡಿಮೆ ಮಾಡುತ್ತದೆಯೇ ಎಂದು ಸಂಶೋಧಕರು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."},
-{t:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರಲ್ಲಿ ಸುರಕ್ಷತಾ ಅಧ್ಯಯನ",c:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರು (ಯಾವುದೇ ರೋಗವಿಲ್ಲ)",w:"ಹೊಸ ಪ್ರಾಯೋಗಿಕ ಉತ್ಪನ್ನವನ್ನು ವಿವಿಧ ಡೋಸ್‌ಗಳಲ್ಲಿ ಆರೋಗ್ಯವಂತ ವಯಸ್ಕರು ಎಷ್ಟು ಸಹಿಸುತ್ತಾರೆ ಎಂದು ಸಂಶೋಧಕರು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."}]}
+T:[]}
 };
 /* Fictional demo records. city/phase/type are language-neutral codes; kw = search words in all 3 languages. */
 const TR=[
-{id:"DEMO-1",city:"Bengaluru",phase:"NA",type:"patient",kw:"diabetes sugar type 2 मधुमेह डायबिटीज़ ಮಧುಮೇಹ"},
-{id:"DEMO-2",city:"Chennai",phase:"II",type:"patient",kw:"asthma breathing lung दमा अस्थमा ಆಸ್ತಮಾ"},
-{id:"DEMO-3",city:"Mumbai",phase:"NA",type:"patient",kw:"breast cancer स्तन कैंसर ಸ್ತನ ಕ್ಯಾನ್ಸರ್"},
-{id:"DEMO-4",city:"New Delhi",phase:"I",type:"healthy",kw:"healthy volunteer safety स्वस्थ ಆರೋಗ್ಯವಂತ"}];
-const CITY_L={en:{"Bengaluru":"Bengaluru","Chennai":"Chennai","Mumbai":"Mumbai","New Delhi":"New Delhi"},hi:{"Bengaluru":"बेंगलुरु","Chennai":"चेन्नई","Mumbai":"मुंबई","New Delhi":"नई दिल्ली"},kn:{"Bengaluru":"ಬೆಂಗಳೂರು","Chennai":"ಚೆನ್ನೈ","Mumbai":"ಮುಂಬೈ","New Delhi":"ನವದೆಹಲಿ"}};
+{id:"CTRI/2024/01/061445",status:"open",phase:["III"],type:"patient",cities:["Bengaluru","Chennai","New Delhi","Mumbai","Kolkata","Hyderabad","Pune","Jaipur","Nagpur","Lucknow","Patna","Kochi"],reg:"15/01/2024",mod:"02/04/2025",
+ kw:"heart cardiac atrial fibrillation irregular heartbeat palpitations stroke blood thinner anticoagulant clot embolism apixaban milvexian cardiology हृदय दिल धड़कन स्ट्रोक आघात खून थक्का ಹೃದಯ ಹೃದಯಬಡಿತ ಪಾರ್ಶ್ವವಾಯು ರಕ್ತ ಹೆಪ್ಪು",
+ sites:["St John’s Medical College Hospital — Bengaluru","Apollo Hospitals — Chennai","Sir Ganga Ram Hospital — New Delhi","KEM Hospital & Seth G.S. Medical College — Mumbai","Nil Ratan Sircar Medical College and Hospital — Kolkata","Yashoda Hospital — Hyderabad"],
+ contacts:[{k:"pq",n:"Shweta Pradhan",r:"Head Clinical Operations, IQVIA RDS Private Limited, Bengaluru",ph:"9513774664",em:"shweta.pradhan@iqvia.com"},{k:"pi",n:"Dr Denis Xavier",r:"Professor of Pharmacology, St John’s Medical College, Bengaluru",ph:"918049466140",em:"drdenisxavier@gmail.com"}]},
+{id:"CTRI/2024/01/062013",status:"open",phase:["II","III"],type:"patient",cities:["Cuttack"],reg:"30/01/2024",mod:"28/10/2024",
+ kw:"spinal cord injury nerve pain neuropathic pain paralysis laser stretching physiotherapy physio rehabilitation back legs रीढ़ मेरुदंड चोट नस दर्द पीड़ा फिजियोथेरेपी ಬೆನ್ನುಹುರಿ ಗಾಯ ನರ ನೋವು ಫಿಸಿಯೋಥೆರಪಿ",
+ sites:["Swami Vivekanand National Institute of Rehabilitation Training and Research (SVNIRTAR), Olatpur, Bairoi — Cuttack, Odisha"],
+ contacts:[{k:"pq",n:"Chittaranjan Mishra",r:"Senior Physiotherapist, SVNIRTAR, Cuttack",ph:"7008536967",em:"chittaranjanmishradpt@gmail.com"},{k:"sci",n:"Dr R Sivakumar",r:"Professor and Principal, Faculty of Physiotherapy, SRIHER, Chennai",ph:"9840068412",em:"rsivkumar@gmail.com"}]},
+{id:"CTRI/2023/10/059224",status:"closed",phase:["III"],type:"patient",cities:["Bengaluru","Hyderabad","Pune","Mumbai","Visakhapatnam"],reg:"27/10/2023",mod:"02/02/2024",
+ kw:"asthma breathing breathlessness wheeze lung allergy omalizumab biologic injection IgE दमा अस्थमा सांस फेफड़े एलर्जी इंजेक्शन ಆಸ್ತಮಾ ಉಸಿರಾಟ ಶ್ವಾಸಕೋಶ ಅಲರ್ಜಿ ಚುಚ್ಚುಮದ್ದು",
+ sites:["Bangalore Medical College and Research Institute (Victoria Hospital) — Bengaluru","Government General and Chest Hospital — Hyderabad","Sangvi Multispeciality Hospital — Pune","SevenHills Healthcare — Mumbai","Government Hospital for Chest and Communicable Diseases — Visakhapatnam"],
+ contacts:[{k:"pq",n:"Mr Kartik Sahni",r:"Director, Insignia Clinical Services Pvt. Ltd., New Delhi",ph:"9868679414",em:"kartik.sahni@insigniacs.com"},{k:"sci",n:"Dr Arpitkumar Prajapati",r:"Deputy General Manager, CuraTeQ Biologics Pvt. Ltd., Hyderabad",ph:"8455255222",em:"arpitkumar.Prajapati@curateqbio.com"}]},
+{id:"CTRI/2024/01/062126",status:"open",phase:["I"],type:"healthy",cities:["Ahmedabad"],reg:"31/01/2024",mod:"07/03/2024",
+ kw:"healthy volunteer volunteers safety cholesterol LDL injection phase 1 PCSK9 स्वस्थ स्वयंसेवक कोलेस्ट्रॉल सुरक्षा ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ ಕೊಲೆಸ್ಟ್ರಾಲ್ ಸುರಕ್ಷತೆ",
+ sites:["Zydus Research Centre, Moraiya — Ahmedabad, Gujarat"],
+ contacts:[{k:"pq",n:"Dr Gaurav Jansari",r:"Senior Scientist, Zydus Lifesciences Ltd, Ahmedabad",ph:"02717665555",em:"Gaurav.Jansari@zyduslife.com"}]},
+{id:"CTRI/2024/01/062097",status:"open",phase:["NA"],type:"patient",cities:["Bengaluru"],reg:"31/01/2024",mod:"31/08/2024",
+ kw:"schizophrenia mental health psychiatry psychosis brain stimulation magnetic TMS cerebellum mind सिज़ोफ्रेनिया मानसिक स्वास्थ्य मनोरोग मस्तिष्क दिमाग चुंबकीय ಸ್ಕಿಜೋಫ್ರೇನಿಯಾ ಮಾನಸಿಕ ಆರೋಗ್ಯ ಮೆದುಳು ಕಾಂತೀಯ",
+ sites:["NIMHANS TMS Lab, Department of Psychiatry, Hosur Road — Bengaluru"],
+ contacts:[{k:"pq",n:"Dr Urvakhsh Meherwan Mehta",r:"Additional Professor of Psychiatry, NIMHANS, Bengaluru",ph:"08026995805",em:"urvakhsh@nimhans.ac.in"}]}];
 let lang="en",checked=new Set(),shown=false,lastIds=[];
 const $=s=>document.querySelector(s),t=k=>L[lang][k];
-const SEO_META={
- en:{title:"TrialMitra — Clinical Trials, Made Understandable",description:"Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra."},
- hi:{title:"TrialMitra — क्लिनिकल ट्रायल आसान भाषा में",description:"क्लिनिकल ट्रायल, उनके चरणों, प्रतिभागियों के अधिकारों और अध्ययन की जानकारी को सरल हिंदी में समझें।"},
- kn:{title:"TrialMitra — ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಸರಳವಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",description:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು, ಹಂತಗಳು, ಭಾಗವಹಿಸುವವರ ಹಕ್ಕುಗಳು ಮತ್ತು ಅಧ್ಯಯನದ ಮಾಹಿತಿಯನ್ನು ಸರಳ ಕನ್ನಡದಲ್ಲಿ ತಿಳಿಯಿರಿ."}
-};
-function updateSeoMetadata(){
- const m=SEO_META[lang]||SEO_META.en;
- document.title=m.title;
- const d=document.querySelector('meta[name="description"]');if(d)d.content=m.description;
- [ ['meta[property="og:title"]',m.title],['meta[property="og:description"]',m.description],['meta[name="twitter:title"]',m.title],['meta[name="twitter:description"]',m.description] ].forEach(([sel,val])=>{const e=document.querySelector(sel);if(e)e.content=val});
- const locale={en:"en_IN",hi:"hi_IN",kn:"kn_IN"}[lang]||"en_IN";const ogLocale=document.querySelector('meta[property="og:locale"]');if(ogLocale)ogLocale.content=locale;
-}
-/* Extra search keywords (synonyms, symptoms, transliterations) per trial, all 3 languages */
-const KWX=[
-"diabetic blood sugar glucose insulin type2 t2dm mellitus lifestyle diet walking exercise nutrition weight obesity madhumeha sugar disease मधुमेह शुगर चीनी रक्त शर्करा ग्लूकोज़ इंसुलिन जीवनशैली आहार व्यायाम टहलना ಸಕ್ಕರೆ ಡಯಾಬಿಟಿಸ್ ಇನ್ಸುಲಿನ್ ಜೀವನಶೈಲಿ ಆಹಾರ ವ್ಯಾಯಾಮ",
-"wheeze wheezing breathing breathlessness shortness breath cough lung lungs inhaler respiratory chest allergy dama dum swasa सांस साँस फेफड़े इन्हेलर खांसी एलर्जी अस्थमा ಉಸಿರಾಟ ಉಸಿರು ಶ್ವಾಸಕೋಶ ಇನ್ಹೇಲರ್ ಕೆಮ್ಮು ಅಲರ್ಜಿ ದಮ್ಮು",
-"oncology tumour tumor chemotherapy radiotherapy fatigue tired stress counselling supportive palliative carcinoma cancer breast कर्क रोग कीमोथेरेपी थकान तनाव परामर्श सहायक ಕ್ಯಾನ್ಸರ್ ಕೀಮೋಥೆರಪಿ ಆಯಾಸ ಒತ್ತಡ ಸಲಹೆ ಬೆಂಬಲ",
-"volunteer volunteers adults safety dose tolerability phase1 first human no disease normal healthy स्वयंसेवक सुरक्षा खुराक सुरक्षित ಸ್ವಯಂಸೇವಕ ಸುರಕ್ಷತೆ ಡೋಸ್"];
+const CITY_L={en:{},hi:{},kn:{}};
+[["Ahmedabad","अहमदाबाद","ಅಹಮದಾಬಾದ್"],["Bengaluru","बेंगलुरु","ಬೆಂಗಳೂರು"],["Chennai","चेन्नई","ಚೆನ್ನೈ"],["Cuttack","कटक","ಕಟಕ್"],["Hyderabad","हैदराबाद","ಹೈದರಾಬಾದ್"],["Jaipur","जयपुर","ಜೈಪುರ"],["Kochi","कोच्चि","ಕೊಚ್ಚಿ"],["Kolkata","कोलकाता","ಕೋಲ್ಕತ್ತಾ"],["Lucknow","लखनऊ","ಲಕ್ನೋ"],["Mumbai","मुंबई","ಮುಂಬೈ"],["Nagpur","नागपुर","ನಾಗಪುರ"],["New Delhi","नई दिल्ली","ನವದೆಹಲಿ"],["Patna","पटना","ಪಟ್ನಾ"],["Pune","पुणे","ಪುಣೆ"],["Visakhapatnam","विशाखापत्तनम","ವಿಶಾಖಪಟ್ಟಣಂ"]].forEach(c=>{CITY_L.en[c[0]]=c[0];CITY_L.hi[c[0]]=c[1];CITY_L.kn[c[0]]=c[2]});
+const KWX=TR.map(()=>"");
+/* Plain-language text (TrialMitra's own wording) simplified from the CTRI records downloaded 24 Oct 2026 */
+const REC={
+en:[{t:"New blood thinner (milvexian) compared with apixaban for irregular heartbeat (atrial fibrillation)",c:"Atrial fibrillation and flutter (irregular heartbeat)",site:"Bengaluru and many other cities across India (see details)",n:"15,500 worldwide, 511 in India",sn:"Many more hospitals are listed on the CTRI record.",
+ w:"Atrial fibrillation is an irregular heartbeat that raises the risk of stroke, so many people take blood thinners. This study checks whether milvexian, a new tablet, protects against stroke and blood clots as well as apixaban (Eliquis), an approved blood thinner. People are picked by chance for one or the other, and neither they nor their doctors know which. Bleeding will also be compared. People take part for up to about 4 years. Phase 3 means a large, late-stage test against an existing treatment."},
+{t:"Laser therapy and stretching exercises for nerve pain after spinal cord injury",c:"Nerve (central) pain after spinal cord injury",site:"SVNIRTAR, Cuttack, Odisha",n:"200",sn:"",
+ w:"A spinal cord injury can cause burning, shooting or electric-shock-type pain in the legs. This study tests whether adding laser therapy and shoulder-blade stretching exercises to the usual medicines eases this pain more than medicines alone. Treatment lasts 3 weeks, followed by 3 weeks of follow-up, and pain is scored at the start, at week 3 and at week 6. It is part of a postgraduate thesis."},
+{t:"Omalizumab injection (BP11) compared with Xolair for moderate to severe asthma",c:"Moderate to severe persistent asthma",site:"Bengaluru, Pune, Hyderabad and other cities",n:"165 (India)",sn:"More hospitals are listed on the CTRI record.",
+ w:"Omalizumab is an injection for allergic asthma. This study compares a version made by CuraTeQ (BP11) with the approved brand Xolair. The injection goes under the skin every 2 or 4 weeks, with the dose based on blood IgE level and body weight. Neither the participants nor the doctors know which product is given. The study runs for about a year, and the main check is how many significant asthma attacks happen by week 16. CTRI lists recruitment in India as closed."},
+{t:"Safety study of a new cholesterol-lowering injection in healthy volunteers",c:"Healthy volunteers (no illness)",site:"Zydus Research Centre, Ahmedabad",n:"60",sn:"",
+ w:"This early (Phase 1) study tests the safety of ZRC-3306, an injection designed to lower “bad” LDL cholesterol, in healthy adults. By chance, some people get the real injection and some get a dummy (placebo), and neither they nor the doctors know which. Injections go under the skin on day 0, day 28 and day 208, and side effects are checked until about day 388."},
+{t:"Magnetic brain stimulation added to medicines for schizophrenia",c:"Schizophrenia",site:"NIMHANS, Bengaluru",n:"70",sn:"",
+ w:"Schizophrenia can be hard to treat. This study adds a type of magnetic brain stimulation (theta burst TMS), aimed at the back of the brain (the cerebellum), to usual antipsychotic medicines. Each person has 5 short sessions a day for 6 days. Half get real stimulation and half get a “sham” that feels similar but does not stimulate. An MRI scan helps choose the spot. Doctors check symptom change after 6 days and at 4 to 8 weeks."}],
+hi:[{t:"अनियमित धड़कन (एट्रियल फिब्रिलेशन) के लिए नई रक्त पतला करने वाली दवा (मिल्वेक्सियन) की अपिक्साबैन से तुलना",c:"एट्रियल फिब्रिलेशन और फ्लटर (अनियमित धड़कन)",site:"बेंगलुरु और भारत के कई अन्य शहर (विवरण देखें)",n:"दुनिया भर में 15,500, भारत में 511",sn:"CTRI रिकॉर्ड में और भी कई अस्पताल सूचीबद्ध हैं।",
+ w:"एट्रियल फिब्रिलेशन एक अनियमित धड़कन है जिससे स्ट्रोक का खतरा बढ़ता है, इसलिए कई लोग खून पतला करने वाली दवा लेते हैं। यह अध्ययन जाँचता है कि नई गोली मिल्वेक्सियन, स्वीकृत दवा अपिक्साबैन (Eliquis) जितनी स्ट्रोक और खून के थक्कों से बचाव करती है या नहीं। लोगों को संयोग से एक या दूसरी दवा दी जाती है, और न उन्हें, न उनके डॉक्टरों को पता होता है कि कौन-सी। रक्तस्राव की भी तुलना होगी। लोग लगभग 4 साल तक भाग लेते हैं। फेज़ 3 यानी मौजूदा इलाज से तुलना करने वाला बड़ा, अंतिम चरण का परीक्षण।"},
+{t:"रीढ़ की हड्डी की चोट के बाद नस के दर्द के लिए लेज़र थेरेपी और स्ट्रेचिंग व्यायाम",c:"रीढ़ की चोट के बाद नस (केंद्रीय) का दर्द",site:"SVNIRTAR, कटक, ओडिशा",n:"200",sn:"",
+ w:"रीढ़ की हड्डी की चोट से पैरों में जलन, चुभन या बिजली के झटके जैसा दर्द हो सकता है। यह अध्ययन जाँचता है कि सामान्य दवाओं के साथ लेज़र थेरेपी और कंधे के पास की मांसपेशियों के स्ट्रेचिंग व्यायाम जोड़ने से केवल दवाओं की तुलना में दर्द ज़्यादा कम होता है या नहीं। इलाज 3 हफ़्ते चलता है, फिर 3 हफ़्ते निगरानी होती है; दर्द की जाँच शुरुआत में, 3 और 6 हफ़्ते पर होती है। यह स्नातकोत्तर थीसिस का हिस्सा है।"},
+{t:"मध्यम से गंभीर दमा के लिए ओमालिज़ुमैब इंजेक्शन (BP11) की Xolair से तुलना",c:"मध्यम से गंभीर स्थायी दमा",site:"बेंगलुरु, पुणे, हैदराबाद और अन्य शहर",n:"165 (भारत)",sn:"CTRI रिकॉर्ड में और अस्पताल सूचीबद्ध हैं।",
+ w:"ओमालिज़ुमैब एलर्जी वाले दमा का इंजेक्शन है। यह अध्ययन CuraTeQ द्वारा बनाए संस्करण (BP11) की स्वीकृत ब्रांड Xolair से तुलना करता है। इंजेक्शन हर 2 या 4 हफ़्ते में त्वचा के नीचे लगता है; खुराक खून में IgE स्तर और वज़न पर निर्भर करती है। न प्रतिभागियों को, न डॉक्टरों को पता होता है कि कौन-सा उत्पाद दिया गया। अध्ययन लगभग एक साल चलता है और मुख्य जाँच है कि 16वें हफ़्ते तक दमा के कितने गंभीर दौरे पड़े। CTRI के अनुसार भारत में भर्ती बंद है।"},
+{t:"स्वस्थ स्वयंसेवकों में कोलेस्ट्रॉल घटाने वाले नए इंजेक्शन का सुरक्षा अध्ययन",c:"स्वस्थ स्वयंसेवक (कोई बीमारी नहीं)",site:"Zydus रिसर्च सेंटर, अहमदाबाद",n:"60",sn:"",
+ w:"यह शुरुआती (फेज़ 1) अध्ययन स्वस्थ वयस्कों में ZRC-3306 की सुरक्षा जाँचता है, जो “खराब” LDL कोलेस्ट्रॉल घटाने के लिए बना इंजेक्शन है। संयोग से कुछ लोगों को असली इंजेक्शन और कुछ को नकली (प्लेसिबो) मिलता है, और किसी को पता नहीं होता कि कौन-सा। इंजेक्शन त्वचा के नीचे दिन 0, दिन 28 और दिन 208 पर लगते हैं, और दुष्प्रभाव लगभग दिन 388 तक देखे जाते हैं।"},
+{t:"सिज़ोफ्रेनिया में दवाओं के साथ चुंबकीय मस्तिष्क उत्तेजना",c:"सिज़ोफ्रेनिया",site:"NIMHANS, बेंगलुरु",n:"70",sn:"",
+ w:"सिज़ोफ्रेनिया का इलाज कई बार कठिन होता है। यह अध्ययन सामान्य एंटीसाइकोटिक दवाओं के साथ मस्तिष्क के पिछले हिस्से (सेरिबेलम) पर एक प्रकार की चुंबकीय उत्तेजना (थीटा बर्स्ट TMS) जोड़ता है। हर व्यक्ति को 6 दिन तक रोज़ 5 छोटे सत्र मिलते हैं। आधे लोगों को असली उत्तेजना और आधे को “नकली” (जैसी महसूस होती है, पर असली उत्तेजना नहीं) मिलती है। जगह चुनने में MRI स्कैन मदद करता है। डॉक्टर 6 दिन बाद और 4 से 8 हफ़्ते पर लक्षणों में बदलाव देखते हैं।"}],
+kn:[{t:"ಅನಿಯಮಿತ ಹೃದಯಬಡಿತಕ್ಕೆ (ಏಟ್ರಿಯಲ್ ಫಿಬ್ರಿಲೇಶನ್) ಹೊಸ ರಕ್ತ ತೆಳುಗೊಳಿಸುವ ಔಷಧ (ಮಿಲ್ವೆಕ್ಸಿಯಾನ್) ಮತ್ತು ಅಪಿಕ್ಸಾಬಾನ್ ಹೋಲಿಕೆ",c:"ಏಟ್ರಿಯಲ್ ಫಿಬ್ರಿಲೇಶನ್ ಮತ್ತು ಫ್ಲಟರ್ (ಅನಿಯಮಿತ ಹೃದಯಬಡಿತ)",site:"ಬೆಂಗಳೂರು ಮತ್ತು ಭಾರತದ ಇನ್ನೂ ಹಲವು ನಗರಗಳು (ವಿವರ ನೋಡಿ)",n:"ಜಗತ್ತಿನಾದ್ಯಂತ 15,500, ಭಾರತದಲ್ಲಿ 511",sn:"CTRI ದಾಖಲೆಯಲ್ಲಿ ಇನ್ನೂ ಹಲವು ಆಸ್ಪತ್ರೆಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಲಾಗಿದೆ.",
+ w:"ಏಟ್ರಿಯಲ್ ಫಿಬ್ರಿಲೇಶನ್ ಎಂದರೆ ಪಾರ್ಶ್ವವಾಯುವಿನ ಅಪಾಯ ಹೆಚ್ಚಿಸುವ ಅನಿಯಮಿತ ಹೃದಯಬಡಿತ, ಆದ್ದರಿಂದ ಅನೇಕರು ರಕ್ತ ತೆಳುಗೊಳಿಸುವ ಔಷಧ ತೆಗೆದುಕೊಳ್ಳುತ್ತಾರೆ. ಹೊಸ ಮಾತ್ರೆ ಮಿಲ್ವೆಕ್ಸಿಯಾನ್, ಅನುಮೋದಿತ ಔಷಧ ಅಪಿಕ್ಸಾಬಾನ್ (Eliquis) ಷ್ಟೇ ಪಾರ್ಶ್ವವಾಯು ಮತ್ತು ರಕ್ತ ಹೆಪ್ಪುಗಟ್ಟುವಿಕೆಯಿಂದ ರಕ್ಷಿಸುತ್ತದೆಯೇ ಎಂದು ಈ ಅಧ್ಯಯನ ಪರೀಕ್ಷಿಸುತ್ತದೆ. ಜನರಿಗೆ ಆಕಸ್ಮಿಕವಾಗಿ ಒಂದು ಅಥವಾ ಇನ್ನೊಂದನ್ನು ನೀಡಲಾಗುತ್ತದೆ; ಯಾವುದು ಎಂದು ಅವರಿಗೂ ವೈದ್ಯರಿಗೂ ತಿಳಿದಿರುವುದಿಲ್ಲ. ರಕ್ತಸ್ರಾವವನ್ನೂ ಹೋಲಿಸಲಾಗುತ್ತದೆ. ಜನರು ಸುಮಾರು 4 ವರ್ಷಗಳವರೆಗೆ ಭಾಗವಹಿಸುತ್ತಾರೆ. ಹಂತ 3 ಎಂದರೆ ಈಗಿರುವ ಚಿಕಿತ್ಸೆಯೊಂದಿಗೆ ಹೋಲಿಸುವ ದೊಡ್ಡ, ಕೊನೆಯ ಹಂತದ ಪರೀಕ್ಷೆ."},
+{t:"ಬೆನ್ನುಹುರಿ ಗಾಯದ ನಂತರದ ನರ ನೋವಿಗೆ ಲೇಸರ್ ಚಿಕಿತ್ಸೆ ಮತ್ತು ಸ್ಟ್ರೆಚಿಂಗ್ ವ್ಯಾಯಾಮ",c:"ಬೆನ್ನುಹುರಿ ಗಾಯದ ನಂತರದ ನರ (ಕೇಂದ್ರೀಯ) ನೋವು",site:"SVNIRTAR, ಕಟಕ್, ಒಡಿಶಾ",n:"200",sn:"",
+ w:"ಬೆನ್ನುಹುರಿ ಗಾಯದಿಂದ ಕಾಲುಗಳಲ್ಲಿ ಉರಿ, ಚುಚ್ಚುವ ಅಥವಾ ವಿದ್ಯುತ್ ಆಘಾತದಂತಹ ನೋವು ಬರಬಹುದು. ಸಾಮಾನ್ಯ ಔಷಧಗಳ ಜೊತೆ ಲೇಸರ್ ಚಿಕಿತ್ಸೆ ಮತ್ತು ಭುಜದ ಬಳಿಯ ಸ್ನಾಯುಗಳ ಸ್ಟ್ರೆಚಿಂಗ್ ವ್ಯಾಯಾಮ ಸೇರಿಸಿದರೆ ಔಷಧ ಮಾತ್ರಕ್ಕಿಂತ ನೋವು ಹೆಚ್ಚು ಕಡಿಮೆಯಾಗುತ್ತದೆಯೇ ಎಂದು ಈ ಅಧ್ಯಯನ ಪರೀಕ್ಷಿಸುತ್ತದೆ. ಚಿಕಿತ್ಸೆ 3 ವಾರ ನಡೆಯುತ್ತದೆ, ನಂತರ 3 ವಾರ ಅನುಸರಣೆ; ನೋವನ್ನು ಆರಂಭದಲ್ಲಿ, 3 ಮತ್ತು 6ನೇ ವಾರದಲ್ಲಿ ಅಳೆಯಲಾಗುತ್ತದೆ. ಇದು ಸ್ನಾತಕೋತ್ತರ ಪ್ರಬಂಧದ ಭಾಗ."},
+{t:"ಮಧ್ಯಮದಿಂದ ತೀವ್ರ ಆಸ್ತಮಾಗೆ ಒಮಾಲಿಜುಮಾಬ್ ಚುಚ್ಚುಮದ್ದು (BP11) ಮತ್ತು Xolair ಹೋಲಿಕೆ",c:"ಮಧ್ಯಮದಿಂದ ತೀವ್ರ ನಿರಂತರ ಆಸ್ತಮಾ",site:"ಬೆಂಗಳೂರು, ಪುಣೆ, ಹೈದರಾಬಾದ್ ಮತ್ತು ಇತರ ನಗರಗಳು",n:"165 (ಭಾರತ)",sn:"CTRI ದಾಖಲೆಯಲ್ಲಿ ಇನ್ನೂ ಆಸ್ಪತ್ರೆಗಳಿವೆ.",
+ w:"ಒಮಾಲಿಜುಮಾಬ್ ಅಲರ್ಜಿ ಆಸ್ತಮಾಗೆ ನೀಡುವ ಚುಚ್ಚುಮದ್ದು. CuraTeQ ತಯಾರಿಸಿದ ಆವೃತ್ತಿ (BP11) ಮತ್ತು ಅನುಮೋದಿತ ಬ್ರಾಂಡ್ Xolair ಅನ್ನು ಈ ಅಧ್ಯಯನ ಹೋಲಿಸುತ್ತದೆ. ಚುಚ್ಚುಮದ್ದನ್ನು ಪ್ರತಿ 2 ಅಥವಾ 4 ವಾರಕ್ಕೊಮ್ಮೆ ಚರ್ಮದ ಕೆಳಗೆ ನೀಡಲಾಗುತ್ತದೆ; ಪ್ರಮಾಣ ರಕ್ತದ IgE ಮಟ್ಟ ಮತ್ತು ತೂಕವನ್ನು ಅವಲಂಬಿಸಿದೆ. ಯಾವ ಉತ್ಪನ್ನ ನೀಡಲಾಗಿದೆ ಎಂದು ಭಾಗಿದಾರರಿಗೂ ವೈದ್ಯರಿಗೂ ತಿಳಿಯುವುದಿಲ್ಲ. ಅಧ್ಯಯನ ಸುಮಾರು ಒಂದು ವರ್ಷ ನಡೆಯುತ್ತದೆ; 16ನೇ ವಾರದೊಳಗೆ ಎಷ್ಟು ತೀವ್ರ ಆಸ್ತಮಾ ದಾಳಿಗಳು ಆದವು ಎಂಬುದೇ ಮುಖ್ಯ ಪರೀಕ್ಷೆ. CTRI ಪ್ರಕಾರ ಭಾರತದಲ್ಲಿ ನೇಮಕಾತಿ ಮುಚ್ಚಿದೆ."},
+{t:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರಲ್ಲಿ ಕೊಲೆಸ್ಟ್ರಾಲ್ ಕಡಿಮೆ ಮಾಡುವ ಹೊಸ ಚುಚ್ಚುಮದ್ದಿನ ಸುರಕ್ಷತಾ ಅಧ್ಯಯನ",c:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರು (ಯಾವುದೇ ಕಾಯಿಲೆ ಇಲ್ಲ)",site:"Zydus ರಿಸರ್ಚ್ ಸೆಂಟರ್, ಅಹಮದಾಬಾದ್",n:"60",sn:"",
+ w:"ಈ ಆರಂಭಿಕ (ಹಂತ 1) ಅಧ್ಯಯನ, “ಕೆಟ್ಟ” LDL ಕೊಲೆಸ್ಟ್ರಾಲ್ ಕಡಿಮೆ ಮಾಡಲು ರೂಪಿಸಿದ ZRC-3306 ಚುಚ್ಚುಮದ್ದಿನ ಸುರಕ್ಷತೆಯನ್ನು ಆರೋಗ್ಯವಂತ ವಯಸ್ಕರಲ್ಲಿ ಪರೀಕ್ಷಿಸುತ್ತದೆ. ಆಕಸ್ಮಿಕವಾಗಿ ಕೆಲವರಿಗೆ ನಿಜವಾದ ಚುಚ್ಚುಮದ್ದು, ಕೆಲವರಿಗೆ ನಕಲಿ (ಪ್ಲಸೀಬೊ) ನೀಡಲಾಗುತ್ತದೆ; ಯಾವುದು ಎಂದು ಯಾರಿಗೂ ತಿಳಿದಿರುವುದಿಲ್ಲ. ಚುಚ್ಚುಮದ್ದುಗಳನ್ನು ದಿನ 0, ದಿನ 28 ಮತ್ತು ದಿನ 208ರಂದು ಚರ್ಮದ ಕೆಳಗೆ ನೀಡಲಾಗುತ್ತದೆ, ಮತ್ತು ಸುಮಾರು ದಿನ 388ರವರೆಗೆ ಅಡ್ಡಪರಿಣಾಮ ಪರೀಕ್ಷಿಸಲಾಗುತ್ತದೆ."},
+{t:"ಸ್ಕಿಜೋಫ್ರೇನಿಯಾಗೆ ಔಷಧಗಳ ಜೊತೆ ಕಾಂತೀಯ ಮೆದುಳು ಉತ್ತೇಜನ",c:"ಸ್ಕಿಜೋಫ್ರೇನಿಯಾ",site:"NIMHANS, ಬೆಂಗಳೂರು",n:"70",sn:"",
+ w:"ಸ್ಕಿಜೋಫ್ರೇನಿಯಾಕ್ಕೆ ಚಿಕಿತ್ಸೆ ಕೆಲವೊಮ್ಮೆ ಕಷ್ಟ. ಸಾಮಾನ್ಯ ಆಂಟಿಸೈಕೋಟಿಕ್ ಔಷಧಗಳ ಜೊತೆ, ಮೆದುಳಿನ ಹಿಂಭಾಗಕ್ಕೆ (ಸೆರೆಬೆಲ್ಲಮ್) ಒಂದು ರೀತಿಯ ಕಾಂತೀಯ ಉತ್ತೇಜನ (ಥೀಟಾ ಬರ್ಸ್ಟ್ TMS) ಸೇರಿಸಲಾಗುತ್ತದೆ. ಪ್ರತಿ ವ್ಯಕ್ತಿಗೆ 6 ದಿನ ದಿನಕ್ಕೆ 5 ಚಿಕ್ಕ ಅವಧಿಗಳು. ಅರ್ಧದಷ್ಟು ಜನರಿಗೆ ನಿಜವಾದ ಉತ್ತೇಜನ, ಉಳಿದವರಿಗೆ ಅದೇ ರೀತಿ ಅನಿಸುವ ಆದರೆ ಉತ್ತೇಜಿಸದ “ನಕಲಿ” ನೀಡಲಾಗುತ್ತದೆ. ಸ್ಥಳ ಆಯ್ಕೆಗೆ MRI ಸ್ಕ್ಯಾನ್ ಸಹಾಯ ಮಾಡುತ್ತದೆ. 6 ದಿನಗಳ ನಂತರ ಮತ್ತು 4 ರಿಂದ 8 ವಾರಗಳಲ್ಲಿ ವೈದ್ಯರು ಲಕ್ಷಣಗಳ ಬದಲಾವಣೆ ಪರೀಕ್ಷಿಸುತ್ತಾರೆ."}]};
 const ELIG={
-en:[{e:["Adults aged 18–65","Living with type 2 diabetes for at least 1 year","Able to walk for 20 minutes without help","Willing to attend monthly check-ups"],x:["Uses an insulin pump","Pregnant or planning pregnancy","Serious heart or kidney problems"]},
-{e:["Aged 12–60","Doctor-diagnosed asthma for at least 1 year","Still has symptoms despite regular inhaler use"],x:["Current smoker","Recent hospital stay for a chest infection","Pregnant or breastfeeding"]},
-{e:["Adults aged 18 or older","Currently receiving treatment for breast cancer","Often feels very tired or stressed"],x:["Cannot attend weekly sessions","Heart problems that limit exercise","Already in another supportive-care study"]},
-{e:["Adults aged 18–45","Generally healthy, no long-term illness","Not taking regular medicines","Willing to stay at the site for a few days"],x:["Pregnant or breastfeeding","Smokes or drinks heavily","Joined another study in the last 3 months"]}],
-hi:[{e:["18–65 वर्ष के वयस्क","कम से कम 1 वर्ष से टाइप 2 डायबिटीज़","बिना सहारे 20 मिनट चल सकते हैं","मासिक जाँच के लिए आने को तैयार"],x:["इंसुलिन पंप का उपयोग","गर्भवती या गर्भधारण की योजना","हृदय या गुर्दे की गंभीर समस्या"]},
-{e:["12–60 वर्ष की आयु","डॉक्टर द्वारा निदान किया गया दमा, कम से कम 1 वर्ष","नियमित इन्हेलर के बावजूद लक्षण बने रहते हैं"],x:["वर्तमान में धूम्रपान करते हैं","छाती के संक्रमण के कारण हाल में अस्पताल में भर्ती","गर्भवती या स्तनपान कराती हैं"]},
-{e:["18 वर्ष या अधिक आयु के वयस्क","स्तन कैंसर का इलाज चल रहा है","अक्सर बहुत थकान या तनाव महसूस होता है"],x:["साप्ताहिक सत्रों में नहीं आ सकते","हृदय की समस्या जो व्यायाम सीमित करती है","पहले से किसी अन्य सहायक-देखभाल अध्ययन में हैं"]},
-{e:["18–45 वर्ष के वयस्क","आमतौर पर स्वस्थ, कोई लंबी बीमारी नहीं","नियमित दवाएँ नहीं लेते","कुछ दिन केंद्र पर रुकने को तैयार"],x:["गर्भवती या स्तनपान कराती हैं","धूम्रपान या अधिक शराब का सेवन","पिछले 3 महीनों में किसी अन्य अध्ययन में शामिल हुए"]}],
-kn:[{e:["18–65 ವರ್ಷದ ವಯಸ್ಕರು","ಕನಿಷ್ಠ 1 ವರ್ಷದಿಂದ ಟೈಪ್ 2 ಮಧುಮೇಹ","ಸಹಾಯವಿಲ್ಲದೆ 20 ನಿಮಿಷ ನಡೆಯಬಲ್ಲವರು","ಮಾಸಿಕ ತಪಾಸಣೆಗೆ ಬರಲು ಸಿದ್ಧರು"],x:["ಇನ್ಸುಲಿನ್ ಪಂಪ್ ಬಳಸುವವರು","ಗರ್ಭಿಣಿ ಅಥವಾ ಗರ್ಭಧಾರಣೆ ಯೋಜಿಸುತ್ತಿರುವವರು","ಗಂಭೀರ ಹೃದಯ ಅಥವಾ ಮೂತ್ರಪಿಂಡ ಸಮಸ್ಯೆ"]},
-{e:["12–60 ವರ್ಷ ವಯಸ್ಸು","ವೈದ್ಯರು ಪತ್ತೆಹಚ್ಚಿದ ಆಸ್ತಮಾ, ಕನಿಷ್ಠ 1 ವರ್ಷ","ನಿಯಮಿತ ಇನ್ಹೇಲರ್ ಬಳಕೆಯ ನಂತರವೂ ಲಕ್ಷಣಗಳಿವೆ"],x:["ಈಗ ಧೂಮಪಾನ ಮಾಡುವವರು","ಎದೆಯ ಸೋಂಕಿಗಾಗಿ ಇತ್ತೀಚೆಗೆ ಆಸ್ಪತ್ರೆಗೆ ದಾಖಲಾಗಿದ್ದವರು","ಗರ್ಭಿಣಿ ಅಥವಾ ಹಾಲುಣಿಸುವವರು"]},
-{e:["18 ವರ್ಷ ಅಥವಾ ಮೇಲ್ಪಟ್ಟ ವಯಸ್ಕರು","ಸ್ತನ ಕ್ಯಾನ್ಸರ್ ಚಿಕಿತ್ಸೆ ಪಡೆಯುತ್ತಿರುವವರು","ಆಗಾಗ್ಗೆ ತುಂಬಾ ಆಯಾಸ ಅಥವಾ ಒತ್ತಡ ಅನುಭವಿಸುವವರು"],x:["ವಾರದ ಅವಧಿಗಳಿಗೆ ಬರಲು ಸಾಧ್ಯವಿಲ್ಲದವರು","ವ್ಯಾಯಾಮ ಸೀಮಿತಗೊಳಿಸುವ ಹೃದಯ ಸಮಸ್ಯೆ","ಈಗಾಗಲೇ ಬೇರೆ ಬೆಂಬಲ ಆರೈಕೆ ಅಧ್ಯಯನದಲ್ಲಿರುವವರು"]},
-{e:["18–45 ವರ್ಷದ ವಯಸ್ಕರು","ಸಾಮಾನ್ಯವಾಗಿ ಆರೋಗ್ಯವಂತರು, ದೀರ್ಘಕಾಲೀನ ಕಾಯಿಲೆ ಇಲ್ಲ","ನಿಯಮಿತ ಔಷಧ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿಲ್ಲ","ಕೆಲವು ದಿನ ಕೇಂದ್ರದಲ್ಲಿ ಉಳಿಯಲು ಸಿದ್ಧರು"],x:["ಗರ್ಭಿಣಿ ಅಥವಾ ಹಾಲುಣಿಸುವವರು","ಧೂಮಪಾನ ಅಥವಾ ಅತಿಯಾದ ಮದ್ಯಪಾನ","ಕಳೆದ 3 ತಿಂಗಳಲ್ಲಿ ಬೇರೆ ಅಧ್ಯಯನದಲ್ಲಿ ಭಾಗವಹಿಸಿದವರು"]}]};
+en:[{e:["Age 18 to 75 years, any gender","Has atrial fibrillation and can safely take long-term blood thinners","Medically stable","Has stroke risk factors (for example age 75 or older, a past stroke, or two or more of: age 65–74, high blood pressure, diabetes, hardened arteries, heart failure)"],x:["Serious heart-valve disease, or likely to need valve surgery","Has another condition that needs long-term blood thinners"]},
+{e:["Age 18 to 80 years, any gender","Spinal cord injury confirmed by MRI (complete or incomplete)","Burning or electric-shock-type nerve pain in both legs (DN4 test score 4 or more)"],x:["Cancer","Thyroid disease","Other nerve or brain conditions","Muscle or bone pain"]},
+{e:["Age 18 to 65 years","Moderate to severe asthma for more than 1 year, with allergy to a year-round allergen","Repeated severe attacks despite high-dose inhaled steroid plus long-acting reliever","Agrees to use birth control and gives written consent"],x:["Asthma hospital or emergency visit in the last 4 weeks","Earlier omalizumab or other biologic asthma treatment","Current smoker, or smoking history of 10 pack-years or more","Other lung disease (such as COPD or TB), HIV or hepatitis B/C, recent heart attack or stroke, or cancer in the last 10 years"]},
+{e:["Healthy adults aged 18 to 65 years, any gender","Body mass index 18.5 to 29.9","Normal health checks (including ECG and blood tests)","LDL cholesterol 129 mg/dL or lower","Able to take part in the whole study and use contraception"],x:["Alcohol, tobacco or drug use in the past year","Serious illness or surgery in the last 3 months","Vaccine in the last 90 days, or another drug study in the last 3 months","Pregnant or breastfeeding","Severe allergies, or allergy to diphtheria toxin"]},
+{e:["Age 18 to 55 years, any gender","Diagnosed with schizophrenia for less than 10 years","Newly diagnosed, or restarting medicines after a relapse (more than 2 months off treatment)","Marked symptom severity, and able to give consent"],x:["History of seizures","Severe agitation, catatonia or suicide risk needing emergency treatment","Other brain or nerve disorder, or substance dependence in the last 6 months (nicotine excepted)","Pregnant or postpartum","Metal implants or other reasons TMS or MRI is unsafe"]}],
+hi:[{e:["18 से 75 वर्ष की आयु, किसी भी लिंग के","एट्रियल फिब्रिलेशन है और लंबे समय तक खून पतला करने वाली दवा सुरक्षित रूप से ले सकते हैं","चिकित्सकीय रूप से स्थिर","स्ट्रोक के जोखिम कारक हैं (जैसे 75 वर्ष या अधिक आयु, पहले स्ट्रोक, या इनमें से दो या अधिक: 65–74 वर्ष, उच्च रक्तचाप, डायबिटीज़, धमनियों का सख्त होना, हृदय विफलता)"],x:["हृदय के वाल्व की गंभीर बीमारी, या वाल्व सर्जरी की संभावना","कोई अन्य स्थिति जिसमें लंबे समय तक खून पतला करने वाली दवा चाहिए"]},
+{e:["18 से 80 वर्ष की आयु, किसी भी लिंग के","MRI से पुष्ट रीढ़ की चोट (पूर्ण या अपूर्ण)","दोनों पैरों में जलन या बिजली के झटके जैसा नस का दर्द (DN4 स्कोर 4 या अधिक)"],x:["कैंसर","थायरॉइड रोग","अन्य नस या मस्तिष्क संबंधी बीमारियाँ","मांसपेशी या हड्डी का दर्द"]},
+{e:["18 से 65 वर्ष की आयु","1 वर्ष से अधिक समय से मध्यम से गंभीर दमा, साल भर रहने वाली किसी चीज़ से एलर्जी","उच्च खुराक वाले इनहेल्ड स्टेरॉइड और लंबे असर वाली दवा के बावजूद बार-बार गंभीर दौरे","गर्भनिरोध का उपयोग करने और लिखित सहमति देने को तैयार"],x:["पिछले 4 हफ़्तों में दमा के कारण अस्पताल या आपातकालीन विज़िट","पहले ओमालिज़ुमैब या कोई अन्य बायोलॉजिक दमा उपचार","वर्तमान धूम्रपान करने वाले, या 10 पैक-वर्ष या अधिक धूम्रपान इतिहास","अन्य फेफड़ों की बीमारी (जैसे COPD या TB), HIV या हेपेटाइटिस B/C, हाल का हार्ट अटैक या स्ट्रोक, या पिछले 10 वर्षों में कैंसर"]},
+{e:["18 से 65 वर्ष के स्वस्थ वयस्क, किसी भी लिंग के","बॉडी मास इंडेक्स 18.5 से 29.9","सामान्य स्वास्थ्य जाँच (ECG और खून की जाँच सहित)","LDL कोलेस्ट्रॉल 129 mg/dL या कम","पूरे अध्ययन में भाग लेने और गर्भनिरोध अपनाने में सक्षम"],x:["पिछले एक वर्ष में शराब, तंबाकू या नशे का सेवन","पिछले 3 महीनों में गंभीर बीमारी या सर्जरी","पिछले 90 दिनों में टीका, या पिछले 3 महीनों में किसी अन्य दवा अध्ययन में भागीदारी","गर्भवती या स्तनपान कराती हैं","गंभीर एलर्जी, या डिफ्थीरिया टॉक्सिन से एलर्जी"]},
+{e:["18 से 55 वर्ष की आयु, किसी भी लिंग के","10 वर्ष से कम समय से सिज़ोफ्रेनिया का निदान","नया निदान, या दोबारा बीमारी उभरने के बाद दवाएँ फिर शुरू (2 महीने से अधिक इलाज बंद रहा)","लक्षण गंभीर हैं और सहमति देने में सक्षम"],x:["दौरे (मिर्गी) का इतिहास","गंभीर बेचैनी, कैटाटोनिया या आत्महत्या का जोखिम जिसमें आपातकालीन इलाज चाहिए","अन्य मस्तिष्क या नस संबंधी विकार, या पिछले 6 महीनों में नशे की लत (निकोटीन को छोड़कर)","गर्भवती या प्रसवोत्तर","धातु के इम्प्लांट या अन्य कारण जिनसे TMS या MRI असुरक्षित हो"]}],
+kn:[{e:["18 ರಿಂದ 75 ವರ್ಷ ವಯಸ್ಸು, ಯಾವುದೇ ಲಿಂಗ","ಏಟ್ರಿಯಲ್ ಫಿಬ್ರಿಲೇಶನ್ ಇದೆ ಮತ್ತು ದೀರ್ಘಕಾಲ ರಕ್ತ ತೆಳುಗೊಳಿಸುವ ಔಷಧ ಸುರಕ್ಷಿತವಾಗಿ ತೆಗೆದುಕೊಳ್ಳಬಹುದು","ವೈದ್ಯಕೀಯವಾಗಿ ಸ್ಥಿರ","ಪಾರ್ಶ್ವವಾಯು ಅಪಾಯದ ಅಂಶಗಳಿವೆ (ಉದಾ: 75 ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು, ಹಿಂದೆ ಪಾರ್ಶ್ವವಾಯು, ಅಥವಾ ಇವುಗಳಲ್ಲಿ ಎರಡು ಅಥವಾ ಹೆಚ್ಚು: 65–74 ವರ್ಷ, ಅಧಿಕ ರಕ್ತದೊತ್ತಡ, ಮಧುಮೇಹ, ಅಪಧಮನಿ ಗಟ್ಟಿಯಾಗುವುದು, ಹೃದಯ ವೈಫಲ್ಯ)"],x:["ಹೃದಯದ ಕವಾಟದ ಗಂಭೀರ ಕಾಯಿಲೆ, ಅಥವಾ ಕವಾಟ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ ಬೇಕಾಗುವ ಸಾಧ್ಯತೆ","ದೀರ್ಘಕಾಲ ರಕ್ತ ತೆಳುಗೊಳಿಸುವ ಔಷಧ ಬೇಕಾದ ಬೇರೆ ಸ್ಥಿತಿ"]},
+{e:["18 ರಿಂದ 80 ವರ್ಷ ವಯಸ್ಸು, ಯಾವುದೇ ಲಿಂಗ","MRI ಯಿಂದ ದೃಢಪಟ್ಟ ಬೆನ್ನುಹುರಿ ಗಾಯ (ಪೂರ್ಣ ಅಥವಾ ಭಾಗಶಃ)","ಎರಡೂ ಕಾಲುಗಳಲ್ಲಿ ಉರಿ ಅಥವಾ ವಿದ್ಯುತ್ ಆಘಾತದಂತಹ ನರ ನೋವು (DN4 ಅಂಕ 4 ಅಥವಾ ಹೆಚ್ಚು)"],x:["ಕ್ಯಾನ್ಸರ್","ಥೈರಾಯ್ಡ್ ಕಾಯಿಲೆ","ಇತರ ನರ ಅಥವಾ ಮೆದುಳಿನ ಸ್ಥಿತಿಗಳು","ಸ್ನಾಯು ಅಥವಾ ಮೂಳೆ ನೋವು"]},
+{e:["18 ರಿಂದ 65 ವರ್ಷ ವಯಸ್ಸು","1 ವರ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚು ಕಾಲ ಮಧ್ಯಮದಿಂದ ತೀವ್ರ ಆಸ್ತಮಾ, ವರ್ಷಪೂರ್ತಿ ಇರುವ ಅಲರ್ಜಿ ಕಾರಕಕ್ಕೆ ಅಲರ್ಜಿ","ಹೆಚ್ಚಿನ ಪ್ರಮಾಣದ ಇನ್ಹೇಲ್ ಸ್ಟೀರಾಯ್ಡ್ ಜೊತೆ ದೀರ್ಘಕಾಲದ ರಿಲೀವರ್ ಬಳಸಿದರೂ ಪುನರಾವರ್ತಿತ ತೀವ್ರ ದಾಳಿ","ಗರ್ಭನಿರೋಧ ಬಳಸಲು ಮತ್ತು ಲಿಖಿತ ಒಪ್ಪಿಗೆ ನೀಡಲು ಸಿದ್ಧ"],x:["ಕಳೆದ 4 ವಾರಗಳಲ್ಲಿ ಆಸ್ತಮಾಗಾಗಿ ಆಸ್ಪತ್ರೆ ಅಥವಾ ತುರ್ತು ಭೇಟಿ","ಹಿಂದೆ ಒಮಾಲಿಜುಮಾಬ್ ಅಥವಾ ಇತರ ಬಯೋಲಾಜಿಕ್ ಆಸ್ತಮಾ ಚಿಕಿತ್ಸೆ","ಈಗ ಧೂಮಪಾನ ಮಾಡುವವರು, ಅಥವಾ 10 ಪ್ಯಾಕ್-ವರ್ಷ ಅಥವಾ ಹೆಚ್ಚು ಧೂಮಪಾನ ಇತಿಹಾಸ","ಇತರ ಶ್ವಾಸಕೋಶ ಕಾಯಿಲೆ (COPD ಅಥವಾ TB), HIV ಅಥವಾ ಹೆಪಟೈಟಿಸ್ B/C, ಇತ್ತೀಚಿನ ಹೃದಯಾಘಾತ ಅಥವಾ ಪಾರ್ಶ್ವವಾಯು, ಅಥವಾ ಕಳೆದ 10 ವರ್ಷಗಳಲ್ಲಿ ಕ್ಯಾನ್ಸರ್"]},
+{e:["18 ರಿಂದ 65 ವರ್ಷದ ಆರೋಗ್ಯವಂತ ವಯಸ್ಕರು, ಯಾವುದೇ ಲಿಂಗ","ಬಾಡಿ ಮಾಸ್ ಇಂಡೆಕ್ಸ್ 18.5 ರಿಂದ 29.9","ಸಾಮಾನ್ಯ ಆರೋಗ್ಯ ಪರೀಕ್ಷೆ (ECG ಮತ್ತು ರಕ್ತ ಪರೀಕ್ಷೆ ಸೇರಿ)","LDL ಕೊಲೆಸ್ಟ್ರಾಲ್ 129 mg/dL ಅಥವಾ ಕಡಿಮೆ","ಇಡೀ ಅಧ್ಯಯನದಲ್ಲಿ ಭಾಗವಹಿಸಲು ಮತ್ತು ಗರ್ಭನಿರೋಧ ಬಳಸಲು ಸಾಧ್ಯ"],x:["ಕಳೆದ ಒಂದು ವರ್ಷದಲ್ಲಿ ಮದ್ಯ, ತಂಬಾಕು ಅಥವಾ ಮಾದಕ ವಸ್ತು ಬಳಕೆ","ಕಳೆದ 3 ತಿಂಗಳಲ್ಲಿ ಗಂಭೀರ ಕಾಯಿಲೆ ಅಥವಾ ಶಸ್ತ್ರಚಿಕಿತ್ಸೆ","ಕಳೆದ 90 ದಿನಗಳಲ್ಲಿ ಲಸಿಕೆ, ಅಥವಾ ಕಳೆದ 3 ತಿಂಗಳಲ್ಲಿ ಬೇರೆ ಔಷಧ ಅಧ್ಯಯನದಲ್ಲಿ ಭಾಗವಹಿಸಿದ್ದು","ಗರ್ಭಿಣಿ ಅಥವಾ ಹಾಲುಣಿಸುವವರು","ತೀವ್ರ ಅಲರ್ಜಿ, ಅಥವಾ ಡಿಫ್ತೀರಿಯಾ ವಿಷಕ್ಕೆ ಅಲರ್ಜಿ"]},
+{e:["18 ರಿಂದ 55 ವರ್ಷ ವಯಸ್ಸು, ಯಾವುದೇ ಲಿಂಗ","10 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ಕಾಲದಿಂದ ಸ್ಕಿಜೋಫ್ರೇನಿಯಾ ಪತ್ತೆ","ಹೊಸದಾಗಿ ಪತ್ತೆ, ಅಥವಾ ಮರುಕಳಿಕೆಯ ನಂತರ ಔಷಧ ಮರುಪ್ರಾರಂಭ (2 ತಿಂಗಳಿಗಿಂತ ಹೆಚ್ಚು ಚಿಕಿತ್ಸೆ ಇಲ್ಲದೆ)","ಲಕ್ಷಣಗಳು ತೀವ್ರ ಮತ್ತು ಒಪ್ಪಿಗೆ ನೀಡಲು ಸಾಧ್ಯ"],x:["ಫಿಟ್ಸ್ (ಮೂರ್ಛೆ ರೋಗ) ಇತಿಹಾಸ","ತುರ್ತು ಚಿಕಿತ್ಸೆ ಬೇಕಾದ ತೀವ್ರ ಆತಂಕ, ಕ್ಯಾಟಟೋನಿಯಾ ಅಥವಾ ಆತ್ಮಹತ್ಯೆ ಅಪಾಯ","ಇತರ ಮೆದುಳು ಅಥವಾ ನರ ಕಾಯಿಲೆ, ಅಥವಾ ಕಳೆದ 6 ತಿಂಗಳಲ್ಲಿ ವ್ಯಸನ (ನಿಕೋಟಿನ್ ಹೊರತುಪಡಿಸಿ)","ಗರ್ಭಿಣಿ ಅಥವಾ ಪ್ರಸವೋತ್ತರ","ಲೋಹದ ಇಂಪ್ಲಾಂಟ್ ಅಥವಾ TMS/MRI ಅಸುರಕ್ಷಿತವಾಗುವ ಇತರ ಕಾರಣಗಳು"]}]};
+L.en.T=REC.en;L.hi.T=REC.hi;L.kn.T=REC.kn;
+/* UI text for real data */
+Object.assign(L.en,{f_note:"These are 5 real records from the Clinical Trials Registry – India (CTRI), downloaded on 24 October 2026 and explained in simple words by TrialMitra. Recruitment status can change, so always confirm with the study team.",f_ph:"e.g. heart, asthma, pain, schizophrenia",chips:["heart","asthma","nerve pain","healthy volunteers","schizophrenia"],
+ d_eligw:"Copied from the CTRI record and simplified. Only the study team can confirm whether you are eligible.",d_unkv:"Details not shown here, such as the full list of sites and ethics committees, are on the original CTRI record. Information may have changed since 24 October 2026.",
+ s_fic:"Transparency note: every trial card shows its CTRI number. The records were downloaded from CTRI on 24 October 2026. The plain-language explanations are TrialMitra’s own wording, not CTRI’s. This site is not endorsed by CTRI, ICMR or WHO. Please check the original CTRI record.",
+ s_future:"Future plan: with CTRI’s permission, records could be loaded through an official export or data agreement, reviewed by a person, and updated regularly. This prototype has no live connection.",
+ demoMsg:"Demo: searching the real CTRI records for “heart”.",st_open:"Open to recruitment (India)",st_closed:"Closed to recruitment (India)",d_stat:"Recruitment status in India",d_reg:"Registered on CTRI",d_upd:"last updated on CTRI",d_size:"Planned number of participants",c_pq:"Contact for public queries",c_pi:"Principal investigator",c_sci:"Contact for scientific queries",d_conv:"Contact details exactly as listed on the CTRI record.",none:"No records match these filters. Try a different word, or reset the filters."});
+Object.assign(L.hi,{f_note:"ये भारत के क्लिनिकल ट्रायल रजिस्ट्री (CTRI) के 5 असली रिकॉर्ड हैं, जो 24 अक्टूबर 2026 को डाउनलोड किए गए और TrialMitra ने सरल भाषा में समझाए हैं। भर्ती की स्थिति बदल सकती है, इसलिए हमेशा अध्ययन टीम से पुष्टि करें।",f_ph:"जैसे: हृदय, दमा, दर्द, सिज़ोफ्रेनिया",chips:["हृदय","दमा","नस दर्द","स्वस्थ स्वयंसेवक","सिज़ोफ्रेनिया"],
+ d_eligw:"CTRI रिकॉर्ड से लेकर सरल किया गया। पात्रता की पुष्टि केवल अध्ययन टीम ही कर सकती है।",d_unkv:"यहाँ न दिखाए गए विवरण, जैसे सभी स्थलों और नैतिकता समितियों की सूची, मूल CTRI रिकॉर्ड में हैं। 24 अक्टूबर 2026 के बाद जानकारी बदल सकती है।",
+ s_fic:"पारदर्शिता सूचना: हर ट्रायल कार्ड पर उसकी CTRI संख्या दी गई है। रिकॉर्ड 24 अक्टूबर 2026 को CTRI से डाउनलोड किए गए। सरल भाषा के विवरण TrialMitra के अपने शब्द हैं, CTRI के नहीं। यह साइट CTRI, ICMR या WHO द्वारा समर्थित नहीं है। कृपया मूल CTRI रिकॉर्ड देखें।",
+ s_future:"भविष्य की योजना: CTRI की अनुमति से रिकॉर्ड आधिकारिक निर्यात या डेटा समझौते से लोड किए जा सकते हैं, किसी व्यक्ति द्वारा जाँचे जा सकते हैं और नियमित रूप से अपडेट हो सकते हैं। इस प्रोटोटाइप में कोई लाइव कनेक्शन नहीं है।",
+ demoMsg:"डेमो: असली CTRI रिकॉर्ड में “हृदय” खोजा जा रहा है।",st_open:"भर्ती खुली है (भारत)",st_closed:"भर्ती बंद है (भारत)",d_stat:"भारत में भर्ती की स्थिति",d_reg:"CTRI पर पंजीकरण",d_upd:"CTRI पर अंतिम अपडेट",d_size:"प्रतिभागियों की नियोजित संख्या",c_pq:"सार्वजनिक प्रश्नों के लिए संपर्क",c_pi:"मुख्य अन्वेषक",c_sci:"वैज्ञानिक प्रश्नों के लिए संपर्क",d_conv:"संपर्क विवरण CTRI रिकॉर्ड में जैसे दिए हैं वैसे ही।",none:"इन फ़िल्टर से कोई रिकॉर्ड नहीं मिला। कोई और शब्द आज़माएँ या फ़िल्टर रीसेट करें।"});
+Object.assign(L.kn,{f_note:"ಇವು ಭಾರತದ ಕ್ಲಿನಿಕಲ್ ಟ್ರಯಲ್ಸ್ ರಿಜಿಸ್ಟ್ರಿ (CTRI) ಯ 5 ನಿಜವಾದ ದಾಖಲೆಗಳು, 24 ಅಕ್ಟೋಬರ್ 2026 ರಂದು ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ TrialMitra ಸರಳ ಮಾತಿನಲ್ಲಿ ವಿವರಿಸಿದೆ. ನೇಮಕಾತಿ ಸ್ಥಿತಿ ಬದಲಾಗಬಹುದು, ಆದ್ದರಿಂದ ಯಾವಾಗಲೂ ಅಧ್ಯಯನ ತಂಡದೊಂದಿಗೆ ಖಚಿತಪಡಿಸಿ.",f_ph:"ಉದಾ: ಹೃದಯ, ಆಸ್ತಮಾ, ನೋವು, ಸ್ಕಿಜೋಫ್ರೇನಿಯಾ",chips:["ಹೃದಯ","ಆಸ್ತಮಾ","ನರ ನೋವು","ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ","ಸ್ಕಿಜೋಫ್ರೇನಿಯಾ"],
+ d_eligw:"CTRI ದಾಖಲೆಯಿಂದ ನಕಲಿಸಿ ಸರಳಗೊಳಿಸಲಾಗಿದೆ. ನೀವು ಅರ್ಹರೇ ಎಂದು ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",d_unkv:"ಇಲ್ಲಿ ತೋರಿಸದ ವಿವರಗಳು, ಉದಾಹರಣೆಗೆ ಎಲ್ಲಾ ಕೇಂದ್ರಗಳು ಮತ್ತು ನೈತಿಕ ಸಮಿತಿಗಳ ಪಟ್ಟಿ, ಮೂಲ CTRI ದಾಖಲೆಯಲ್ಲಿವೆ. 24 ಅಕ್ಟೋಬರ್ 2026 ರ ನಂತರ ಮಾಹಿತಿ ಬದಲಾಗಿರಬಹುದು.",
+ s_fic:"ಪಾರದರ್ಶಕತೆ ಸೂಚನೆ: ಪ್ರತಿ ಪ್ರಯೋಗ ಕಾರ್ಡ್‌ನಲ್ಲಿ CTRI ಸಂಖ್ಯೆ ಇದೆ. ದಾಖಲೆಗಳನ್ನು 24 ಅಕ್ಟೋಬರ್ 2026 ರಂದು CTRI ಯಿಂದ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ. ಸರಳ ಭಾಷೆಯ ವಿವರಣೆಗಳು TrialMitra ದ ಸ್ವಂತ ಮಾತುಗಳು, CTRI ಯದಲ್ಲ. ಈ ಸೈಟ್‌ಗೆ CTRI, ICMR ಅಥವಾ WHO ಅನುಮೋದನೆ ಇಲ್ಲ. ದಯವಿಟ್ಟು ಮೂಲ CTRI ದಾಖಲೆ ನೋಡಿ.",
+ s_future:"ಭವಿಷ್ಯದ ಯೋಜನೆ: CTRI ಅನುಮತಿಯೊಂದಿಗೆ, ಅಧಿಕೃತ ರಫ್ತು ಅಥವಾ ಡೇಟಾ ಒಪ್ಪಂದದ ಮೂಲಕ ದಾಖಲೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಿ, ವ್ಯಕ್ತಿಯಿಂದ ಪರಿಶೀಲಿಸಿ, ನಿಯಮಿತವಾಗಿ ನವೀಕರಿಸಬಹುದು. ಈ ಮಾದರಿಯಲ್ಲಿ ಲೈವ್ ಸಂಪರ್ಕವಿಲ್ಲ.",
+ demoMsg:"ಡೆಮೊ: ನಿಜವಾದ CTRI ದಾಖಲೆಗಳಲ್ಲಿ “ಹೃದಯ” ಹುಡುಕಲಾಗುತ್ತಿದೆ.",st_open:"ನೇಮಕಾತಿ ತೆರೆದಿದೆ (ಭಾರತ)",st_closed:"ನೇಮಕಾತಿ ಮುಚ್ಚಿದೆ (ಭಾರತ)",d_stat:"ಭಾರತದಲ್ಲಿ ನೇಮಕಾತಿ ಸ್ಥಿತಿ",d_reg:"CTRI ನಲ್ಲಿ ನೋಂದಣಿ",d_upd:"CTRI ನಲ್ಲಿ ಕೊನೆಯ ನವೀಕರಣ",d_size:"ಯೋಜಿತ ಭಾಗಿದಾರರ ಸಂಖ್ಯೆ",c_pq:"ಸಾರ್ವಜನಿಕ ಪ್ರಶ್ನೆಗಳಿಗೆ ಸಂಪರ್ಕ",c_pi:"ಪ್ರಧಾನ ಅನ್ವೇಷಕರು",c_sci:"ವೈಜ್ಞಾನಿಕ ಪ್ರಶ್ನೆಗಳಿಗೆ ಸಂಪರ್ಕ",d_conv:"ಸಂಪರ್ಕ ವಿವರಗಳು CTRI ದಾಖಲೆಯಲ್ಲಿ ಇರುವಂತೆಯೇ.",none:"ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಯಾವುದೇ ದಾಖಲೆ ಹೊಂದಿಕೆಯಾಗಲಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಫಿಲ್ಟರ್ ಮರುಹೊಂದಿಸಿ."});
+/* Hindi / Kannada versions of site names, people and roles (phone numbers and emails stay exactly as on CTRI) */
+const LOC={
+hi:{"St John’s Medical College Hospital — Bengaluru":"सेंट जॉन्स मेडिकल कॉलेज अस्पताल — बेंगलुरु","Apollo Hospitals — Chennai":"अपोलो हॉस्पिटल्स — चेन्नई","Sir Ganga Ram Hospital — New Delhi":"सर गंगा राम अस्पताल — नई दिल्ली","KEM Hospital & Seth G.S. Medical College — Mumbai":"केईएम अस्पताल और सेठ जी.एस. मेडिकल कॉलेज — मुंबई","Nil Ratan Sircar Medical College and Hospital — Kolkata":"नील रतन सरकार मेडिकल कॉलेज और अस्पताल — कोलकाता","Yashoda Hospital — Hyderabad":"यशोदा अस्पताल — हैदराबाद",
+"Swami Vivekanand National Institute of Rehabilitation Training and Research (SVNIRTAR), Olatpur, Bairoi — Cuttack, Odisha":"स्वामी विवेकानंद राष्ट्रीय पुनर्वास प्रशिक्षण एवं अनुसंधान संस्थान (SVNIRTAR), ओलाटपुर, बैरोई — कटक, ओडिशा",
+"Bangalore Medical College and Research Institute (Victoria Hospital) — Bengaluru":"बैंगलोर मेडिकल कॉलेज एवं अनुसंधान संस्थान (विक्टोरिया अस्पताल) — बेंगलुरु","Government General and Chest Hospital — Hyderabad":"सरकारी जनरल एवं चेस्ट अस्पताल — हैदराबाद","Sangvi Multispeciality Hospital — Pune":"सांगवी मल्टीस्पेशलिटी अस्पताल — पुणे","SevenHills Healthcare — Mumbai":"सेवनहिल्स हेल्थकेयर — मुंबई","Government Hospital for Chest and Communicable Diseases — Visakhapatnam":"सरकारी छाती एवं संक्रामक रोग अस्पताल — विशाखापत्तनम",
+"Zydus Research Centre, Moraiya — Ahmedabad, Gujarat":"ज़ाइडस रिसर्च सेंटर, मोराइया — अहमदाबाद, गुजरात","NIMHANS TMS Lab, Department of Psychiatry, Hosur Road — Bengaluru":"निमहांस TMS लैब, मनोचिकित्सा विभाग, होसूर रोड — बेंगलुरु",
+"Shweta Pradhan":"श्वेता प्रधान","Dr Denis Xavier":"डॉ. डेनिस ज़ेवियर","Chittaranjan Mishra":"चित्तरंजन मिश्रा","Dr R Sivakumar":"डॉ. आर. शिवकुमार","Mr Kartik Sahni":"श्री कार्तिक सहनी","Dr Arpitkumar Prajapati":"डॉ. अर्पितकुमार प्रजापति","Dr Gaurav Jansari":"डॉ. गौरव जंसारी","Dr Urvakhsh Meherwan Mehta":"डॉ. उर्वक्ष मेहरवान मेहता",
+"Head Clinical Operations, IQVIA RDS Private Limited, Bengaluru":"प्रमुख, क्लिनिकल ऑपरेशंस, IQVIA RDS प्राइवेट लिमिटेड, बेंगलुरु","Professor of Pharmacology, St John’s Medical College, Bengaluru":"फार्माकोलॉजी के प्रोफ़ेसर, सेंट जॉन्स मेडिकल कॉलेज, बेंगलुरु","Senior Physiotherapist, SVNIRTAR, Cuttack":"वरिष्ठ फिज़ियोथेरेपिस्ट, SVNIRTAR, कटक","Professor and Principal, Faculty of Physiotherapy, SRIHER, Chennai":"प्रोफ़ेसर एवं प्रधान, फिज़ियोथेरेपी संकाय, SRIHER, चेन्नई","Director, Insignia Clinical Services Pvt. Ltd., New Delhi":"निदेशक, इन्सिग्निया क्लिनिकल सर्विसेज़ प्रा. लि., नई दिल्ली","Deputy General Manager, CuraTeQ Biologics Pvt. Ltd., Hyderabad":"उप महाप्रबंधक, क्यूराटेक बायोलॉजिक्स प्रा. लि., हैदराबाद","Senior Scientist, Zydus Lifesciences Ltd, Ahmedabad":"वरिष्ठ वैज्ञानिक, ज़ाइडस लाइफसाइंसेज़ लि., अहमदाबाद","Additional Professor of Psychiatry, NIMHANS, Bengaluru":"मनोचिकित्सा के अतिरिक्त प्रोफ़ेसर, निमहांस, बेंगलुरु"},
+kn:{"St John’s Medical College Hospital — Bengaluru":"ಸೇಂಟ್ ಜಾನ್ಸ್ ಮೆಡಿಕಲ್ ಕಾಲೇಜ್ ಆಸ್ಪತ್ರೆ — ಬೆಂಗಳೂರು","Apollo Hospitals — Chennai":"ಅಪೋಲೊ ಆಸ್ಪತ್ರೆಗಳು — ಚೆನ್ನೈ","Sir Ganga Ram Hospital — New Delhi":"ಸರ್ ಗಂಗಾ ರಾಮ್ ಆಸ್ಪತ್ರೆ — ನವದೆಹಲಿ","KEM Hospital & Seth G.S. Medical College — Mumbai":"ಕೆಇಎಂ ಆಸ್ಪತ್ರೆ ಮತ್ತು ಸೇಠ್ ಜಿ.ಎಸ್. ವೈದ್ಯಕೀಯ ಕಾಲೇಜು — ಮುಂಬೈ","Nil Ratan Sircar Medical College and Hospital — Kolkata":"ನೀಲ್ ರತನ್ ಸರ್ಕಾರ್ ವೈದ್ಯಕೀಯ ಕಾಲೇಜು ಮತ್ತು ಆಸ್ಪತ್ರೆ — ಕೋಲ್ಕತ್ತಾ","Yashoda Hospital — Hyderabad":"ಯಶೋದಾ ಆಸ್ಪತ್ರೆ — ಹೈದರಾಬಾದ್",
+"Swami Vivekanand National Institute of Rehabilitation Training and Research (SVNIRTAR), Olatpur, Bairoi — Cuttack, Odisha":"ಸ್ವಾಮಿ ವಿವೇಕಾನಂದ ರಾಷ್ಟ್ರೀಯ ಪುನರ್ವಸತಿ ತರಬೇತಿ ಮತ್ತು ಸಂಶೋಧನಾ ಸಂಸ್ಥೆ (SVNIRTAR), ಒಲಾಟ್‌ಪುರ್, ಬೈರೋಯಿ — ಕಟಕ್, ಒಡಿಶಾ",
+"Bangalore Medical College and Research Institute (Victoria Hospital) — Bengaluru":"ಬೆಂಗಳೂರು ವೈದ್ಯಕೀಯ ಕಾಲೇಜು ಮತ್ತು ಸಂಶೋಧನಾ ಸಂಸ್ಥೆ (ವಿಕ್ಟೋರಿಯಾ ಆಸ್ಪತ್ರೆ) — ಬೆಂಗಳೂರು","Government General and Chest Hospital — Hyderabad":"ಸರ್ಕಾರಿ ಜನರಲ್ ಮತ್ತು ಎದೆರೋಗ ಆಸ್ಪತ್ರೆ — ಹೈದರಾಬಾದ್","Sangvi Multispeciality Hospital — Pune":"ಸಾಂಗ್ವಿ ಮಲ್ಟಿಸ್ಪೆಷಾಲಿಟಿ ಆಸ್ಪತ್ರೆ — ಪುಣೆ","SevenHills Healthcare — Mumbai":"ಸೆವೆನ್‌ಹಿಲ್ಸ್ ಹೆಲ್ತ್‌ಕೇರ್ — ಮುಂಬೈ","Government Hospital for Chest and Communicable Diseases — Visakhapatnam":"ಸರ್ಕಾರಿ ಎದೆರೋಗ ಮತ್ತು ಸಾಂಕ್ರಾಮಿಕ ರೋಗಗಳ ಆಸ್ಪತ್ರೆ — ವಿಶಾಖಪಟ್ಟಣಂ",
+"Zydus Research Centre, Moraiya — Ahmedabad, Gujarat":"ಝೈಡಸ್ ರಿಸರ್ಚ್ ಸೆಂಟರ್, ಮೊರೈಯಾ — ಅಹಮದಾಬಾದ್, ಗುಜರಾತ್","NIMHANS TMS Lab, Department of Psychiatry, Hosur Road — Bengaluru":"ನಿಮ್ಹಾನ್ಸ್ TMS ಪ್ರಯೋಗಾಲಯ, ಮನೋವೈದ್ಯಕೀಯ ವಿಭಾಗ, ಹೊಸೂರು ರಸ್ತೆ — ಬೆಂಗಳೂರು",
+"Shweta Pradhan":"ಶ್ವೇತಾ ಪ್ರಧಾನ್","Dr Denis Xavier":"ಡಾ. ಡೆನಿಸ್ ಕ್ಸೇವಿಯರ್","Chittaranjan Mishra":"ಚಿತ್ತರಂಜನ್ ಮಿಶ್ರಾ","Dr R Sivakumar":"ಡಾ. ಆರ್. ಶಿವಕುಮಾರ್","Mr Kartik Sahni":"ಶ್ರೀ ಕಾರ್ತಿಕ್ ಸಹನಿ","Dr Arpitkumar Prajapati":"ಡಾ. ಅರ್ಪಿತ್‌ಕುಮಾರ್ ಪ್ರಜಾಪತಿ","Dr Gaurav Jansari":"ಡಾ. ಗೌರವ್ ಜನ್ಸಾರಿ","Dr Urvakhsh Meherwan Mehta":"ಡಾ. ಊರ್ವಕ್ಷ್ ಮೆಹರ್ವಾನ್ ಮೆಹ್ತಾ",
+"Head Clinical Operations, IQVIA RDS Private Limited, Bengaluru":"ಮುಖ್ಯಸ್ಥರು, ಕ್ಲಿನಿಕಲ್ ಆಪರೇಷನ್ಸ್, IQVIA RDS ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್, ಬೆಂಗಳೂರು","Professor of Pharmacology, St John’s Medical College, Bengaluru":"ಫಾರ್ಮಕಾಲಜಿ ಪ್ರಾಧ್ಯಾಪಕರು, ಸೇಂಟ್ ಜಾನ್ಸ್ ಮೆಡಿಕಲ್ ಕಾಲೇಜ್, ಬೆಂಗಳೂರು","Senior Physiotherapist, SVNIRTAR, Cuttack":"ಹಿರಿಯ ಫಿಸಿಯೋಥೆರಪಿಸ್ಟ್, SVNIRTAR, ಕಟಕ್","Professor and Principal, Faculty of Physiotherapy, SRIHER, Chennai":"ಪ್ರಾಧ್ಯಾಪಕರು ಮತ್ತು ಪ್ರಾಂಶುಪಾಲರು, ಫಿಸಿಯೋಥೆರಪಿ ವಿಭಾಗ, SRIHER, ಚೆನ್ನೈ","Director, Insignia Clinical Services Pvt. Ltd., New Delhi":"ನಿರ್ದೇಶಕರು, ಇನ್ಸಿಗ್ನಿಯಾ ಕ್ಲಿನಿಕಲ್ ಸರ್ವೀಸಸ್ ಪ್ರೈ. ಲಿ., ನವದೆಹಲಿ","Deputy General Manager, CuraTeQ Biologics Pvt. Ltd., Hyderabad":"ಉಪ ಪ್ರಧಾನ ವ್ಯವಸ್ಥಾಪಕರು, ಕ್ಯೂರಾಟೆಕ್ ಬಯೋಲಾಜಿಕ್ಸ್ ಪ್ರೈ. ಲಿ., ಹೈದರಾಬಾದ್","Senior Scientist, Zydus Lifesciences Ltd, Ahmedabad":"ಹಿರಿಯ ವಿಜ್ಞಾನಿ, ಝೈಡಸ್ ಲೈಫ್‌ಸೈನ್ಸಸ್ ಲಿ., ಅಹಮದಾಬಾದ್","Additional Professor of Psychiatry, NIMHANS, Bengaluru":"ಹೆಚ್ಚುವರಿ ಪ್ರಾಧ್ಯಾಪಕರು, ಮನೋವೈದ್ಯಕೀಯ, ನಿಮ್ಹಾನ್ಸ್, ಬೆಂಗಳೂರು"}};
+const tl=x=>(LOC[lang]&&LOC[lang][x])||x;
+const phaseTxt=r=>r.phase[0]==="NA"?t("na"):({en:"Phase ",hi:"फेज़ ",kn:"ಹಂತ "}[lang])+r.phase.map(x=>({I:"1",II:"2",III:"3",IV:"4"}[x])).join("/");
 function eligHTML(i){const E=ELIG[lang][i],li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");
  return `<p style="margin:6px 0 2px"><strong>${t("d_inc")}</strong></p><ul style="margin:0 0 6px;padding-left:20px">${li(E.e)}</ul><p style="margin:6px 0 2px"><strong>${t("d_exc")}</strong></p><ul style="margin:0 0 6px;padding-left:20px">${li(E.x)}</ul><p style="font-size:.9rem;margin:6px 0 0">${t("d_eligw")}</p>`}
 /* Illustrations (inline SVG icons, decorative) */
@@ -427,14 +418,14 @@ ribbon:'<path d="M24 9c-6 0-9 5-7 10 1.5 4 7 9 7 9s5.5-5 7-9c2-5-1-10-7-10z" fil
 people:'<circle cx="24" cy="18" r="6" fill="#0f7a74"/><path d="M13 38v-3a11 11 0 0 1 22 0v3z" fill="#0f7a74"/><circle cx="12" cy="21" r="4.5" fill="#7fd1c6"/><circle cx="36" cy="21" r="4.5" fill="#9fc8ec"/><path d="M4 37v-3a8 8 0 0 1 8-8v11z" fill="#7fd1c6"/><path d="M44 37v-3a8 8 0 0 0-8-8v11z" fill="#9fc8ec"/>',
 heart:'<path d="M24 38C10 28 8 19 13 14c4-4 9-2 11 2 2-4 7-6 11-2 5 5 3 14-11 24z" fill="#f6b6c4" stroke="#b4456b" stroke-width="2.2" stroke-linejoin="round"/>'};
 const ico=n=>`<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${BG}${ICO[n]}</svg>`;
-const TI=["drop","lungs","ribbon","people"],PI=["flask","pill","scale","chart"],QI=["flask","magnifier","heart","chart","shield"];
+const TI=["heart","shield","lungs","people","flask"],PI=["flask","pill","scale","chart"],QI=["flask","magnifier","heart","chart","shield"];
 /* Smarter search: ignores filler words, matches synonyms in all 3 languages, tolerates small typos, ranks best match first */
 const STOP=new Set("for and the in of a an my with to on is are me i near about study studies trial trials clinical के का की में और है ಮತ್ತು".split(" "));
-const norm=x=>x.toLowerCase().replace(/[^\p{L}\p{M}\p{N}\s]/gu," ").replace(/\s+/g," ").trim();
+const norm=x=>x.normalize("NFC").toLowerCase().replace(/[^\p{L}\p{M}\p{N}\s]/gu," ").replace(/\s+/g," ").trim();
 function lev(a,b){const m=a.length,n=b.length;let p=[...Array(n+1).keys()];for(let i=1;i<=m;i++){const c=[i];for(let j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
 let HAY=null;
 function matchTrials(q){
- HAY=HAY||TR.map((r,i)=>{const h=norm([r.kw,KWX[i],...["en","hi","kn"].map(l=>{const T=L[l].T[i],E=ELIG[l][i];return [T.t,T.c,T.w,...E.e,...E.x].join(" ")})].join(" "));return{h,w:[...new Set(h.split(" "))]}});
+ HAY=HAY||TR.map((r,i)=>{const h=norm([r.kw,KWX[i],...["en","hi","kn"].map(l=>{const T=L[l].T[i],E=ELIG[l][i];return [T.t,T.c,T.w].join(" ")})].join(" "));return{h,w:[...new Set(h.split(" "))]}});
  const toks=norm(q).split(" ").filter(x=>x&&!STOP.has(x));
  if(!toks.length)return TR.slice();
  return TR.map((r,i)=>{let s=0;const H=HAY[i];
@@ -459,7 +450,6 @@ function fillSelects(){
 }
 function applyLang(){
  document.documentElement.lang=lang;
- updateSeoMetadata();
  document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));
  document.querySelectorAll("[data-ph]").forEach(e=>e.placeholder=t(e.dataset.ph));
  $("#srcMain").textContent=t("src");$("#dClose").textContent=t("close");renderChips();
@@ -476,12 +466,12 @@ function renderChecklist(){
 }
 function updProg(){const n=checked.size,m=10;$("#bar").style.width=n*10+"%";$("#cnt").textContent=t("c_n")(n,m)}
 function card(r,i){const T=t("T")[i];
- return `<article class="card" id="${r.id}"><div class="cico" aria-hidden="true">${ico(TI[i])}</div><span class="tag fic">${t("fic")}</span><br><span class="tag">${esc(T.c)}</span><span class="tag">${esc(phaseLbl(r.phase))}</span>
- <h3>${esc(T.t)}</h3><p>${esc(T.w)}</p><p style="font-size:.92rem;color:var(--mut)">${esc(CITY_L[lang][r.city])} · ${t("site")}</p>
- <details><summary>${t("d_elig")}</summary>${eligHTML(i)}</details><button data-open="${r.id}">${t("view")}</button></article>`}
+ return `<article class="card" id="${esc(r.id)}"><div class="cico" aria-hidden="true">${ico(TI[i])}</div><span class="tag ${r.status}">${t("st_"+r.status)}</span><span class="tag">${esc(r.id)}</span><br><span class="tag">${esc(T.c)}</span><span class="tag">${esc(phaseTxt(r))}</span>
+ <h3>${esc(T.t)}</h3><p>${esc(T.w)}</p><p style="font-size:.92rem;color:var(--mut)">${esc(T.site)}</p>
+ <details><summary>${t("d_elig")}</summary>${eligHTML(i)}</details><button data-open="${esc(r.id)}">${t("view")}</button></article>`}
 function search(_,quiet){
  const q=$("#q").value,c=$("#city").value,p=$("#phase").value,ty=$("#ptype").value;
- const out=matchTrials(q).filter(r=>(!c||r.city===c)&&(!p||r.phase===p)&&(!ty||r.type===ty));
+ const out=matchTrials(q).filter(r=>(!c||r.cities.includes(c))&&(!p||r.phase.includes(p))&&(!ty||r.type===ty));
  shown=true;lastIds=out.map(r=>r.id);
  $("#res").innerHTML=out.length?`<p><strong>${t("count")(out.length)}</strong></p><div class="grid">${out.map(r=>card(r,TR.indexOf(r))).join("")}</div>`:`<div class="card"><p>${t("none")}</p></div>`;
  return out;
@@ -489,11 +479,13 @@ function search(_,quiet){
 function openDetail(id){
  const i=TR.findIndex(r=>r.id===id),r=TR[i],T=t("T")[i];
  $("#dlg").dataset.id=id;
- $("#dBody").innerHTML=`<span class="tag fic">${t("fic")}</span><h2 id="dT" style="margin-top:8px">${esc(T.t)}</h2>
- <dl><dt>${t("d_sum")}</dt><dd>${esc(T.w)}</dd><dt>${t("d_cond")}</dt><dd>${esc(T.c)}</dd><dt>${t("d_phase")}</dt><dd>${esc(phaseLbl(r.phase))}</dd>
- <dt>${t("d_type")}</dt><dd>${esc(typeLbl(r.type))}</dd><dt>${t("d_elig")}</dt><dd>${eligHTML(i)}</dd>
- <dt>${t("d_site")}</dt><dd>${esc(CITY_L[lang][r.city])} — ${t("site")}</dd><dt>${t("d_ctri")}</dt><dd>${t("d_ctriv")}</dd>
- <dt>${t("d_con")}</dt><dd>${t("d_conv")}</dd><dt>${t("d_unk")}</dt><dd>${t("d_unkv")}</dd></dl>
+ const ct=r.contacts.map(c=>`<p style="margin:4px 0"><strong>${t("c_"+c.k)}:</strong> ${esc(tl(c.n))}, ${esc(tl(c.r))}. ${esc(c.ph)} · <a href="mailto:${esc(c.em)}">${esc(c.em)}</a></p>`).join("");
+ $("#dBody").innerHTML=`<span class="tag ${r.status}">${t("st_"+r.status)}</span><span class="tag">${esc(r.id)}</span><h2 id="dT" style="margin-top:8px">${esc(T.t)}</h2>
+ <dl><dt>${t("d_sum")}</dt><dd>${esc(T.w)}</dd><dt>${t("d_cond")}</dt><dd>${esc(T.c)}</dd><dt>${t("d_phase")}</dt><dd>${esc(phaseTxt(r))}</dd>
+ <dt>${t("d_type")}</dt><dd>${esc(typeLbl(r.type))}</dd><dt>${t("d_size")}</dt><dd>${esc(T.n)}</dd><dt>${t("d_elig")}</dt><dd>${eligHTML(i)}</dd>
+ <dt>${t("d_site")}</dt><dd><ul style="margin:0;padding-left:20px">${r.sites.map(x=>`<li>${esc(tl(x))}</li>`).join("")}</ul>${T.sn?`<p style="margin:4px 0">${esc(T.sn)}</p>`:""}</dd>
+ <dt>${t("d_ctri")}</dt><dd>${esc(r.id)}</dd><dt>${t("d_reg")}</dt><dd>${esc(r.reg)} · ${t("d_upd")} ${esc(r.mod)}</dd>
+ <dt>${t("d_con")}</dt><dd>${ct}<p style="margin:4px 0;font-size:.9rem">${t("d_conv")}</p></dd><dt>${t("d_unk")}</dt><dd>${t("d_unkv")}</dd></dl>
  <p class="note">${t("d_conf")}</p>`;
  if(!$("#dlg").open)$("#dlg").showModal();
 }
@@ -552,7 +544,7 @@ async function demo(){
  $("#reset").click();
  $("#find").scrollIntoView({behavior:"smooth"});await w(900);
  say(t("demoMsg"));
- const q=$("#q"),word={en:"diabetes",hi:"डायबिटीज़",kn:"ಮಧುಮೇಹ"}[lang];q.value="";
+ const q=$("#q"),word={en:"heart",hi:"हृदय",kn:"ಹೃದಯ"}[lang];q.value="";
  for(const ch of [...word]){q.value+=ch;await w(110)}
  await w(400);$("#go").click();await w(500);
  const f=document.getElementById(lastIds[0]);
