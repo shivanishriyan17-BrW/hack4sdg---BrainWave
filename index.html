@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TrialMitra — Clinical Trials, Made Understandable</title>
+<style>
+:root{color-scheme:light;--bg:#ffffff;--card:#fff;--ink:#1d3633;--mut:#4a6360;--teal:#0f7a74;--teal2:#0b5f5a;--mint:#edf8f5;--blue:#2a68a8;--line:#d5eae5;--warn:#fff8e1;--warnb:#c58b00;--sh:0 4px 16px rgba(15,122,116,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.hdr{display:flex;align-items:center;gap:14px;margin-bottom:14px}.hdr h2{margin:0}
+.hico svg{width:64px;height:64px;display:block}
+.cico{float:right;margin:0 0 6px 10px}.cico svg{width:54px;height:54px}.pico svg{width:56px;height:56px;margin-bottom:8px;display:block}
+.card details{margin:6px 0 14px;background:var(--mint);border-radius:12px;padding:8px 12px}
+summary{cursor:pointer;font-weight:650;color:var(--teal2)}
+.card.rt{display:flex;gap:12px;align-items:flex-start}.card.rt p{margin:0}.card.rt::before{content:"\2713";flex:none;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-weight:800}
+.chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:14px}.chips button{padding:5px 14px;font-size:.9rem;background:var(--mint);color:var(--teal2);border-color:var(--line)}
+.speakbar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom,0px));background:#fff;border:2px solid var(--teal);border-radius:999px;padding:8px 8px 8px 18px;display:flex;gap:12px;align-items:center;box-shadow:var(--sh);z-index:30;font-weight:650}.speakbar[hidden]{display:none}.toast{position:fixed;left:14px;right:14px;max-width:560px;margin:auto;bottom:calc(76px + env(safe-area-inset-bottom,0px));background:#fff8e1;border:2px solid var(--warnb);border-radius:14px;padding:12px 16px;z-index:40;box-shadow:var(--sh)}.toast[hidden]{display:none}
+.float{animation:fl 5s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}
+.hero svg{width:100%;height:auto}
+.help{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center;background:linear-gradient(135deg,#0f7a74,#2a68a8);color:#fff;border-radius:28px;padding:30px;box-shadow:var(--sh)}
+.help h2{color:#fff;margin:0 0 8px}.help p{margin:0 0 6px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:16px}
+.tile{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);border-radius:18px;padding:14px 16px}
+.tile .ti svg{width:46px;height:46px;flex:none;display:block}
+.tile .lbl{font-size:.85rem;margin:0}.tile .val{font-size:1.25rem;font-weight:800;margin:0;word-break:break-word}.tile a{color:#fff;text-decoration:none}.tile a[href]:hover{text-decoration:underline}
+@media(max-width:760px){.help{grid-template-columns:1fr;text-align:center;padding:24px 18px}.help svg.big{max-width:150px;margin:auto}.tile{text-align:left}}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;font:17px/1.65 system-ui,-apple-system,"Segoe UI","Noto Sans","Noto Sans Devanagari","Noto Sans Kannada",sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--blue)}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.hd{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:10px 18px;max-width:1100px;margin:auto}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1.25rem;color:var(--teal);text-decoration:none}
+nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+nav a{color:var(--ink);text-decoration:none;padding:6px 10px;border-radius:999px;font-size:.95rem}
+nav a:hover,nav a:focus-visible{background:var(--mint)}
+select,input[type=text]{font:inherit;padding:9px 12px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);width:100%}
+#lang{width:auto}
+button,.btn{font:inherit;font-weight:650;cursor:pointer;border:2px solid var(--teal);background:var(--teal);color:#fff;padding:10px 18px;border-radius:999px;text-decoration:none;display:inline-block;transition:transform .15s,box-shadow .15s}
+button:hover,.btn:hover{transform:translateY(-2px);box-shadow:var(--sh)}
+button.alt,.btn.alt{background:transparent;color:var(--teal)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.hero{background:linear-gradient(135deg,var(--mint),var(--bg) 60%);padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:0 0 14px;color:var(--teal2)}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);color:var(--teal2);margin:0 0 14px}
+h3{margin:0 0 6px;color:var(--teal)}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.note{background:var(--warn);border-left:5px solid var(--warnb);padding:12px 16px;border-radius:12px;font-size:.95rem}
+section{padding:46px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--sh)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;align-items:end}
+label{font-weight:650;font-size:.92rem;display:block;margin-bottom:4px}
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;background:var(--mint);color:var(--teal2);font-size:.82rem;font-weight:650;margin:0 6px 6px 0}
+.tag.fic{background:var(--warn);color:var(--ink);border:1px solid var(--warnb)}
+.res{margin-top:22px}
+.hl{animation:pulse 1.2s 3;outline:3px solid var(--blue)}
+@keyframes pulse{50%{box-shadow:0 0 0 10px rgba(47,111,176,.25)}}
+.phases{counter-reset:p}.phases .card{border-top:6px solid var(--teal)}
+dialog{border:none;border-radius:20px;max-width:640px;width:calc(100% - 28px);padding:24px;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(5,30,28,.6)}
+dl dt{font-weight:700;color:var(--teal);margin-top:10px}dl dd{margin:0}
+.chk{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;cursor:pointer}
+.chk input{width:22px;height:22px;margin-top:4px;accent-color:var(--teal)}
+.prog{height:10px;background:var(--mint);border-radius:9px;overflow:hidden;margin:10px 0}.prog i{display:block;height:100%;background:var(--teal);transition:width .3s}
+footer{background:var(--mint);color:var(--ink);padding:34px 0;border-top:4px solid var(--teal)}footer a{color:var(--teal2);font-weight:700}
+footer .wrap>*{max-width:820px}
+#msg{margin:8px 0;font-weight:600;color:var(--blue)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero svg{max-width:260px;margin:auto}}
+@media print{header,.hero,#learn,#find,#rights,footer,.tools,.noprint,#msg{display:none!important}section{padding:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+ <div class="hd">
+  <a class="logo" href="#home"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#0b6e69"/><path d="M20 9v22M9 20h22" stroke="#dff4ee" stroke-width="5" stroke-linecap="round"/></svg><span>TrialMitra</span></a>
+  <nav aria-label="Main"><a href="#home" data-i="n_home"></a><a href="#learn" data-i="n_learn"></a><a href="#find" data-i="n_find"></a><a href="#check" data-i="n_check"></a></nav>
+  <label for="lang" class="sr" style="position:absolute;left:-9999px" data-i="lang_l"></label>
+  <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option></select>
+  <a class="btn" href="#find" data-i="n_cta"></a>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+ <div class="wrap">
+  <div>
+   <h1 data-i="h1"></h1>
+   <p data-i="h1p"></p>
+   <div class="row">
+    <a class="btn" href="#find" data-i="b_exp"></a>
+    <a class="btn alt" href="#learn" data-i="b_und"></a>
+    <button class="alt" id="demoBtn" data-i="b_demo"></button>
+   </div>
+   <div class="note" data-i="trust"></div>
+   <div class="row noprint">
+    <button class="alt" id="readMain" data-i="read_main"></button>
+    <button class="alt" id="stop" data-i="stop"></button>
+   </div>
+   <div id="msg" role="status" aria-live="polite"></div>
+  </div>
+  <svg aria-hidden="true" focusable="false" viewBox="0 0 440 350">
+<path d="M50 190C28 100 100 20 210 22s200 50 190 140-60 170-170 170S72 270 50 190z" fill="#e3f5f1"/>
+<circle cx="52" cy="62" r="10" fill="#7fd1c6"/><circle cx="80" cy="38" r="6" fill="#9fc8ec"/><path d="M52 62l28-24" stroke="#7fd1c6" stroke-width="3"/>
+<rect x="70" y="62" width="300" height="205" rx="26" fill="#fff" stroke="#bfe3db" stroke-width="3"/>
+<path d="M70 90a28 28 0 0 1 28-28h244a28 28 0 0 1 28 28v10H70z" fill="#0f7a74"/>
+<circle cx="98" cy="81" r="10" fill="#fff"/><path d="M98 75v12M92 81h12" stroke="#0f7a74" stroke-width="3" stroke-linecap="round"/>
+<path d="M250 82h28l6-11 8 22 7-11h34" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M104 262v-48a36 36 0 0 1 72 0v48z" fill="#e8f6f3" stroke="#bfe3db" stroke-width="3"/>
+<path d="M128 182l12 24 12-24z" fill="#0f7a74"/><circle cx="140" cy="158" r="21" fill="#f2c9a5"/><path d="M119 154a21 21 0 0 1 42 0c-9-8-31-8-42 0z" fill="#4a3426"/>
+<path d="M124 190c-9 14-5 30 10 30" fill="none" stroke="#2a68a8" stroke-width="3"/><circle cx="135" cy="221" r="5" fill="#2a68a8"/>
+<path d="M266 262v-40a33 33 0 0 1 66 0v40z" fill="#9fc8ec"/><circle cx="299" cy="170" r="19" fill="#e0aa84"/><path d="M280 166a19 19 0 0 1 38 0c-8-7-30-7-38 0z" fill="#2f2622"/>
+<rect x="190" y="140" width="64" height="92" rx="9" fill="#fff" stroke="#0f7a74" stroke-width="3"/><rect x="209" y="132" width="26" height="15" rx="5" fill="#7fd1c6" stroke="#0f7a74" stroke-width="2"/>
+<path d="M202 170l5 5 9-10M224 170h20M202 192l5 5 9-10M224 192h20M202 214l5 5 9-10M224 214h20" fill="none" stroke="#0f7a74" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<g class="float"><g transform="translate(340 22)"><path d="M32 54C8 38 2 24 12 13c9-8 17-2 20 5 3-7 11-13 20-5 10 11 4 25-20 41z" fill="#f6b6c4" stroke="#b4456b" stroke-width="2.5" stroke-linejoin="round"/></g></g>
+<g transform="rotate(-35 80 310)"><rect x="48" y="297" width="64" height="26" rx="13" fill="#fff" stroke="#2a68a8" stroke-width="3"/><path d="M80 297h19a13 13 0 0 1 0 26H80z" fill="#9fc8ec"/></g>
+<path d="M388 336c-22-10-26-36-9-52 15 11 22 32 9 52z" fill="#7fd1c6"/><path d="M388 336c19-6 30-27 19-46-17 6-26 25-19 46z" fill="#0f7a74" opacity=".85"/>
+</svg>
+ </div>
+</section>
+
+<section id="learn">
+ <div class="wrap">
+  <div class="hdr"><span class="hico" data-ico="flask" aria-hidden="true"></span><h2 data-i="l_h"></h2></div>
+  <div class="row noprint"><button class="alt" id="readLearn" data-i="read_learn"></button><button class="alt" id="stop2" data-i="stop"></button></div>
+  <div id="journey" aria-hidden="true"></div><div class="grid" id="qa"></div>
+  <h3 style="margin-top:28px" data-i="ph_h"></h3>
+  <div class="grid phases" id="phases"></div>
+  <p data-i="ph_note"></p>
+ </div>
+</section>
+
+<section id="find" style="background:var(--mint)">
+ <div class="wrap">
+  <div class="hdr"><span class="hico" data-ico="magnifier" aria-hidden="true"></span><h2 data-i="f_h"></h2></div>
+  <div class="note" data-i="f_note" style="margin-bottom:16px"></div>
+  <div class="row noprint"><button class="alt" data-read="#find" data-i="read_learn"></button><button class="alt" data-stop data-i="stop"></button></div>
+  <div class="card">
+   <div class="filters">
+    <div><label for="q" data-i="f_cond"></label><input type="text" id="q" data-ph="f_ph" autocomplete="off"></div>
+    <div><label for="city" data-i="f_city"></label><select id="city"></select></div>
+    <div><label for="phase" data-i="f_phase"></label><select id="phase"></select></div>
+    <div><label for="ptype" data-i="f_type"></label><select id="ptype"></select></div>
+   </div>
+   <div class="chips" id="chips"></div><div class="row"><button id="go" data-i="f_go"></button><button class="alt" id="reset" data-i="f_reset"></button></div>
+  </div>
+  <div class="res" id="res" aria-live="polite"></div>
+ </div>
+</section>
+
+<section id="rights">
+ <div class="wrap"><div class="hdr"><span class="hico" data-ico="shield" aria-hidden="true"></span><h2 data-i="r_h"></h2></div><div class="row noprint"><button class="alt" data-read="#rights" data-i="read_learn"></button><button class="alt" data-stop data-i="stop"></button></div><div class="grid" id="rightsList"></div><p style="margin-top:16px"><strong data-i="r_doc"></strong></p></div>
+</section>
+
+<section id="check" style="background:var(--mint)">
+ <div class="wrap">
+  <div class="hdr"><span class="hico" data-ico="clipboard" aria-hidden="true"></span><h2 data-i="c_h"></h2></div><p data-i="c_p"></p>
+  <div class="row noprint"><button class="alt" data-read="#check" data-i="read_learn"></button><button class="alt" data-stop data-i="stop"></button></div>
+  <div class="prog" aria-hidden="true"><i id="bar"></i></div><p id="cnt" aria-live="polite"></p>
+  <div id="cl"></div>
+  <div class="row noprint"><button class="alt" id="clReset" data-i="c_reset"></button><button id="clPrint" data-i="c_print"></button></div>
+ </div>
+</section>
+<section id="helpline"><div class="wrap">
+ <div class="help">
+  <svg class="big" aria-hidden="true" focusable="false" viewBox="0 0 200 200" width="200" height="200"><circle cx="100" cy="100" r="92" fill="#fff" opacity=".16"/><circle cx="100" cy="100" r="68" fill="#fff" opacity=".18"/><path d="M52 106v-12a48 48 0 0 1 96 0v12" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/><rect x="40" y="102" width="26" height="44" rx="12" fill="#fff"/><rect x="134" y="102" width="26" height="44" rx="12" fill="#fff"/><path d="M147 146c0 18-14 26-36 26" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/><circle cx="106" cy="172" r="9" fill="#7fd1c6" stroke="#fff" stroke-width="4"/><path d="M100 70v26M87 83h26" stroke="#fff" stroke-width="7" stroke-linecap="round"/></svg>
+  <div>
+   <h2 data-i="h_h"></h2>
+   <p data-i="h_p"></p>
+   <div class="tiles">
+    <div class="tile"><span class="ti" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#fff"/><path d="M15 12h5l2 6-3 2a14 14 0 0 0 5 5l2-3 6 2v5a3 3 0 0 1-3 3C20 32 12 24 12 15a3 3 0 0 1 3-3z" fill="#0f7a74"/></svg></span><div><p class="lbl" data-i="h_nl"></p><p class="val"><a id="helpTel">+91 XXXXX XXXXX</a></p></div></div>
+    <div class="tile"><span class="ti" aria-hidden="true"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="22" fill="#fff"/><rect x="11" y="14" width="22" height="16" rx="3" fill="#0f7a74"/><path d="M12 16l10 8 10-8" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><p class="lbl" data-i="h_el"></p><p class="val"><a id="helpMail" href="mailto:helpline@trialmitra.example">helpline@trialmitra.example</a></p></div></div>
+   </div>
+  </div>
+ </div>
+ <p class="note" style="margin-top:18px" data-i="h_w"></p>
+</div></section>
+<script>/* link the number only once a real one is entered */
+(function(){var a=document.getElementById("helpTel"),d=a.textContent.replace(/[^\d+]/g,"");if(/\d{6,}/.test(d))a.href="tel:"+d})();
+</script>
+</main>
+
+<footer id="source">
+ <div class="wrap">
+  <p id="srcMain" style="font-weight:650"></p>
+  <p><a href="https://ctri.nic.in/" target="_blank" rel="noopener noreferrer" data-i="s_link"></a></p>
+  <p data-i="s_fic"></p>
+  <p data-i="s_future"></p>
+ </div>
+</footer>
+
+<div id="toast" class="toast noprint" hidden role="alert"></div>
+<div id="speakbar" class="speakbar noprint" hidden role="status"><span data-i="reading"></span><button id="stopBar" data-i="stop"></button></div>
+<dialog id="dlg" aria-labelledby="dT"><div id="dBody"></div><div class="row"><button id="dRead" class="alt" data-i="read_learn"></button><button class="alt" data-stop data-i="stop"></button><button id="dClose"></button></div></dialog>
+
+<script>
+const L={
+en:{lang_l:"Language",h_h:"Helpline",h_p:"Have a question about using TrialMitra or understanding clinical trials? Write to our helpline team.",h_nl:"Helpline number",h_n:"TrialMitra Helpline",h_el:"Email ID",h_w:"This helpline cannot give medical advice or confirm eligibility for a study. For emergencies, contact your doctor or local emergency services.",reading:"Reading aloud…",try:"Try:",chips:["diabetes","asthma","breast cancer","healthy volunteers"],d_inc:"May be a fit if:",d_exc:"May not be a fit if:",d_eligw:"Illustrative criteria for this fictional record only — not from a real study. Only a real study team can confirm eligibility.",n_home:"Home",n_learn:"Learn About Trials",n_find:"Find Trials",n_check:"Participant Checklist",n_cta:"Find a Trial",
+h1:"Clinical Trials, Made Understandable.",h1p:"Explore clinical research in simple language. Learn what participation means, discover studies, and prepare the right questions before contacting a research team.",
+b_exp:"Explore Clinical Trials",b_und:"Understand Clinical Trials",b_demo:"Start Demo",
+trust:"TrialMitra is an educational discovery prototype. It does not provide medical advice and cannot guarantee eligibility for any study.",
+read_main:"Read aloud (main page)",read_learn:"Read aloud (this section)",stop:"Stop reading",
+novoice:"No voice for this language was found on your device, so read aloud cannot play (it would otherwise read the text as question marks). Install one: Windows – Settings › Time & language › Speech › Add voices; Android – Settings › Text-to-speech › Install voice data; iPhone/Mac – Settings › Accessibility › Spoken Content › Voices. Then reload this page. Chrome or Edge usually include Hindi.",nospeech:"Your browser does not support read aloud.",
+l_h:"Learn About Clinical Trials",
+qa:[["What is a clinical trial?","A clinical trial is a research study in which volunteers help doctors test a medicine, device, test or lifestyle approach, to learn whether it is safe and whether it works."],
+["Why are clinical trials conducted?","Doctors cannot know if a new approach is safe and better just by guessing. Careful testing in people gives reliable evidence."],
+["How can a trial help an individual?","Some participants get close medical monitoring or access to a new approach before it is widely available. But this is not guaranteed."],
+["How do trials help healthcare?","Every approved treatment was once tested in a trial. Results help doctors and regulators decide which treatments to use for everyone."],
+["Benefits, risks, costs and uncertainties","Benefits: extra monitoring, possible access to new care, helping others. Risks: side effects, unknown effects, extra visits. Costs: some things may be free or reimbursed, others not. Uncertainty: you may receive a comparison treatment or placebo, and the treatment may not work. Always ask the study team."]],
+ph_h:"The phases, in easy language",ph:[["Phase I","Usually examines safety, dose and side effects; often involves a small number of participants."],["Phase II","Examines whether a treatment appears to work and continues evaluating safety."],["Phase III","Compares the treatment with existing care or a control to gather stronger evidence."],["Phase IV","Studies a treatment after approval to learn more about its longer-term effects and use."]],
+ph_note:"Not every trial follows exactly the same design, and phases can vary by the type of intervention.",
+f_h:"Find Clinical Trials",f_note:"Demo data only: every record below is a fictional example, not a real clinical trial. No live data is being retrieved.",
+f_cond:"Condition or disease",f_ph:"e.g. diabetes, asthma",f_city:"City",f_phase:"Trial phase",f_type:"Participant type",all:"All",pat:"Patients",hv:"Healthy volunteers",na:"Not applicable (not a drug trial)",
+f_go:"Search Trials",f_reset:"Reset filters",none:"No demo records match these filters. Try a different condition, or reset the filters.",count:n=>n+" demo record(s) found",
+fic:"Fictional demo record — not a real clinical trial.",view:"View Details",site:"Demo site — not a real location",
+d_sum:"Study summary",d_cond:"Condition",d_phase:"Phase",d_type:"Participant type",d_elig:"Eligibility criteria",d_site:"Location and research site",d_ctri:"CTRI registration number",d_con:"Research team contact",
+d_eligv:"Unknown — this is a fictional record, so no real eligibility criteria exist.",d_ctriv:"None — fictional record, not registered anywhere.",d_conv:"No real contact available.",
+d_unk:"What is unknown",d_unkv:"Everything about real-world sites, registration, contacts and eligibility is unknown, because this record is invented for demonstration.",d_conf:"Only a real study team can confirm whether you are eligible.",close:"Close",
+r_h:"Your Rights Matter",r:["Participation is generally voluntary.","You should receive information about the study before deciding.","Informed consent should be obtained before you take part.","You can ask questions and discuss risks, benefits, alternatives and costs.","You can generally withdraw without penalty, subject to applicable rules and practical considerations.","Medical care, compensation and injury-related arrangements depend on the study and regulations; ask the research team.","Joining a trial does not guarantee personal benefit or that an investigational treatment will work."],
+r_doc:"Please discuss your decision with your own doctor and with the research team.",
+c_h:"Questions to ask before you contact a research team",c_p:"Tick each question once you have thought about it. You can print this list.",
+c:["What is the main purpose of this study?","Why might I be eligible?","What tests, visits or procedures are involved?","What are the possible risks and benefits?","Are there costs or reimbursements?","How long will participation last?","Can I continue my current medicines or treatment?","Who can I contact if I have concerns or side effects?","Can I leave the study later?","What happens if I experience a study-related injury?"],
+c_reset:"Reset checklist",c_print:"Print checklist",c_n:(a,b)=>a+" of "+b+" questions ticked",
+src:"All study information on this prototype is collected from the Clinical Trials Registry–India (CTRI).",s_link:"Official CTRI website",
+s_fic:"Transparency note: the trial records shown in this prototype are fictional demonstration data. They are not verified CTRI records.",
+s_future:"Future plan: a real version could load CTRI records through an official export or permitted data agreement, store them in a database, and show the CTRI number and source for each verified record. This prototype has no live connection.",
+demoMsg:"Demo: searching the fictional sample data for “diabetes”. No live data is being used.",
+T:[{t:"Lifestyle support for adults with type 2 diabetes",c:"Type 2 diabetes",w:"Researchers would study whether a coached daily-walking and meal-planning programme helps adults keep blood sugar steadier."},
+{t:"A new add-on inhaler for asthma",c:"Asthma",w:"Researchers would study whether adding an investigational inhaler to usual asthma care reduces attacks, while watching safety."},
+{t:"Supportive care during breast cancer treatment",c:"Breast cancer",w:"Researchers would study whether a counselling and exercise programme eases tiredness and stress during treatment."},
+{t:"Safety study in healthy volunteers",c:"Healthy volunteers (no condition)",w:"Researchers would study how a new investigational product is tolerated by healthy adults at different doses."}]},
+hi:{lang_l:"भाषा",h_h:"हेल्पलाइन",h_p:"TrialMitra के उपयोग या क्लिनिकल ट्रायल को समझने के बारे में कोई सवाल है? हमारी हेल्पलाइन टीम को लिखें।",h_nl:"हेल्पलाइन नंबर",h_n:"TrialMitra हेल्पलाइन",h_el:"ईमेल आईडी",h_w:"यह हेल्पलाइन चिकित्सा सलाह नहीं दे सकती और किसी अध्ययन की पात्रता की पुष्टि नहीं कर सकती। आपात स्थिति में अपने डॉक्टर या स्थानीय आपातकालीन सेवाओं से संपर्क करें।",reading:"पढ़कर सुनाया जा रहा है…",try:"आज़माएँ:",chips:["डायबिटीज़","दमा","स्तन कैंसर","स्वस्थ स्वयंसेवक"],d_inc:"पात्र हो सकते हैं यदि:",d_exc:"पात्र नहीं हो सकते यदि:",d_eligw:"ये मानदंड केवल इस काल्पनिक रिकॉर्ड के लिए उदाहरण हैं — किसी असली अध्ययन से नहीं। पात्रता केवल असली अध्ययन टीम ही तय कर सकती है।",n_home:"होम",n_learn:"ट्रायल के बारे में जानें",n_find:"ट्रायल खोजें",n_check:"प्रतिभागी चेकलिस्ट",n_cta:"ट्रायल खोजें",
+h1:"क्लिनिकल ट्रायल, अब आसान भाषा में।",h1p:"क्लिनिकल शोध को सरल भाषा में समझें। जानें कि भाग लेने का क्या मतलब है, अध्ययन खोजें, और शोध टीम से संपर्क करने से पहले सही सवाल तैयार करें।",
+b_exp:"क्लिनिकल ट्रायल देखें",b_und:"क्लिनिकल ट्रायल समझें",b_demo:"डेमो शुरू करें",
+trust:"TrialMitra एक शैक्षिक प्रोटोटाइप है। यह चिकित्सा सलाह नहीं देता और किसी अध्ययन के लिए पात्रता की गारंटी नहीं दे सकता।",
+read_main:"जोर से पढ़ें (मुख्य पृष्ठ)",read_learn:"जोर से पढ़ें (यह भाग)",stop:"पढ़ना रोकें",
+novoice:"आपके डिवाइस पर इस भाषा की आवाज़ नहीं मिली, इसलिए पढ़कर सुनाना संभव नहीं है (वरना यह टेक्स्ट प्रश्नचिह्न की तरह पढ़ा जाएगा)। आवाज़ जोड़ें: Windows – Settings › Time & language › Speech › Add voices; Android – Settings › Text-to-speech › Install voice data; iPhone/Mac – Settings › Accessibility › Spoken Content › Voices। फिर पेज दोबारा खोलें। Chrome या Edge में आमतौर पर हिन्दी आवाज़ मिलती है।",nospeech:"आपका ब्राउज़र जोर से पढ़ने की सुविधा का समर्थन नहीं करता।",
+l_h:"क्लिनिकल ट्रायल के बारे में जानें",
+qa:[["क्लिनिकल ट्रायल क्या है?","क्लिनिकल ट्रायल एक शोध अध्ययन है जिसमें स्वयंसेवक डॉक्टरों को किसी दवा, उपकरण, जाँच या जीवनशैली के तरीके को परखने में मदद करते हैं, ताकि पता चले कि वह सुरक्षित है और काम करता है या नहीं।"],
+["क्लिनिकल ट्रायल क्यों किए जाते हैं?","कोई नया तरीका सुरक्षित और बेहतर है या नहीं, यह अंदाज़े से नहीं जाना जा सकता। लोगों पर सावधानी से परीक्षण करने से भरोसेमंद प्रमाण मिलते हैं।"],
+["ट्रायल एक व्यक्ति की कैसे मदद कर सकता है?","कुछ प्रतिभागियों को नज़दीकी चिकित्सा निगरानी या नए तरीके तक जल्दी पहुँच मिल सकती है। लेकिन इसकी कोई गारंटी नहीं है।"],
+["ट्रायल स्वास्थ्य सेवा में कैसे योगदान देते हैं?","हर स्वीकृत इलाज कभी किसी ट्रायल में परखा गया था। नतीजे डॉक्टरों और नियामकों को यह तय करने में मदद करते हैं कि सबके लिए कौन-सा इलाज इस्तेमाल हो।"],
+["लाभ, जोखिम, खर्च और अनिश्चितताएँ","लाभ: अतिरिक्त निगरानी, नए इलाज की संभावित पहुँच, दूसरों की मदद। जोखिम: दुष्प्रभाव, अज्ञात असर, अधिक बार जाना। खर्च: कुछ चीज़ें मुफ़्त या प्रतिपूर्ति योग्य हो सकती हैं, कुछ नहीं। अनिश्चितता: आपको तुलना वाला इलाज या प्लेसिबो मिल सकता है, और इलाज काम न भी करे। हमेशा अध्ययन टीम से पूछें।"]],
+ph_h:"चरण (फेज़), आसान भाषा में",ph:[["फेज़ I","आमतौर पर सुरक्षा, खुराक और दुष्प्रभाव देखे जाते हैं; अक्सर कम प्रतिभागी होते हैं।"],["फेज़ II","देखा जाता है कि इलाज काम करता दिखता है या नहीं, और सुरक्षा की जाँच जारी रहती है।"],["फेज़ III","अधिक मज़बूत प्रमाण के लिए इलाज की तुलना मौजूदा देखभाल या नियंत्रण समूह से की जाती है।"],["फेज़ IV","मंज़ूरी के बाद इलाज के लंबे समय के असर और उपयोग के बारे में अधिक जाना जाता है।"]],
+ph_note:"हर ट्रायल बिल्कुल एक जैसा नहीं होता, और चरण इलाज के प्रकार के अनुसार अलग हो सकते हैं।",
+f_h:"क्लिनिकल ट्रायल खोजें",f_note:"केवल डेमो डेटा: नीचे का हर रिकॉर्ड काल्पनिक उदाहरण है, असली क्लिनिकल ट्रायल नहीं। कोई लाइव डेटा नहीं लाया जा रहा।",
+f_cond:"बीमारी या स्थिति",f_ph:"जैसे: डायबिटीज़, दमा",f_city:"शहर",f_phase:"ट्रायल का चरण",f_type:"प्रतिभागी का प्रकार",all:"सभी",pat:"मरीज़",hv:"स्वस्थ स्वयंसेवक",na:"लागू नहीं (दवा ट्रायल नहीं)",
+f_go:"ट्रायल खोजें",f_reset:"फ़िल्टर रीसेट करें",none:"इन फ़िल्टर से कोई डेमो रिकॉर्ड नहीं मिला। कोई और बीमारी आज़माएँ या फ़िल्टर रीसेट करें।",count:n=>n+" डेमो रिकॉर्ड मिले",
+fic:"काल्पनिक डेमो रिकॉर्ड — असली क्लिनिकल ट्रायल नहीं।",view:"विवरण देखें",site:"डेमो साइट — असली स्थान नहीं",
+d_sum:"अध्ययन सारांश",d_cond:"स्थिति",d_phase:"चरण",d_type:"प्रतिभागी का प्रकार",d_elig:"पात्रता मानदंड",d_site:"स्थान और शोध स्थल",d_ctri:"CTRI पंजीकरण संख्या",d_con:"शोध टीम का संपर्क",
+d_eligv:"अज्ञात — यह काल्पनिक रिकॉर्ड है, इसलिए कोई असली पात्रता मानदंड नहीं हैं।",d_ctriv:"कोई नहीं — काल्पनिक रिकॉर्ड, कहीं पंजीकृत नहीं।",d_conv:"कोई असली संपर्क उपलब्ध नहीं।",
+d_unk:"क्या अज्ञात है",d_unkv:"असली स्थान, पंजीकरण, संपर्क और पात्रता के बारे में सब कुछ अज्ञात है, क्योंकि यह रिकॉर्ड प्रदर्शन के लिए गढ़ा गया है।",d_conf:"आप पात्र हैं या नहीं, यह केवल असली अध्ययन टीम ही बता सकती है।",close:"बंद करें",
+r_h:"आपके अधिकार मायने रखते हैं",r:["भागीदारी आमतौर पर स्वैच्छिक होती है।","निर्णय लेने से पहले आपको अध्ययन की जानकारी मिलनी चाहिए।","भाग लेने से पहले सूचित सहमति ली जानी चाहिए।","आप सवाल पूछ सकते हैं और जोखिम, लाभ, विकल्प और खर्च पर चर्चा कर सकते हैं।","आप आमतौर पर बिना दंड के हट सकते हैं, लागू नियमों और व्यावहारिक बातों के अधीन।","चिकित्सा देखभाल, मुआवज़ा और चोट संबंधी व्यवस्था अध्ययन और नियमों पर निर्भर करती है; शोध टीम से पूछें।","ट्रायल में शामिल होने से व्यक्तिगत लाभ या प्रायोगिक इलाज के काम करने की गारंटी नहीं मिलती।"],
+r_doc:"कृपया अपने निर्णय पर अपने डॉक्टर और शोध टीम से चर्चा करें।",
+c_h:"शोध टीम से संपर्क करने से पहले पूछने योग्य सवाल",c_p:"हर सवाल पर विचार करने के बाद उसे टिक करें। आप यह सूची प्रिंट कर सकते हैं।",
+c:["इस अध्ययन का मुख्य उद्देश्य क्या है?","मैं पात्र क्यों हो सकता/सकती हूँ?","इसमें कौन-सी जाँचें, विज़िट या प्रक्रियाएँ शामिल हैं?","संभावित जोखिम और लाभ क्या हैं?","क्या कोई खर्च या प्रतिपूर्ति है?","भागीदारी कितने समय तक चलेगी?","क्या मैं अपनी मौजूदा दवाएँ या इलाज जारी रख सकता/सकती हूँ?","चिंता या दुष्प्रभाव होने पर मैं किससे संपर्क करूँ?","क्या मैं बाद में अध्ययन छोड़ सकता/सकती हूँ?","अध्ययन से जुड़ी चोट होने पर क्या होता है?"],
+c_reset:"चेकलिस्ट रीसेट करें",c_print:"चेकलिस्ट प्रिंट करें",c_n:(a,b)=>b+" में से "+a+" सवाल टिक किए",
+src:"इस प्रोटोटाइप की सारी अध्ययन जानकारी भारत के क्लिनिकल ट्रायल रजिस्ट्री (CTRI) से एकत्र की गई है।",s_link:"आधिकारिक CTRI वेबसाइट",
+s_fic:"पारदर्शिता सूचना: इस प्रोटोटाइप में दिखाए गए ट्रायल रिकॉर्ड काल्पनिक प्रदर्शन डेटा हैं। वे सत्यापित CTRI रिकॉर्ड नहीं हैं।",
+s_future:"भविष्य की योजना: असली संस्करण आधिकारिक निर्यात या अनुमत डेटा समझौते से CTRI रिकॉर्ड लोड कर सकता है, उन्हें डेटाबेस में रख सकता है, और हर सत्यापित रिकॉर्ड के लिए CTRI संख्या और स्रोत दिखा सकता है। इस प्रोटोटाइप में कोई लाइव कनेक्शन नहीं है।",
+demoMsg:"डेमो: काल्पनिक नमूना डेटा में “डायबिटीज़” खोजा जा रहा है। कोई लाइव डेटा इस्तेमाल नहीं हो रहा।",
+T:[{t:"टाइप 2 डायबिटीज़ वाले वयस्कों के लिए जीवनशैली सहायता",c:"टाइप 2 डायबिटीज़",w:"शोधकर्ता देखेंगे कि कोच की मदद से रोज़ टहलने और भोजन योजना का कार्यक्रम वयस्कों का ब्लड शुगर अधिक स्थिर रखने में मदद करता है या नहीं।"},
+{t:"दमा के लिए नया अतिरिक्त इन्हेलर",c:"दमा (अस्थमा)",w:"शोधकर्ता देखेंगे कि सामान्य दमा देखभाल में एक प्रायोगिक इन्हेलर जोड़ने से दौरे कम होते हैं या नहीं, और सुरक्षा पर नज़र रखेंगे।"},
+{t:"स्तन कैंसर के इलाज के दौरान सहायक देखभाल",c:"स्तन कैंसर",w:"शोधकर्ता देखेंगे कि परामर्श और व्यायाम कार्यक्रम इलाज के दौरान थकान और तनाव कम करता है या नहीं।"},
+{t:"स्वस्थ स्वयंसेवकों में सुरक्षा अध्ययन",c:"स्वस्थ स्वयंसेवक (कोई बीमारी नहीं)",w:"शोधकर्ता देखेंगे कि एक नया प्रायोगिक उत्पाद अलग-अलग खुराक पर स्वस्थ वयस्कों द्वारा कितना सहन किया जाता है।"}]},
+kn:{lang_l:"ಭಾಷೆ",h_h:"ಸಹಾಯವಾಣಿ",h_p:"TrialMitra ಬಳಸುವ ಬಗ್ಗೆ ಅಥವಾ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಇದೆಯೇ? ನಮ್ಮ ಸಹಾಯವಾಣಿ ತಂಡಕ್ಕೆ ಬರೆಯಿರಿ.",h_nl:"ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ",h_n:"TrialMitra ಸಹಾಯವಾಣಿ",h_el:"ಇಮೇಲ್ ಐಡಿ",h_w:"ಈ ಸಹಾಯವಾಣಿ ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡಲು ಅಥವಾ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ತುರ್ತು ಸ್ಥಿತಿಯಲ್ಲಿ ನಿಮ್ಮ ವೈದ್ಯರು ಅಥವಾ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",reading:"ಗಟ್ಟಿಯಾಗಿ ಓದಲಾಗುತ್ತಿದೆ…",try:"ಪ್ರಯತ್ನಿಸಿ:",chips:["ಮಧುಮೇಹ","ಆಸ್ತಮಾ","ಸ್ತನ ಕ್ಯಾನ್ಸರ್","ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ"],d_inc:"ಹೊಂದಿಕೆಯಾಗಬಹುದು, ಒಂದು ವೇಳೆ:",d_exc:"ಹೊಂದಿಕೆಯಾಗದಿರಬಹುದು, ಒಂದು ವೇಳೆ:",d_eligw:"ಈ ಮಾನದಂಡಗಳು ಈ ಕಾಲ್ಪನಿಕ ದಾಖಲೆಗೆ ಮಾತ್ರ ಉದಾಹರಣೆ — ನಿಜವಾದ ಅಧ್ಯಯನದಿಂದಲ್ಲ. ಅರ್ಹತೆಯನ್ನು ನಿಜವಾದ ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",n_home:"ಮುಖಪುಟ",n_learn:"ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",n_find:"ಪ್ರಯೋಗ ಹುಡುಕಿ",n_check:"ಭಾಗಿದಾರರ ಪರಿಶೀಲನಾಪಟ್ಟಿ",n_cta:"ಪ್ರಯೋಗ ಹುಡುಕಿ",
+h1:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು, ಸರಳವಾಗಿ ಅರ್ಥವಾಗುವಂತೆ.",h1p:"ಕ್ಲಿನಿಕಲ್ ಸಂಶೋಧನೆಯನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ತಿಳಿಯಿರಿ. ಭಾಗವಹಿಸುವುದು ಎಂದರೇನು ಎಂದು ತಿಳಿಯಿರಿ, ಅಧ್ಯಯನಗಳನ್ನು ಹುಡುಕಿ, ಮತ್ತು ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಸರಿಯಾದ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ.",
+b_exp:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ನೋಡಿ",b_und:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",b_demo:"ಡೆಮೊ ಪ್ರಾರಂಭಿಸಿ",
+trust:"TrialMitra ಒಂದು ಶೈಕ್ಷಣಿಕ ಮಾದರಿ ಯೋಜನೆ. ಇದು ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡುವುದಿಲ್ಲ ಮತ್ತು ಯಾವುದೇ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯ ಖಾತರಿ ನೀಡಲು ಸಾಧ್ಯವಿಲ್ಲ.",
+read_main:"ಗಟ್ಟಿಯಾಗಿ ಓದಿ (ಮುಖ್ಯ ಪುಟ)",read_learn:"ಗಟ್ಟಿಯಾಗಿ ಓದಿ (ಈ ವಿಭಾಗ)",stop:"ಓದುವುದನ್ನು ನಿಲ್ಲಿಸಿ",
+novoice:"ನಿಮ್ಮ ಸಾಧನದಲ್ಲಿ ಈ ಭಾಷೆಯ ಧ್ವನಿ ಸಿಗಲಿಲ್ಲ, ಆದ್ದರಿಂದ ಗಟ್ಟಿಯಾಗಿ ಓದಲು ಸಾಧ್ಯವಿಲ್ಲ. ಧ್ವನಿ ಸೇರಿಸಿ: Windows – Settings › Time & language › Speech › Add voices; Android – Settings › Text-to-speech › Install voice data; iPhone/Mac – Settings › Accessibility › Spoken Content › Voices. ನಂತರ ಪುಟವನ್ನು ಮರುಲೋಡ್ ಮಾಡಿ.",nospeech:"ನಿಮ್ಮ ಬ್ರೌಸರ್ ಗಟ್ಟಿಯಾಗಿ ಓದುವ ಸೌಲಭ್ಯವನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ.",
+l_h:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",
+qa:[["ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ ಎಂದರೇನು?","ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ ಒಂದು ಸಂಶೋಧನಾ ಅಧ್ಯಯನ. ಇದರಲ್ಲಿ ಸ್ವಯಂಸೇವಕರು ಔಷಧ, ಸಾಧನ, ಪರೀಕ್ಷೆ ಅಥವಾ ಜೀವನಶೈಲಿ ವಿಧಾನವನ್ನು ಪರೀಕ್ಷಿಸಲು ವೈದ್ಯರಿಗೆ ಸಹಾಯ ಮಾಡುತ್ತಾರೆ, ಅದು ಸುರಕ್ಷಿತವೇ ಮತ್ತು ಕೆಲಸ ಮಾಡುತ್ತದೆಯೇ ಎಂದು ತಿಳಿಯಲು."],
+["ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಏಕೆ ಮಾಡಲಾಗುತ್ತದೆ?","ಹೊಸ ವಿಧಾನ ಸುರಕ್ಷಿತ ಮತ್ತು ಉತ್ತಮ ಎಂದು ಊಹೆಯಿಂದ ತಿಳಿಯಲಾಗದು. ಜನರ ಮೇಲೆ ಎಚ್ಚರಿಕೆಯಿಂದ ಪರೀಕ್ಷಿಸಿದರೆ ವಿಶ್ವಾಸಾರ್ಹ ಪುರಾವೆ ಸಿಗುತ್ತದೆ."],
+["ಪ್ರಯೋಗ ಒಬ್ಬ ವ್ಯಕ್ತಿಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?","ಕೆಲವು ಭಾಗಿದಾರರಿಗೆ ನಿಕಟ ವೈದ್ಯಕೀಯ ಮೇಲ್ವಿಚಾರಣೆ ಅಥವಾ ಹೊಸ ವಿಧಾನಕ್ಕೆ ಬೇಗ ಪ್ರವೇಶ ಸಿಗಬಹುದು. ಆದರೆ ಇದಕ್ಕೆ ಖಾತರಿ ಇಲ್ಲ."],
+["ಪ್ರಯೋಗಗಳು ಆರೋಗ್ಯ ಸೇವೆಗೆ ಹೇಗೆ ಕೊಡುಗೆ ನೀಡುತ್ತವೆ?","ಅನುಮೋದಿತ ಪ್ರತಿಯೊಂದು ಚಿಕಿತ್ಸೆಯನ್ನೂ ಒಮ್ಮೆ ಪ್ರಯೋಗದಲ್ಲಿ ಪರೀಕ್ಷಿಸಲಾಗಿತ್ತು. ಫಲಿತಾಂಶಗಳು ವೈದ್ಯರು ಮತ್ತು ನಿಯಂತ್ರಕರಿಗೆ ಎಲ್ಲರಿಗೂ ಯಾವ ಚಿಕಿತ್ಸೆ ಬಳಸಬೇಕು ಎಂದು ನಿರ್ಧರಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ."],
+["ಪ್ರಯೋಜನ, ಅಪಾಯ, ವೆಚ್ಚ ಮತ್ತು ಅನಿಶ್ಚಿತತೆ","ಪ್ರಯೋಜನ: ಹೆಚ್ಚುವರಿ ಮೇಲ್ವಿಚಾರಣೆ, ಹೊಸ ಆರೈಕೆಗೆ ಸಂಭಾವ್ಯ ಪ್ರವೇಶ, ಇತರರಿಗೆ ಸಹಾಯ. ಅಪಾಯ: ಅಡ್ಡಪರಿಣಾಮ, ಅಜ್ಞಾತ ಪರಿಣಾಮ, ಹೆಚ್ಚುವರಿ ಭೇಟಿ. ವೆಚ್ಚ: ಕೆಲವು ಉಚಿತ ಅಥವಾ ಮರುಪಾವತಿ ಆಗಬಹುದು, ಕೆಲವು ಆಗದಿರಬಹುದು. ಅನಿಶ್ಚಿತತೆ: ನಿಮಗೆ ಹೋಲಿಕೆಯ ಚಿಕಿತ್ಸೆ ಅಥವಾ ಪ್ಲಸೀಬೊ ಸಿಗಬಹುದು, ಮತ್ತು ಚಿಕಿತ್ಸೆ ಕೆಲಸ ಮಾಡದಿರಬಹುದು. ಯಾವಾಗಲೂ ಅಧ್ಯಯನ ತಂಡವನ್ನು ಕೇಳಿ."]],
+ph_h:"ಹಂತಗಳು (ಫೇಸ್), ಸರಳ ಭಾಷೆಯಲ್ಲಿ",ph:[["ಹಂತ I (Phase I)","ಸಾಮಾನ್ಯವಾಗಿ ಸುರಕ್ಷತೆ, ಡೋಸ್ ಮತ್ತು ಅಡ್ಡಪರಿಣಾಮಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತದೆ; ಹೆಚ್ಚಾಗಿ ಕಡಿಮೆ ಭಾಗಿದಾರರಿರುತ್ತಾರೆ."],["ಹಂತ II (Phase II)","ಚಿಕಿತ್ಸೆ ಕೆಲಸ ಮಾಡುವಂತೆ ಕಾಣುತ್ತದೆಯೇ ಎಂದು ನೋಡಲಾಗುತ್ತದೆ ಮತ್ತು ಸುರಕ್ಷತೆಯ ಮೌಲ್ಯಮಾಪನ ಮುಂದುವರಿಯುತ್ತದೆ."],["ಹಂತ III (Phase III)","ಬಲವಾದ ಪುರಾವೆಗಾಗಿ ಚಿಕಿತ್ಸೆಯನ್ನು ಅಸ್ತಿತ್ವದಲ್ಲಿರುವ ಆರೈಕೆ ಅಥವಾ ನಿಯಂತ್ರಣ ಗುಂಪಿನೊಂದಿಗೆ ಹೋಲಿಸಲಾಗುತ್ತದೆ."],["ಹಂತ IV (Phase IV)","ಅನುಮೋದನೆಯ ನಂತರ ಚಿಕಿತ್ಸೆಯ ದೀರ್ಘಕಾಲದ ಪರಿಣಾಮ ಮತ್ತು ಬಳಕೆಯ ಬಗ್ಗೆ ಹೆಚ್ಚು ತಿಳಿಯಲಾಗುತ್ತದೆ."]],
+ph_note:"ಎಲ್ಲಾ ಪ್ರಯೋಗಗಳು ಒಂದೇ ರೀತಿ ಇರುವುದಿಲ್ಲ, ಮತ್ತು ಹಂತಗಳು ಚಿಕಿತ್ಸೆಯ ಪ್ರಕಾರಕ್ಕೆ ಅನುಗುಣವಾಗಿ ಬದಲಾಗಬಹುದು.",
+f_h:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಹುಡುಕಿ",f_note:"ಡೆಮೊ ಡೇಟಾ ಮಾತ್ರ: ಕೆಳಗಿನ ಪ್ರತಿ ದಾಖಲೆಯೂ ಕಾಲ್ಪನಿಕ ಉದಾಹರಣೆ, ನಿಜವಾದ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗವಲ್ಲ. ಯಾವುದೇ ಲೈವ್ ಡೇಟಾ ತರಲಾಗುತ್ತಿಲ್ಲ.",
+f_cond:"ಸ್ಥಿತಿ ಅಥವಾ ರೋಗ",f_ph:"ಉದಾ: ಮಧುಮೇಹ, ಆಸ್ತಮಾ",f_city:"ನಗರ",f_phase:"ಪ್ರಯೋಗದ ಹಂತ",f_type:"ಭಾಗಿದಾರರ ಪ್ರಕಾರ",all:"ಎಲ್ಲಾ",pat:"ರೋಗಿಗಳು",hv:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರು",na:"ಅನ್ವಯಿಸುವುದಿಲ್ಲ (ಔಷಧ ಪ್ರಯೋಗವಲ್ಲ)",
+f_go:"ಪ್ರಯೋಗ ಹುಡುಕಿ",f_reset:"ಫಿಲ್ಟರ್ ಮರುಹೊಂದಿಸಿ",none:"ಈ ಫಿಲ್ಟರ್‌ಗಳಿಗೆ ಯಾವುದೇ ಡೆಮೊ ದಾಖಲೆ ಹೊಂದಿಕೆಯಾಗಲಿಲ್ಲ. ಬೇರೆ ಸ್ಥಿತಿ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಫಿಲ್ಟರ್ ಮರುಹೊಂದಿಸಿ.",count:n=>n+" ಡೆಮೊ ದಾಖಲೆ(ಗಳು) ಸಿಕ್ಕಿವೆ",
+fic:"ಕಾಲ್ಪನಿಕ ಡೆಮೊ ದಾಖಲೆ — ನಿಜವಾದ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗವಲ್ಲ.",view:"ವಿವರ ನೋಡಿ",site:"ಡೆಮೊ ಸ್ಥಳ — ನಿಜವಾದ ಸ್ಥಳವಲ್ಲ",
+d_sum:"ಅಧ್ಯಯನ ಸಾರಾಂಶ",d_cond:"ಸ್ಥಿತಿ",d_phase:"ಹಂತ",d_type:"ಭಾಗಿದಾರರ ಪ್ರಕಾರ",d_elig:"ಅರ್ಹತಾ ಮಾನದಂಡ",d_site:"ಸ್ಥಳ ಮತ್ತು ಸಂಶೋಧನಾ ಕೇಂದ್ರ",d_ctri:"CTRI ನೋಂದಣಿ ಸಂಖ್ಯೆ",d_con:"ಸಂಶೋಧನಾ ತಂಡದ ಸಂಪರ್ಕ",
+d_eligv:"ಅಜ್ಞಾತ — ಇದು ಕಾಲ್ಪನಿಕ ದಾಖಲೆ, ಆದ್ದರಿಂದ ನಿಜವಾದ ಅರ್ಹತಾ ಮಾನದಂಡವಿಲ್ಲ.",d_ctriv:"ಯಾವುದೂ ಇಲ್ಲ — ಕಾಲ್ಪನಿಕ ದಾಖಲೆ, ಎಲ್ಲಿಯೂ ನೋಂದಣಿಯಾಗಿಲ್ಲ.",d_conv:"ನಿಜವಾದ ಸಂಪರ್ಕ ಲಭ್ಯವಿಲ್ಲ.",
+d_unk:"ಏನು ಅಜ್ಞಾತ",d_unkv:"ನಿಜವಾದ ಸ್ಥಳ, ನೋಂದಣಿ, ಸಂಪರ್ಕ ಮತ್ತು ಅರ್ಹತೆಯ ಬಗ್ಗೆ ಎಲ್ಲವೂ ಅಜ್ಞಾತ, ಏಕೆಂದರೆ ಈ ದಾಖಲೆ ಪ್ರದರ್ಶನಕ್ಕಾಗಿ ರಚಿಸಲಾಗಿದೆ.",d_conf:"ನೀವು ಅರ್ಹರೇ ಎಂದು ನಿಜವಾದ ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",close:"ಮುಚ್ಚಿ",
+r_h:"ನಿಮ್ಮ ಹಕ್ಕುಗಳು ಮುಖ್ಯ",r:["ಭಾಗವಹಿಸುವುದು ಸಾಮಾನ್ಯವಾಗಿ ಸ್ವಯಂಪ್ರೇರಿತ.","ನಿರ್ಧರಿಸುವ ಮೊದಲು ನಿಮಗೆ ಅಧ್ಯಯನದ ಮಾಹಿತಿ ಸಿಗಬೇಕು.","ಭಾಗವಹಿಸುವ ಮೊದಲು ತಿಳಿದ ಒಪ್ಪಿಗೆ ಪಡೆಯಬೇಕು.","ನೀವು ಪ್ರಶ್ನೆ ಕೇಳಬಹುದು ಮತ್ತು ಅಪಾಯ, ಪ್ರಯೋಜನ, ಪರ್ಯಾಯ ಹಾಗೂ ವೆಚ್ಚದ ಬಗ್ಗೆ ಚರ್ಚಿಸಬಹುದು.","ಅನ್ವಯವಾಗುವ ನಿಯಮ ಮತ್ತು ಪ್ರಾಯೋಗಿಕ ಅಂಶಗಳಿಗೆ ಒಳಪಟ್ಟು, ನೀವು ಸಾಮಾನ್ಯವಾಗಿ ದಂಡವಿಲ್ಲದೆ ಹಿಂದೆ ಸರಿಯಬಹುದು.","ವೈದ್ಯಕೀಯ ಆರೈಕೆ, ಪರಿಹಾರ ಮತ್ತು ಗಾಯ ಸಂಬಂಧಿತ ವ್ಯವಸ್ಥೆ ಅಧ್ಯಯನ ಮತ್ತು ನಿಯಮಗಳ ಮೇಲೆ ಅವಲಂಬಿತ; ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಕೇಳಿ.","ಪ್ರಯೋಗದಲ್ಲಿ ಸೇರುವುದರಿಂದ ವೈಯಕ್ತಿಕ ಪ್ರಯೋಜನ ಅಥವಾ ಪ್ರಾಯೋಗಿಕ ಚಿಕಿತ್ಸೆ ಕೆಲಸ ಮಾಡುವ ಖಾತರಿ ಇಲ್ಲ."],
+r_doc:"ದಯವಿಟ್ಟು ನಿಮ್ಮ ನಿರ್ಧಾರವನ್ನು ನಿಮ್ಮ ವೈದ್ಯರು ಮತ್ತು ಸಂಶೋಧನಾ ತಂಡದೊಂದಿಗೆ ಚರ್ಚಿಸಿ.",
+c_h:"ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಕೇಳಬೇಕಾದ ಪ್ರಶ್ನೆಗಳು",c_p:"ಪ್ರತಿ ಪ್ರಶ್ನೆಯ ಬಗ್ಗೆ ಯೋಚಿಸಿದ ನಂತರ ಟಿಕ್ ಮಾಡಿ. ನೀವು ಈ ಪಟ್ಟಿಯನ್ನು ಮುದ್ರಿಸಬಹುದು.",
+c:["ಈ ಅಧ್ಯಯನದ ಮುಖ್ಯ ಉದ್ದೇಶವೇನು?","ನಾನು ಏಕೆ ಅರ್ಹನಾಗಿರಬಹುದು?","ಯಾವ ಪರೀಕ್ಷೆ, ಭೇಟಿ ಅಥವಾ ಪ್ರಕ್ರಿಯೆಗಳಿವೆ?","ಸಂಭಾವ್ಯ ಅಪಾಯ ಮತ್ತು ಪ್ರಯೋಜನಗಳೇನು?","ಯಾವುದೇ ವೆಚ್ಚ ಅಥವಾ ಮರುಪಾವತಿ ಇದೆಯೇ?","ಭಾಗವಹಿಸುವಿಕೆ ಎಷ್ಟು ಕಾಲ ಇರುತ್ತದೆ?","ನನ್ನ ಈಗಿನ ಔಷಧ ಅಥವಾ ಚಿಕಿತ್ಸೆಯನ್ನು ಮುಂದುವರಿಸಬಹುದೇ?","ಆತಂಕ ಅಥವಾ ಅಡ್ಡಪರಿಣಾಮ ಇದ್ದರೆ ಯಾರನ್ನು ಸಂಪರ್ಕಿಸಲಿ?","ನಾನು ನಂತರ ಅಧ್ಯಯನವನ್ನು ಬಿಡಬಹುದೇ?","ಅಧ್ಯಯನ ಸಂಬಂಧಿತ ಗಾಯವಾದರೆ ಏನಾಗುತ್ತದೆ?"],
+c_reset:"ಪರಿಶೀಲನಾಪಟ್ಟಿ ಮರುಹೊಂದಿಸಿ",c_print:"ಪರಿಶೀಲನಾಪಟ್ಟಿ ಮುದ್ರಿಸಿ",c_n:(a,b)=>b+" ಪ್ರಶ್ನೆಗಳಲ್ಲಿ "+a+" ಟಿಕ್ ಮಾಡಲಾಗಿದೆ",
+src:"ಈ ಮಾದರಿ ಯೋಜನೆಯ ಎಲ್ಲಾ ಅಧ್ಯಯನ ಮಾಹಿತಿಯನ್ನು ಭಾರತದ ಕ್ಲಿನಿಕಲ್ ಟ್ರಯಲ್ಸ್ ರಿಜಿಸ್ಟ್ರಿ (CTRI) ಯಿಂದ ಸಂಗ್ರಹಿಸಲಾಗಿದೆ.",s_link:"ಅಧಿಕೃತ CTRI ವೆಬ್‌ಸೈಟ್",
+s_fic:"ಪಾರದರ್ಶಕತೆ ಸೂಚನೆ: ಈ ಮಾದರಿಯಲ್ಲಿ ತೋರಿಸಿರುವ ಪ್ರಯೋಗ ದಾಖಲೆಗಳು ಕಾಲ್ಪನಿಕ ಪ್ರದರ್ಶನ ಡೇಟಾ. ಅವು ಪರಿಶೀಲಿತ CTRI ದಾಖಲೆಗಳಲ್ಲ.",
+s_future:"ಭವಿಷ್ಯದ ಯೋಜನೆ: ನಿಜವಾದ ಆವೃತ್ತಿ ಅಧಿಕೃತ ರಫ್ತು ಅಥವಾ ಅನುಮತಿಸಿದ ಡೇಟಾ ಒಪ್ಪಂದದ ಮೂಲಕ CTRI ದಾಖಲೆಗಳನ್ನು ಲೋಡ್ ಮಾಡಿ, ಡೇಟಾಬೇಸ್‌ನಲ್ಲಿ ಇಟ್ಟು, ಪ್ರತಿ ಪರಿಶೀಲಿತ ದಾಖಲೆಗೆ CTRI ಸಂಖ್ಯೆ ಮತ್ತು ಮೂಲವನ್ನು ತೋರಿಸಬಹುದು. ಈ ಮಾದರಿಯಲ್ಲಿ ಲೈವ್ ಸಂಪರ್ಕವಿಲ್ಲ.",
+demoMsg:"ಡೆಮೊ: ಕಾಲ್ಪನಿಕ ಮಾದರಿ ಡೇಟಾದಲ್ಲಿ “ಮಧುಮೇಹ” ಹುಡುಕಲಾಗುತ್ತಿದೆ. ಯಾವುದೇ ಲೈವ್ ಡೇಟಾ ಬಳಸಿಲ್ಲ.",
+T:[{t:"ಟೈಪ್ 2 ಮಧುಮೇಹ ಇರುವ ವಯಸ್ಕರಿಗೆ ಜೀವನಶೈಲಿ ಬೆಂಬಲ",c:"ಟೈಪ್ 2 ಮಧುಮೇಹ",w:"ತರಬೇತುದಾರರ ನೆರವಿನ ದೈನಂದಿನ ನಡಿಗೆ ಮತ್ತು ಆಹಾರ ಯೋಜನೆ ಕಾರ್ಯಕ್ರಮ ವಯಸ್ಕರ ರಕ್ತದ ಸಕ್ಕರೆಯನ್ನು ಸ್ಥಿರವಾಗಿಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆಯೇ ಎಂದು ಸಂಶೋಧಕರು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."},
+{t:"ಆಸ್ತಮಾಗೆ ಹೊಸ ಹೆಚ್ಚುವರಿ ಇನ್ಹೇಲರ್",c:"ಆಸ್ತಮಾ",w:"ಸಾಮಾನ್ಯ ಆಸ್ತಮಾ ಆರೈಕೆಗೆ ಪ್ರಾಯೋಗಿಕ ಇನ್ಹೇಲರ್ ಸೇರಿಸುವುದರಿಂದ ಆಕ್ರಮಣಗಳು ಕಡಿಮೆಯಾಗುತ್ತವೆಯೇ ಎಂದು ಸಂಶೋಧಕರು ಸುರಕ್ಷತೆಯ ಮೇಲೆ ಗಮನವಿಟ್ಟು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."},
+{t:"ಸ್ತನ ಕ್ಯಾನ್ಸರ್ ಚಿಕಿತ್ಸೆ ವೇಳೆ ಬೆಂಬಲ ಆರೈಕೆ",c:"ಸ್ತನ ಕ್ಯಾನ್ಸರ್",w:"ಸಲಹೆ ಮತ್ತು ವ್ಯಾಯಾಮ ಕಾರ್ಯಕ್ರಮ ಚಿಕಿತ್ಸೆಯ ವೇಳೆ ಆಯಾಸ ಮತ್ತು ಒತ್ತಡ ಕಡಿಮೆ ಮಾಡುತ್ತದೆಯೇ ಎಂದು ಸಂಶೋಧಕರು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."},
+{t:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರಲ್ಲಿ ಸುರಕ್ಷತಾ ಅಧ್ಯಯನ",c:"ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕರು (ಯಾವುದೇ ರೋಗವಿಲ್ಲ)",w:"ಹೊಸ ಪ್ರಾಯೋಗಿಕ ಉತ್ಪನ್ನವನ್ನು ವಿವಿಧ ಡೋಸ್‌ಗಳಲ್ಲಿ ಆರೋಗ್ಯವಂತ ವಯಸ್ಕರು ಎಷ್ಟು ಸಹಿಸುತ್ತಾರೆ ಎಂದು ಸಂಶೋಧಕರು ಅಧ್ಯಯನ ಮಾಡುತ್ತಾರೆ."}]}
+};
+/* Fictional demo records. city/phase/type are language-neutral codes; kw = search words in all 3 languages. */
+const TR=[
+{id:"DEMO-1",city:"Bengaluru",phase:"NA",type:"patient",kw:"diabetes sugar type 2 मधुमेह डायबिटीज़ ಮಧುಮೇಹ"},
+{id:"DEMO-2",city:"Chennai",phase:"II",type:"patient",kw:"asthma breathing lung दमा अस्थमा ಆಸ್ತಮಾ"},
+{id:"DEMO-3",city:"Mumbai",phase:"NA",type:"patient",kw:"breast cancer स्तन कैंसर ಸ್ತನ ಕ್ಯಾನ್ಸರ್"},
+{id:"DEMO-4",city:"New Delhi",phase:"I",type:"healthy",kw:"healthy volunteer safety स्वस्थ ಆರೋಗ್ಯವಂತ"}];
+const CITY_L={en:{"Bengaluru":"Bengaluru","Chennai":"Chennai","Mumbai":"Mumbai","New Delhi":"New Delhi"},hi:{"Bengaluru":"बेंगलुरु","Chennai":"चेन्नई","Mumbai":"मुंबई","New Delhi":"नई दिल्ली"},kn:{"Bengaluru":"ಬೆಂಗಳೂರು","Chennai":"ಚೆನ್ನೈ","Mumbai":"ಮುಂಬೈ","New Delhi":"ನವದೆಹಲಿ"}};
+let lang="en",checked=new Set(),shown=false,lastIds=[];
+const $=s=>document.querySelector(s),t=k=>L[lang][k];
+/* Extra search keywords (synonyms, symptoms, transliterations) per trial, all 3 languages */
+const KWX=[
+"diabetic blood sugar glucose insulin type2 t2dm mellitus lifestyle diet walking exercise nutrition weight obesity madhumeha sugar disease मधुमेह शुगर चीनी रक्त शर्करा ग्लूकोज़ इंसुलिन जीवनशैली आहार व्यायाम टहलना ಸಕ್ಕರೆ ಡಯಾಬಿಟಿಸ್ ಇನ್ಸುಲಿನ್ ಜೀವನಶೈಲಿ ಆಹಾರ ವ್ಯಾಯಾಮ",
+"wheeze wheezing breathing breathlessness shortness breath cough lung lungs inhaler respiratory chest allergy dama dum swasa सांस साँस फेफड़े इन्हेलर खांसी एलर्जी अस्थमा ಉಸಿರಾಟ ಉಸಿರು ಶ್ವಾಸಕೋಶ ಇನ್ಹೇಲರ್ ಕೆಮ್ಮು ಅಲರ್ಜಿ ದಮ್ಮು",
+"oncology tumour tumor chemotherapy radiotherapy fatigue tired stress counselling supportive palliative carcinoma cancer breast कर्क रोग कीमोथेरेपी थकान तनाव परामर्श सहायक ಕ್ಯಾನ್ಸರ್ ಕೀಮೋಥೆರಪಿ ಆಯಾಸ ಒತ್ತಡ ಸಲಹೆ ಬೆಂಬಲ",
+"volunteer volunteers adults safety dose tolerability phase1 first human no disease normal healthy स्वयंसेवक सुरक्षा खुराक सुरक्षित ಸ್ವಯಂಸೇವಕ ಸುರಕ್ಷತೆ ಡೋಸ್"];
+const ELIG={
+en:[{e:["Adults aged 18–65","Living with type 2 diabetes for at least 1 year","Able to walk for 20 minutes without help","Willing to attend monthly check-ups"],x:["Uses an insulin pump","Pregnant or planning pregnancy","Serious heart or kidney problems"]},
+{e:["Aged 12–60","Doctor-diagnosed asthma for at least 1 year","Still has symptoms despite regular inhaler use"],x:["Current smoker","Recent hospital stay for a chest infection","Pregnant or breastfeeding"]},
+{e:["Adults aged 18 or older","Currently receiving treatment for breast cancer","Often feels very tired or stressed"],x:["Cannot attend weekly sessions","Heart problems that limit exercise","Already in another supportive-care study"]},
+{e:["Adults aged 18–45","Generally healthy, no long-term illness","Not taking regular medicines","Willing to stay at the site for a few days"],x:["Pregnant or breastfeeding","Smokes or drinks heavily","Joined another study in the last 3 months"]}],
+hi:[{e:["18–65 वर्ष के वयस्क","कम से कम 1 वर्ष से टाइप 2 डायबिटीज़","बिना सहारे 20 मिनट चल सकते हैं","मासिक जाँच के लिए आने को तैयार"],x:["इंसुलिन पंप का उपयोग","गर्भवती या गर्भधारण की योजना","हृदय या गुर्दे की गंभीर समस्या"]},
+{e:["12–60 वर्ष की आयु","डॉक्टर द्वारा निदान किया गया दमा, कम से कम 1 वर्ष","नियमित इन्हेलर के बावजूद लक्षण बने रहते हैं"],x:["वर्तमान में धूम्रपान करते हैं","छाती के संक्रमण के कारण हाल में अस्पताल में भर्ती","गर्भवती या स्तनपान कराती हैं"]},
+{e:["18 वर्ष या अधिक आयु के वयस्क","स्तन कैंसर का इलाज चल रहा है","अक्सर बहुत थकान या तनाव महसूस होता है"],x:["साप्ताहिक सत्रों में नहीं आ सकते","हृदय की समस्या जो व्यायाम सीमित करती है","पहले से किसी अन्य सहायक-देखभाल अध्ययन में हैं"]},
+{e:["18–45 वर्ष के वयस्क","आमतौर पर स्वस्थ, कोई लंबी बीमारी नहीं","नियमित दवाएँ नहीं लेते","कुछ दिन केंद्र पर रुकने को तैयार"],x:["गर्भवती या स्तनपान कराती हैं","धूम्रपान या अधिक शराब का सेवन","पिछले 3 महीनों में किसी अन्य अध्ययन में शामिल हुए"]}],
+kn:[{e:["18–65 ವರ್ಷದ ವಯಸ್ಕರು","ಕನಿಷ್ಠ 1 ವರ್ಷದಿಂದ ಟೈಪ್ 2 ಮಧುಮೇಹ","ಸಹಾಯವಿಲ್ಲದೆ 20 ನಿಮಿಷ ನಡೆಯಬಲ್ಲವರು","ಮಾಸಿಕ ತಪಾಸಣೆಗೆ ಬರಲು ಸಿದ್ಧರು"],x:["ಇನ್ಸುಲಿನ್ ಪಂಪ್ ಬಳಸುವವರು","ಗರ್ಭಿಣಿ ಅಥವಾ ಗರ್ಭಧಾರಣೆ ಯೋಜಿಸುತ್ತಿರುವವರು","ಗಂಭೀರ ಹೃದಯ ಅಥವಾ ಮೂತ್ರಪಿಂಡ ಸಮಸ್ಯೆ"]},
+{e:["12–60 ವರ್ಷ ವಯಸ್ಸು","ವೈದ್ಯರು ಪತ್ತೆಹಚ್ಚಿದ ಆಸ್ತಮಾ, ಕನಿಷ್ಠ 1 ವರ್ಷ","ನಿಯಮಿತ ಇನ್ಹೇಲರ್ ಬಳಕೆಯ ನಂತರವೂ ಲಕ್ಷಣಗಳಿವೆ"],x:["ಈಗ ಧೂಮಪಾನ ಮಾಡುವವರು","ಎದೆಯ ಸೋಂಕಿಗಾಗಿ ಇತ್ತೀಚೆಗೆ ಆಸ್ಪತ್ರೆಗೆ ದಾಖಲಾಗಿದ್ದವರು","ಗರ್ಭಿಣಿ ಅಥವಾ ಹಾಲುಣಿಸುವವರು"]},
+{e:["18 ವರ್ಷ ಅಥವಾ ಮೇಲ್ಪಟ್ಟ ವಯಸ್ಕರು","ಸ್ತನ ಕ್ಯಾನ್ಸರ್ ಚಿಕಿತ್ಸೆ ಪಡೆಯುತ್ತಿರುವವರು","ಆಗಾಗ್ಗೆ ತುಂಬಾ ಆಯಾಸ ಅಥವಾ ಒತ್ತಡ ಅನುಭವಿಸುವವರು"],x:["ವಾರದ ಅವಧಿಗಳಿಗೆ ಬರಲು ಸಾಧ್ಯವಿಲ್ಲದವರು","ವ್ಯಾಯಾಮ ಸೀಮಿತಗೊಳಿಸುವ ಹೃದಯ ಸಮಸ್ಯೆ","ಈಗಾಗಲೇ ಬೇರೆ ಬೆಂಬಲ ಆರೈಕೆ ಅಧ್ಯಯನದಲ್ಲಿರುವವರು"]},
+{e:["18–45 ವರ್ಷದ ವಯಸ್ಕರು","ಸಾಮಾನ್ಯವಾಗಿ ಆರೋಗ್ಯವಂತರು, ದೀರ್ಘಕಾಲೀನ ಕಾಯಿಲೆ ಇಲ್ಲ","ನಿಯಮಿತ ಔಷಧ ತೆಗೆದುಕೊಳ್ಳುತ್ತಿಲ್ಲ","ಕೆಲವು ದಿನ ಕೇಂದ್ರದಲ್ಲಿ ಉಳಿಯಲು ಸಿದ್ಧರು"],x:["ಗರ್ಭಿಣಿ ಅಥವಾ ಹಾಲುಣಿಸುವವರು","ಧೂಮಪಾನ ಅಥವಾ ಅತಿಯಾದ ಮದ್ಯಪಾನ","ಕಳೆದ 3 ತಿಂಗಳಲ್ಲಿ ಬೇರೆ ಅಧ್ಯಯನದಲ್ಲಿ ಭಾಗವಹಿಸಿದವರು"]}]};
+function eligHTML(i){const E=ELIG[lang][i],li=a=>a.map(x=>`<li>${esc(x)}</li>`).join("");
+ return `<p style="margin:6px 0 2px"><strong>${t("d_inc")}</strong></p><ul style="margin:0 0 6px;padding-left:20px">${li(E.e)}</ul><p style="margin:6px 0 2px"><strong>${t("d_exc")}</strong></p><ul style="margin:0 0 6px;padding-left:20px">${li(E.x)}</ul><p style="font-size:.9rem;margin:6px 0 0">${t("d_eligw")}</p>`}
+/* Illustrations (inline SVG icons, decorative) */
+const BG='<circle cx="24" cy="24" r="23" fill="#e3f5f1"/>';
+const ICO={
+flask:'<path d="M19 9h10M21 9v10l-8 14a3 3 0 0 0 2.6 4.5h16.8A3 3 0 0 0 35 33l-8-14V9" fill="#fff" stroke="#0f7a74" stroke-width="2.4" stroke-linejoin="round"/><path d="M16.5 30h15l3 5.5h-21z" fill="#7fd1c6"/>',
+pill:'<g transform="rotate(-40 24 24)"><rect x="8" y="16.5" width="32" height="15" rx="7.5" fill="#fff" stroke="#0f7a74" stroke-width="2.4"/><path d="M24 16.5h8a7.5 7.5 0 0 1 0 15h-8z" fill="#7fd1c6"/></g>',
+scale:'<path d="M24 10v26M14 38h20M12 16h24" stroke="#0f7a74" stroke-width="2.6" stroke-linecap="round"/><path d="M12 16l-5 10h10zM36 16l-5 10h10z" fill="#7fd1c6" stroke="#0f7a74" stroke-width="2" stroke-linejoin="round"/>',
+chart:'<rect x="11" y="26" width="6" height="11" rx="1.5" fill="#7fd1c6"/><rect x="21" y="16" width="6" height="21" rx="1.5" fill="#0f7a74"/><rect x="31" y="21" width="6" height="16" rx="1.5" fill="#2a68a8"/>',
+shield:'<path d="M24 8l13 5v10c0 8-6 13-13 16-7-3-13-8-13-16V13z" fill="#fff" stroke="#0f7a74" stroke-width="2.6" stroke-linejoin="round"/><path d="M18 24l5 5 8-10" fill="none" stroke="#0f7a74" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>',
+clipboard:'<rect x="12" y="10" width="24" height="29" rx="4" fill="#fff" stroke="#0f7a74" stroke-width="2.4"/><rect x="18" y="7" width="12" height="7" rx="3" fill="#7fd1c6" stroke="#0f7a74" stroke-width="2"/><path d="M17 23l2.5 2.5 4-5M27 23h5M17 32l2.5 2.5 4-5M27 32h5" fill="none" stroke="#0f7a74" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>',
+magnifier:'<circle cx="21" cy="21" r="10" fill="#fff" stroke="#0f7a74" stroke-width="3"/><path d="M29 29l10 10" stroke="#2a68a8" stroke-width="4.5" stroke-linecap="round"/><path d="M17 21h8M21 17v8" stroke="#0f7a74" stroke-width="2.4" stroke-linecap="round"/>',
+drop:'<path d="M24 8c6 8 11 13 11 20a11 11 0 0 1-22 0c0-7 5-12 11-20z" fill="#cfe4f7" stroke="#2a68a8" stroke-width="2.6" stroke-linejoin="round"/><path d="M18 29a6 6 0 0 0 6 6" fill="none" stroke="#2a68a8" stroke-width="2.4" stroke-linecap="round"/>',
+lungs:'<path d="M22 11v15c0 5-3 10-8 10-4 0-5-3-4-7 1-6 4-13 8-18z" fill="#cfe4f7" stroke="#2a68a8" stroke-width="2.4" stroke-linejoin="round"/><path d="M26 11v15c0 5 3 10 8 10 4 0 5-3 4-7-1-6-4-13-8-18z" fill="#cfe4f7" stroke="#2a68a8" stroke-width="2.4" stroke-linejoin="round"/><path d="M24 7v14M24 21l-4 4M24 21l4 4" fill="none" stroke="#2a68a8" stroke-width="2.4" stroke-linecap="round"/>',
+ribbon:'<path d="M24 9c-6 0-9 5-7 10 1.5 4 7 9 7 9s5.5-5 7-9c2-5-1-10-7-10z" fill="#f6b6c4" stroke="#b4456b" stroke-width="2.2" stroke-linejoin="round"/><path d="M24 28l-7 11M24 28l7 11" stroke="#b4456b" stroke-width="2.6" stroke-linecap="round"/>',
+people:'<circle cx="24" cy="18" r="6" fill="#0f7a74"/><path d="M13 38v-3a11 11 0 0 1 22 0v3z" fill="#0f7a74"/><circle cx="12" cy="21" r="4.5" fill="#7fd1c6"/><circle cx="36" cy="21" r="4.5" fill="#9fc8ec"/><path d="M4 37v-3a8 8 0 0 1 8-8v11z" fill="#7fd1c6"/><path d="M44 37v-3a8 8 0 0 0-8-8v11z" fill="#9fc8ec"/>',
+heart:'<path d="M24 38C10 28 8 19 13 14c4-4 9-2 11 2 2-4 7-6 11-2 5 5 3 14-11 24z" fill="#f6b6c4" stroke="#b4456b" stroke-width="2.2" stroke-linejoin="round"/>'};
+const ico=n=>`<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">${BG}${ICO[n]}</svg>`;
+const TI=["drop","lungs","ribbon","people"],PI=["flask","pill","scale","chart"],QI=["flask","magnifier","heart","chart","shield"];
+/* Smarter search: ignores filler words, matches synonyms in all 3 languages, tolerates small typos, ranks best match first */
+const STOP=new Set("for and the in of a an my with to on is are me i near about study studies trial trials clinical के का की में और है ಮತ್ತು".split(" "));
+const norm=x=>x.toLowerCase().replace(/[^\p{L}\p{M}\p{N}\s]/gu," ").replace(/\s+/g," ").trim();
+function lev(a,b){const m=a.length,n=b.length;let p=[...Array(n+1).keys()];for(let i=1;i<=m;i++){const c=[i];for(let j=1;j<=n;j++)c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1));p=c}return p[n]}
+let HAY=null;
+function matchTrials(q){
+ HAY=HAY||TR.map((r,i)=>{const h=norm([r.kw,KWX[i],...["en","hi","kn"].map(l=>{const T=L[l].T[i],E=ELIG[l][i];return [T.t,T.c,T.w,...E.e,...E.x].join(" ")})].join(" "));return{h,w:[...new Set(h.split(" "))]}});
+ const toks=norm(q).split(" ").filter(x=>x&&!STOP.has(x));
+ if(!toks.length)return TR.slice();
+ return TR.map((r,i)=>{let s=0;const H=HAY[i];
+  for(const k of toks){
+   if(H.w.includes(k))s+=3;else if(H.h.includes(k))s+=2;
+   else if(k.length>=4&&H.w.some(w=>Math.abs(w.length-k.length)<=2&&lev(w,k)<=(k.length>6?2:1)))s+=1;
+   else return{r,s:-1}}
+  return{r,s}}).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).map(x=>x.r);
+}
+function renderChips(){$("#chips").innerHTML=`<span style="font-size:.9rem">${t("try")}</span>`+t("chips").map(c=>`<button class="alt" data-q="${esc(c)}">${esc(c)}</button>`).join("")}
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const phaseLbl=p=>p==="NA"?t("na"):(lang==="en"?"Phase "+p:(lang==="hi"?"फेज़ ":"ಹಂತ ")+p);
+const typeLbl=p=>p==="patient"?t("pat"):t("hv");
+
+function fillSelects(){
+ const keep=[$("#city").value,$("#phase").value,$("#ptype").value];
+ const opt=(v,l)=>`<option value="${v}">${esc(l)}</option>`;
+ $("#city").innerHTML=opt("",t("all"))+Object.keys(CITY_L.en).map(c=>opt(c,CITY_L[lang][c])).join("");
+ $("#phase").innerHTML=opt("",t("all"))+["I","II","III","IV","NA"].map(p=>opt(p,phaseLbl(p))).join("");
+ $("#ptype").innerHTML=opt("",t("all"))+opt("patient",t("pat"))+opt("healthy",t("hv"));
+ $("#city").value=keep[0]||"";$("#phase").value=keep[1]||"";$("#ptype").value=keep[2]||"";
+}
+function applyLang(){
+ document.documentElement.lang=lang;
+ document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));
+ document.querySelectorAll("[data-ph]").forEach(e=>e.placeholder=t(e.dataset.ph));
+ $("#srcMain").textContent=t("src");$("#dClose").textContent=t("close");renderChips();
+ $("#qa").innerHTML=t("qa").map((q,i)=>`<article class="card"><div class="pico" aria-hidden="true">${ico(QI[i])}</div><h3>${q[0]}</h3><p>${q[1]}</p></article>`).join("");
+ $("#phases").innerHTML=t("ph").map((p,i)=>`<article class="card"><div class="pico" aria-hidden="true">${ico(PI[i])}</div><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join("");
+ $("#rightsList").innerHTML=t("r").map(r=>`<div class="card rt"><p>${r}</p></div>`).join("");
+ fillSelects();renderChecklist();
+ if(shown)search(lastIds.length?null:undefined,true);
+ if($("#dlg").open)openDetail($("#dlg").dataset.id);
+}
+function renderChecklist(){
+ $("#cl").innerHTML=t("c").map((q,i)=>`<label class="chk"><input type="checkbox" data-n="${i}" ${checked.has(i)?"checked":""}><span>${q}</span></label>`).join("");
+ updProg();
+}
+function updProg(){const n=checked.size,m=10;$("#bar").style.width=n*10+"%";$("#cnt").textContent=t("c_n")(n,m)}
+function card(r,i){const T=t("T")[i];
+ return `<article class="card" id="${r.id}"><div class="cico" aria-hidden="true">${ico(TI[i])}</div><span class="tag fic">${t("fic")}</span><br><span class="tag">${esc(T.c)}</span><span class="tag">${esc(phaseLbl(r.phase))}</span>
+ <h3>${esc(T.t)}</h3><p>${esc(T.w)}</p><p style="font-size:.92rem;color:var(--mut)">${esc(CITY_L[lang][r.city])} · ${t("site")}</p>
+ <details><summary>${t("d_elig")}</summary>${eligHTML(i)}</details><button data-open="${r.id}">${t("view")}</button></article>`}
+function search(_,quiet){
+ const q=$("#q").value,c=$("#city").value,p=$("#phase").value,ty=$("#ptype").value;
+ const out=matchTrials(q).filter(r=>(!c||r.city===c)&&(!p||r.phase===p)&&(!ty||r.type===ty));
+ shown=true;lastIds=out.map(r=>r.id);
+ $("#res").innerHTML=out.length?`<p><strong>${t("count")(out.length)}</strong></p><div class="grid">${out.map(r=>card(r,TR.indexOf(r))).join("")}</div>`:`<div class="card"><p>${t("none")}</p></div>`;
+ return out;
+}
+function openDetail(id){
+ const i=TR.findIndex(r=>r.id===id),r=TR[i],T=t("T")[i];
+ $("#dlg").dataset.id=id;
+ $("#dBody").innerHTML=`<span class="tag fic">${t("fic")}</span><h2 id="dT" style="margin-top:8px">${esc(T.t)}</h2>
+ <dl><dt>${t("d_sum")}</dt><dd>${esc(T.w)}</dd><dt>${t("d_cond")}</dt><dd>${esc(T.c)}</dd><dt>${t("d_phase")}</dt><dd>${esc(phaseLbl(r.phase))}</dd>
+ <dt>${t("d_type")}</dt><dd>${esc(typeLbl(r.type))}</dd><dt>${t("d_elig")}</dt><dd>${eligHTML(i)}</dd>
+ <dt>${t("d_site")}</dt><dd>${esc(CITY_L[lang][r.city])} — ${t("site")}</dd><dt>${t("d_ctri")}</dt><dd>${t("d_ctriv")}</dd>
+ <dt>${t("d_con")}</dt><dd>${t("d_conv")}</dd><dt>${t("d_unk")}</dt><dd>${t("d_unkv")}</dd></dl>
+ <p class="note">${t("d_conf")}</p>`;
+ if(!$("#dlg").open)$("#dlg").showModal();
+}
+/* Read aloud: only meaningful text; skips decorative, buttons, form controls, emoji and symbols */
+const synth=window.speechSynthesis;
+let rdTok=0;
+const bar=on=>{$("#speakbar").hidden=!on};
+/* Collects only meaningful visible text; drops icons, buttons, form controls, decorative SVG, emoji and symbols */
+function speakable2(roots){
+ const sel="h1,h2,h3,p,li,dt,dd,summary,.note,.chk span,.tag";
+ return [].concat(roots).flatMap(root=>{
+  const c=root.cloneNode(true);
+  c.querySelectorAll('[aria-hidden="true"],button,svg,select,input,textarea,#msg,.noprint,.btn,.hico,style,script').forEach(e=>e.remove());
+  return [...c.querySelectorAll(sel)].filter(e=>!e.querySelector(sel))
+   .map(e=>e.textContent.replace(/[\uFE0F]/g,"").replace(/[\p{Extended_Pictographic}·•→←↑↓★✓✔▶►■□●○]/gu," ").replace(/(\d)\s*[–-]\s*(\d)/g,"$1 "+({en:"to",hi:"से",kn:"ರಿಂದ"}[lang])+" $2").replace(/TrialMitra/g,({en:"TrialMitra",hi:"ट्रायल मित्र",kn:"ಟ್ರಯಲ್ ಮಿತ್ರ"}[lang])).replace(/CTRI/g,({en:"C T R I",hi:"सी टी आर आई",kn:"ಸಿ ಟಿ ಆರ್ ಐ"}[lang])).replace(/\s+/g," ").trim()).filter(x=>x.length>1)});
+}
+let toastT;function say(m){$("#msg").textContent=m||"";const x=$("#toast");x.textContent=m||"";x.hidden=!m;clearTimeout(toastT);if(m)toastT=setTimeout(()=>{x.hidden=true},10000)}
+function speakable(root){
+ const c=root.cloneNode(true);
+ c.querySelectorAll('[aria-hidden="true"],button,svg,select,input,label.sr,#msg,.noprint,.btn').forEach(e=>e.remove());
+ return [...c.querySelectorAll("h1,h2,h3,p,li,span:not(.tag)")].filter(e=>!e.querySelector("h1,h2,h3,p,li")&&!(e.tagName==="SPAN"&&e.closest("p,h1,h2,h3,li")&&e.parentElement.tagName!=="LABEL"))
+  .map(e=>e.textContent.replace(/[\uFE0F]/g,"").replace(/[\p{Extended_Pictographic}·•→←↑↓★✓✔▶►■□●○]/gu," ").replace(/(\d)\s*[–-]\s*(\d)/g,"$1 "+({en:"to",hi:"से",kn:"ರಿಂದ"}[lang])+" $2").replace(/TrialMitra/g,({en:"TrialMitra",hi:"ट्रायल मित्र",kn:"ಟ್ರಯಲ್ ಮಿತ್ರ"}[lang])).replace(/CTRI/g,({en:"C T R I",hi:"सी टी आर आई",kn:"ಸಿ ಟಿ ಆರ್ ಐ"}[lang])).replace(/\s+/g," ").trim()).filter(s=>s.length>1);
+}
+function chunks(txt){ /* short pieces: long utterances get cut off by many Hindi/Kannada voices */
+ const out=[];(txt.match(/[^.!?।]+[.!?।]*/g)||[txt]).forEach(x=>{x=x.trim();while(x.length>140){let i=x.lastIndexOf(" ",140);if(i<40)i=140;out.push(x.slice(0,i));x=x.slice(i).trim()}if(x.length>1)out.push(x)});return out}
+function pickVoice(code){
+ const names={en:/english/i,hi:/hindi|हिन्दी|हिंदी/i,kn:/kannada|ಕನ್ನಡ/i}[code];
+ const vs=synth.getVoices().filter(v=>v.lang.toLowerCase().replace("_","-").split("-")[0]===code||(code!=="en"&&names.test(v.name)));
+ const rank=v=>(/-in$/i.test(v.lang.replace("_","-"))?0:2)+(v.localService?0:1);
+ return vs.sort((x,y)=>rank(x)-rank(y))[0];
+}
+function readAloud(root){
+ if(!synth){say(t("nospeech"));return}
+ synth.cancel();
+ const code=lang;
+ const go=()=>{
+  const v=pickVoice(code);
+  if(!v){say(t("novoice"));return}
+  const parts=speakable2(root).flatMap(chunks);if(!parts.length)return;
+  const tok=++rdTok;bar(true);say("");let failed=false;
+  $("#speakbar span").textContent=t("reading")+" ("+v.name+")";
+  parts.forEach((x,k)=>{const u=new SpeechSynthesisUtterance(x);
+   u.voice=v;u.lang=v.lang;u.rate=.9;
+   u.onerror=ev=>{if(tok!==rdTok||ev.error==="canceled"||ev.error==="interrupted")return;if(!failed){failed=true;say(t("novoice"))}bar(false)};
+   if(k===parts.length-1)u.onend=()=>{if(tok===rdTok)bar(false)};
+   synth.speak(u)});
+ };
+ if(synth.getVoices().length)go();
+ else{let done=false;const once=()=>{if(!done){done=true;go()}};synth.onvoiceschanged=()=>{synth.onvoiceschanged=null;once()};setTimeout(once,1200)}
+}
+const stopRead=()=>{rdTok++;if(synth)synth.cancel();say("");bar(false)};
+
+/* Demo mode: no typing needed, uses only local fictional data */
+async function demo(){
+ stopRead();const w=ms=>new Promise(r=>setTimeout(r,ms));
+ $("#reset").click();
+ $("#find").scrollIntoView({behavior:"smooth"});await w(900);
+ say(t("demoMsg"));
+ const q=$("#q"),word={en:"diabetes",hi:"डायबिटीज़",kn:"ಮಧುಮೇಹ"}[lang];q.value="";
+ for(const ch of [...word]){q.value+=ch;await w(110)}
+ await w(400);$("#go").click();await w(500);
+ const f=document.getElementById(lastIds[0]);
+ if(f){f.scrollIntoView({behavior:"smooth",block:"center"});f.classList.add("hl");setTimeout(()=>f.classList.remove("hl"),4000);f.querySelector("button").focus({preventScroll:true})}
+}
+
+$("#lang").onchange=e=>{lang=e.target.value;stopRead();applyLang()};
+$("#go").onclick=()=>search();
+$("#q").onkeydown=e=>{if(e.key==="Enter")search()};
+$("#reset").onclick=()=>{$("#q").value="";["city","phase","ptype"].forEach(i=>$("#"+i).value="");shown=false;lastIds=[];$("#res").innerHTML=""};
+$("#res").onclick=e=>{const b=e.target.closest("[data-open]");if(b)openDetail(b.dataset.open)};
+$("#dClose").onclick=()=>$("#dlg").close();
+$("#dlg").onclick=e=>{if(e.target.id==="dlg")$("#dlg").close()};
+$("#cl").onchange=e=>{const n=+e.target.dataset.n;e.target.checked?checked.add(n):checked.delete(n);updProg()};
+$("#clReset").onclick=()=>{checked.clear();renderChecklist()};
+$("#clPrint").onclick=()=>window.print();
+$("#demoBtn").onclick=demo;
+$("#readMain").onclick=()=>readAloud([$("#main"),$("#source")]);
+$("#readLearn").onclick=()=>readAloud($("#learn"));
+$("#stop").onclick=stopRead;$("#stop2").onclick=stopRead;
+document.addEventListener("click",e=>{const r=e.target.closest("[data-read]");if(r)readAloud(document.querySelector(r.dataset.read));if(e.target.closest("[data-stop]")||e.target.id==="stopBar")stopRead()});
+$("#dRead").onclick=()=>readAloud($("#dBody"));
+$("#dlg").addEventListener("close",stopRead);
+$("#chips").onclick=e=>{const b=e.target.closest("[data-q]");if(b){$("#q").value=b.dataset.q;search()}};
+document.querySelectorAll("[data-ico]").forEach(e=>e.innerHTML=ico(e.dataset.ico));
+const J=["people","flask","chart","heart"];
+$("#journey").innerHTML='<svg viewBox="0 0 640 100" style="width:100%;max-width:640px;display:block;margin:0 auto 20px" aria-hidden="true">'+J.map((n,i)=>`<g transform="translate(${20+i*170} 10)"><g transform="scale(1.6)">${BG}${ICO[n]}</g></g>`+(i<3?`<path d="M${105+i*170} 48h46" stroke="#7fd1c6" stroke-width="3" stroke-dasharray="6 6"/><path d="M${146+i*170} 41l9 7-9 7" fill="none" stroke="#0f7a74" stroke-width="3" stroke-linecap="round"/>`:"")).join("")+'</svg>';
+applyLang();
+</script>
+</body>
+</html>
