@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# After TrialMitra has a permanent public domain and a valid sitemap, add a line like:
+# Sitemap: https://YOUR-REAL-DOMAIN/sitemap.xml
