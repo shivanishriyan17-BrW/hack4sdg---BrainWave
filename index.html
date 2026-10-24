@@ -4,6 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TrialMitra — Clinical Trials, Made Understandable</title>
+<meta name="description" content="Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#0f7a74">
+<meta name="application-name" content="TrialMitra">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TrialMitra">
+<meta property="og:title" content="TrialMitra — Clinical Trials, Made Understandable">
+<meta property="og:description" content="Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra.">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TrialMitra — Clinical Trials, Made Understandable">
+<meta name="twitter:description" content="Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra.">
+<!-- Deployment SEO note: add a rel="canonical" URL, an og:url value, and an og:image URL only after the permanent public domain and hosted share image are known. -->
+<!-- Google Search Console verification: add the verification meta tag supplied by Search Console after choosing your domain. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TrialMitra",
+  "description": "Educational information about clinical trials, study phases, participant rights, and preparing to contact a research team.",
+  "inLanguage": ["en", "hi", "kn"]
+}
+</script>
 <style>
 :root{color-scheme:light;--bg:#ffffff;--card:#fff;--ink:#1d3633;--mut:#4a6360;--teal:#0f7a74;--teal2:#0b5f5a;--mint:#edf8f5;--blue:#2a68a8;--line:#d5eae5;--warn:#fff8e1;--warnb:#c58b00;--sh:0 4px 16px rgba(15,122,116,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .hdr{display:flex;align-items:center;gap:14px;margin-bottom:14px}.hdr h2{margin:0}
@@ -68,6 +91,11 @@ dl dt{font-weight:700;color:var(--teal);margin-top:10px}dl dd{margin:0}
 footer{background:var(--mint);color:var(--ink);padding:34px 0;border-top:4px solid var(--teal)}footer a{color:var(--teal2);font-weight:700}
 footer .wrap>*{max-width:820px}
 #msg{margin:8px 0;font-weight:600;color:var(--blue)}
+.seo-resources{margin-top:18px}
+.seo-resources .card{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.seo-resources .card p{margin:0 0 8px}
+.seo-resources .card .btn{margin-top:auto}
+.seo-intro{max-width:850px}
 @media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.hero svg{max-width:260px;margin:auto}}
 @media print{header,.hero,#learn,#find,#rights,footer,.tools,.noprint,#msg{display:none!important}section{padding:0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
@@ -77,7 +105,7 @@ footer .wrap>*{max-width:820px}
 <header>
  <div class="hd">
   <a class="logo" href="#home"><svg aria-hidden="true" width="34" height="34" viewBox="0 0 40 40"><circle cx="20" cy="20" r="20" fill="#0b6e69"/><path d="M20 9v22M9 20h22" stroke="#dff4ee" stroke-width="5" stroke-linecap="round"/></svg><span>TrialMitra</span></a>
-  <nav aria-label="Main"><a href="#home" data-i="n_home"></a><a href="#learn" data-i="n_learn"></a><a href="#find" data-i="n_find"></a><a href="#check" data-i="n_check"></a></nav>
+  <nav aria-label="Main"><a href="#home" data-i="n_home"></a><a href="#learn" data-i="n_learn"></a><a href="#resources" data-i="n_resources"></a><a href="#find" data-i="n_find"></a><a href="#check" data-i="n_check"></a></nav>
   <label for="lang" class="sr" style="position:absolute;left:-9999px" data-i="lang_l"></label>
   <select id="lang"><option value="en">English</option><option value="hi">हिन्दी</option><option value="kn">ಕನ್ನಡ</option></select>
   <a class="btn" href="#find" data-i="n_cta"></a>
@@ -133,6 +161,36 @@ footer .wrap>*{max-width:820px}
  </div>
 </section>
 
+<section id="resources">
+ <div class="wrap">
+  <div class="hdr"><span class="hico" data-ico="chart" aria-hidden="true"></span><h2 data-i="seo_h"></h2></div>
+  <p class="seo-intro" data-i="seo_intro"></p>
+  <div class="grid seo-resources">
+   <article class="card">
+    <h3 data-i="seo_trial_h"></h3>
+    <p data-i="seo_trial_p"></p>
+    <a class="btn alt" href="#learn" data-i="seo_trial_link"></a>
+   </article>
+   <article class="card">
+    <h3 data-i="seo_registry_h"></h3>
+    <p data-i="seo_registry_p"></p>
+    <a class="btn alt" href="https://ctri.nic.in/" target="_blank" rel="noopener noreferrer" data-i="seo_registry_link"></a>
+   </article>
+   <article class="card">
+    <h3 data-i="seo_rights_h"></h3>
+    <p data-i="seo_rights_p"></p>
+    <a class="btn alt" href="#rights" data-i="seo_rights_link"></a>
+   </article>
+   <article class="card">
+    <h3 data-i="seo_check_h"></h3>
+    <p data-i="seo_check_p"></p>
+    <a class="btn alt" href="#check" data-i="seo_check_link"></a>
+   </article>
+  </div>
+  <p class="note" style="margin-top:18px" data-i="seo_demo_note"></p>
+ </div>
+</section>
+
 <section id="find" style="background:var(--mint)">
  <div class="wrap">
   <div class="hdr"><span class="hico" data-ico="magnifier" aria-hidden="true"></span><h2 data-i="f_h"></h2></div>
@@ -178,6 +236,13 @@ footer .wrap>*{max-width:820px}
  </div>
  <p class="note" style="margin-top:18px" data-i="h_w"></p>
 </div></section>
+<!-- Deployment checklist for the site owner:
+     1. Once the permanent public domain is known, add its canonical URL and og:url in the head.
+     2. Verify the domain in Google Search Console and submit /sitemap.xml.
+     3. Publish a robots.txt that allows public pages to be crawled and points to the deployed sitemap.
+     4. Add Google Analytics 4 only after creating a real property/measurement ID; never use a placeholder ID.
+     5. For complete multilingual SEO, deploy separate indexable URLs for English, Hindi, and Kannada and add matching hreflang links. The current language selector switches text on one URL only.
+-->
 <script>/* link the number only once a real one is entered */
 (function(){var a=document.getElementById("helpTel"),d=a.textContent.replace(/[^\d+]/g,"");if(/\d{6,}/.test(d))a.href="tel:"+d})();
 </script>
@@ -198,7 +263,8 @@ footer .wrap>*{max-width:820px}
 
 <script>
 const L={
-en:{lang_l:"Language",h_h:"Helpline",h_p:"Have a question about using TrialMitra or understanding clinical trials? Write to our helpline team.",h_nl:"Helpline number",h_n:"TrialMitra Helpline",h_el:"Email ID",h_w:"This helpline cannot give medical advice or confirm eligibility for a study. For emergencies, contact your doctor or local emergency services.",reading:"Reading aloud…",try:"Try:",chips:["diabetes","asthma","breast cancer","healthy volunteers"],d_inc:"May be a fit if:",d_exc:"May not be a fit if:",d_eligw:"Illustrative criteria for this fictional record only — not from a real study. Only a real study team can confirm eligibility.",n_home:"Home",n_learn:"Learn About Trials",n_find:"Find Trials",n_check:"Participant Checklist",n_cta:"Find a Trial",
+en:{lang_l:"Language",h_h:"Helpline",h_p:"Have a question about using TrialMitra or understanding clinical trials? Write to our helpline team.",h_nl:"Helpline number",h_n:"TrialMitra Helpline",h_el:"Email ID",h_w:"This helpline cannot give medical advice or confirm eligibility for a study. For emergencies, contact your doctor or local emergency services.",reading:"Reading aloud…",try:"Try:",chips:["diabetes","asthma","breast cancer","healthy volunteers"],d_inc:"May be a fit if:",d_exc:"May not be a fit if:",d_eligw:"Illustrative criteria for this fictional record only — not from a real study. Only a real study team can confirm eligibility.",n_home:"Home",n_learn:"Learn About Trials",n_resources:"Resources",n_find:"Find Trials",n_check:"Participant Checklist",n_cta:"Find a Trial",
+seo_h:"Clinical Trial Resources",seo_intro:"Explore clear, practical guides about clinical research, registered study information, participant rights, and questions to ask before contacting a research team.",seo_trial_h:"Understand clinical trials",seo_trial_p:"Learn what clinical trials are, why they are conducted, and how phases I–IV are commonly described. The design can differ by study type.",seo_trial_link:"Learn the basics",seo_registry_h:"Look for registered study information",seo_registry_p:"Use the official Clinical Trials Registry–India (CTRI) website to look for registry information. Always confirm a study’s registration and current status from the official source or study team.",seo_registry_link:"Visit official CTRI",seo_rights_h:"Know your participant rights",seo_rights_p:"Before deciding, ask about informed consent, possible risks and benefits, visits, costs, alternatives, and arrangements for study-related injury.",seo_rights_link:"Read about rights",seo_check_h:"Prepare questions for the study team",seo_check_p:"Use a checklist to organize questions about eligibility, procedures, duration, current medicines, contacts, and withdrawing from a study.",seo_check_link:"Open checklist",seo_demo_note:"Transparency: the trial records in this prototype are fictional examples, not verified or live CTRI records. Do not use them to make healthcare decisions.",
 h1:"Clinical Trials, Made Understandable.",h1p:"Explore clinical research in simple language. Learn what participation means, discover studies, and prepare the right questions before contacting a research team.",
 b_exp:"Explore Clinical Trials",b_und:"Understand Clinical Trials",b_demo:"Start Demo",
 trust:"TrialMitra is an educational discovery prototype. It does not provide medical advice and cannot guarantee eligibility for any study.",
@@ -232,7 +298,8 @@ T:[{t:"Lifestyle support for adults with type 2 diabetes",c:"Type 2 diabetes",w:
 {t:"A new add-on inhaler for asthma",c:"Asthma",w:"Researchers would study whether adding an investigational inhaler to usual asthma care reduces attacks, while watching safety."},
 {t:"Supportive care during breast cancer treatment",c:"Breast cancer",w:"Researchers would study whether a counselling and exercise programme eases tiredness and stress during treatment."},
 {t:"Safety study in healthy volunteers",c:"Healthy volunteers (no condition)",w:"Researchers would study how a new investigational product is tolerated by healthy adults at different doses."}]},
-hi:{lang_l:"भाषा",h_h:"हेल्पलाइन",h_p:"TrialMitra के उपयोग या क्लिनिकल ट्रायल को समझने के बारे में कोई सवाल है? हमारी हेल्पलाइन टीम को लिखें।",h_nl:"हेल्पलाइन नंबर",h_n:"TrialMitra हेल्पलाइन",h_el:"ईमेल आईडी",h_w:"यह हेल्पलाइन चिकित्सा सलाह नहीं दे सकती और किसी अध्ययन की पात्रता की पुष्टि नहीं कर सकती। आपात स्थिति में अपने डॉक्टर या स्थानीय आपातकालीन सेवाओं से संपर्क करें।",reading:"पढ़कर सुनाया जा रहा है…",try:"आज़माएँ:",chips:["डायबिटीज़","दमा","स्तन कैंसर","स्वस्थ स्वयंसेवक"],d_inc:"पात्र हो सकते हैं यदि:",d_exc:"पात्र नहीं हो सकते यदि:",d_eligw:"ये मानदंड केवल इस काल्पनिक रिकॉर्ड के लिए उदाहरण हैं — किसी असली अध्ययन से नहीं। पात्रता केवल असली अध्ययन टीम ही तय कर सकती है।",n_home:"होम",n_learn:"ट्रायल के बारे में जानें",n_find:"ट्रायल खोजें",n_check:"प्रतिभागी चेकलिस्ट",n_cta:"ट्रायल खोजें",
+hi:{lang_l:"भाषा",h_h:"हेल्पलाइन",h_p:"TrialMitra के उपयोग या क्लिनिकल ट्रायल को समझने के बारे में कोई सवाल है? हमारी हेल्पलाइन टीम को लिखें।",h_nl:"हेल्पलाइन नंबर",h_n:"TrialMitra हेल्पलाइन",h_el:"ईमेल आईडी",h_w:"यह हेल्पलाइन चिकित्सा सलाह नहीं दे सकती और किसी अध्ययन की पात्रता की पुष्टि नहीं कर सकती। आपात स्थिति में अपने डॉक्टर या स्थानीय आपातकालीन सेवाओं से संपर्क करें।",reading:"पढ़कर सुनाया जा रहा है…",try:"आज़माएँ:",chips:["डायबिटीज़","दमा","स्तन कैंसर","स्वस्थ स्वयंसेवक"],d_inc:"पात्र हो सकते हैं यदि:",d_exc:"पात्र नहीं हो सकते यदि:",d_eligw:"ये मानदंड केवल इस काल्पनिक रिकॉर्ड के लिए उदाहरण हैं — किसी असली अध्ययन से नहीं। पात्रता केवल असली अध्ययन टीम ही तय कर सकती है।",n_home:"होम",n_learn:"ट्रायल के बारे में जानें",n_resources:"संसाधन",n_find:"ट्रायल खोजें",n_check:"प्रतिभागी चेकलिस्ट",n_cta:"ट्रायल खोजें",
+seo_h:"क्लिनिकल ट्रायल के संसाधन",seo_intro:"क्लिनिकल रिसर्च, पंजीकृत अध्ययन की जानकारी, प्रतिभागियों के अधिकारों और शोध टीम से संपर्क करने से पहले पूछे जाने वाले सवालों के बारे में सरल मार्गदर्शिकाएँ देखें।",seo_trial_h:"क्लिनिकल ट्रायल समझें",seo_trial_p:"जानें कि क्लिनिकल ट्रायल क्या हैं, क्यों किए जाते हैं और फेज़ I–IV को आम तौर पर कैसे समझा जाता है। अध्ययन के प्रकार के अनुसार डिज़ाइन अलग हो सकता है।",seo_trial_link:"बुनियादी जानकारी पढ़ें",seo_registry_h:"पंजीकृत अध्ययन की जानकारी देखें",seo_registry_p:"रजिस्ट्री की जानकारी खोजने के लिए भारत की आधिकारिक क्लिनिकल ट्रायल्स रजिस्ट्री (CTRI) वेबसाइट का उपयोग करें। अध्ययन का पंजीकरण और वर्तमान स्थिति आधिकारिक स्रोत या शोध टीम से अवश्य जाँचें।",seo_registry_link:"आधिकारिक CTRI देखें",seo_rights_h:"प्रतिभागी के अधिकार जानें",seo_rights_p:"निर्णय लेने से पहले सूचित सहमति, संभावित जोखिम और लाभ, विज़िट, खर्च, विकल्प और अध्ययन से जुड़ी चोट की व्यवस्था के बारे में पूछें।",seo_rights_link:"अधिकारों के बारे में पढ़ें",seo_check_h:"शोध टीम से पूछने के सवाल तैयार करें",seo_check_p:"पात्रता, प्रक्रियाओं, अवधि, मौजूदा दवाओं, संपर्क और अध्ययन छोड़ने से जुड़े सवालों को व्यवस्थित करने के लिए चेकलिस्ट का उपयोग करें।",seo_check_link:"चेकलिस्ट खोलें",seo_demo_note:"पारदर्शिता: इस प्रोटोटाइप में दिखाए गए ट्रायल रिकॉर्ड काल्पनिक उदाहरण हैं, सत्यापित या लाइव CTRI रिकॉर्ड नहीं। स्वास्थ्य संबंधी निर्णय लेने के लिए इनका उपयोग न करें।",
 h1:"क्लिनिकल ट्रायल, अब आसान भाषा में।",h1p:"क्लिनिकल शोध को सरल भाषा में समझें। जानें कि भाग लेने का क्या मतलब है, अध्ययन खोजें, और शोध टीम से संपर्क करने से पहले सही सवाल तैयार करें।",
 b_exp:"क्लिनिकल ट्रायल देखें",b_und:"क्लिनिकल ट्रायल समझें",b_demo:"डेमो शुरू करें",
 trust:"TrialMitra एक शैक्षिक प्रोटोटाइप है। यह चिकित्सा सलाह नहीं देता और किसी अध्ययन के लिए पात्रता की गारंटी नहीं दे सकता।",
@@ -266,7 +333,8 @@ T:[{t:"टाइप 2 डायबिटीज़ वाले वयस्क�
 {t:"दमा के लिए नया अतिरिक्त इन्हेलर",c:"दमा (अस्थमा)",w:"शोधकर्ता देखेंगे कि सामान्य दमा देखभाल में एक प्रायोगिक इन्हेलर जोड़ने से दौरे कम होते हैं या नहीं, और सुरक्षा पर नज़र रखेंगे।"},
 {t:"स्तन कैंसर के इलाज के दौरान सहायक देखभाल",c:"स्तन कैंसर",w:"शोधकर्ता देखेंगे कि परामर्श और व्यायाम कार्यक्रम इलाज के दौरान थकान और तनाव कम करता है या नहीं।"},
 {t:"स्वस्थ स्वयंसेवकों में सुरक्षा अध्ययन",c:"स्वस्थ स्वयंसेवक (कोई बीमारी नहीं)",w:"शोधकर्ता देखेंगे कि एक नया प्रायोगिक उत्पाद अलग-अलग खुराक पर स्वस्थ वयस्कों द्वारा कितना सहन किया जाता है।"}]},
-kn:{lang_l:"ಭಾಷೆ",h_h:"ಸಹಾಯವಾಣಿ",h_p:"TrialMitra ಬಳಸುವ ಬಗ್ಗೆ ಅಥವಾ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಇದೆಯೇ? ನಮ್ಮ ಸಹಾಯವಾಣಿ ತಂಡಕ್ಕೆ ಬರೆಯಿರಿ.",h_nl:"ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ",h_n:"TrialMitra ಸಹಾಯವಾಣಿ",h_el:"ಇಮೇಲ್ ಐಡಿ",h_w:"ಈ ಸಹಾಯವಾಣಿ ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡಲು ಅಥವಾ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ತುರ್ತು ಸ್ಥಿತಿಯಲ್ಲಿ ನಿಮ್ಮ ವೈದ್ಯರು ಅಥವಾ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",reading:"ಗಟ್ಟಿಯಾಗಿ ಓದಲಾಗುತ್ತಿದೆ…",try:"ಪ್ರಯತ್ನಿಸಿ:",chips:["ಮಧುಮೇಹ","ಆಸ್ತಮಾ","ಸ್ತನ ಕ್ಯಾನ್ಸರ್","ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ"],d_inc:"ಹೊಂದಿಕೆಯಾಗಬಹುದು, ಒಂದು ವೇಳೆ:",d_exc:"ಹೊಂದಿಕೆಯಾಗದಿರಬಹುದು, ಒಂದು ವೇಳೆ:",d_eligw:"ಈ ಮಾನದಂಡಗಳು ಈ ಕಾಲ್ಪನಿಕ ದಾಖಲೆಗೆ ಮಾತ್ರ ಉದಾಹರಣೆ — ನಿಜವಾದ ಅಧ್ಯಯನದಿಂದಲ್ಲ. ಅರ್ಹತೆಯನ್ನು ನಿಜವಾದ ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",n_home:"ಮುಖಪುಟ",n_learn:"ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",n_find:"ಪ್ರಯೋಗ ಹುಡುಕಿ",n_check:"ಭಾಗಿದಾರರ ಪರಿಶೀಲನಾಪಟ್ಟಿ",n_cta:"ಪ್ರಯೋಗ ಹುಡುಕಿ",
+kn:{lang_l:"ಭಾಷೆ",h_h:"ಸಹಾಯವಾಣಿ",h_p:"TrialMitra ಬಳಸುವ ಬಗ್ಗೆ ಅಥವಾ ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆ ಇದೆಯೇ? ನಮ್ಮ ಸಹಾಯವಾಣಿ ತಂಡಕ್ಕೆ ಬರೆಯಿರಿ.",h_nl:"ಸಹಾಯವಾಣಿ ಸಂಖ್ಯೆ",h_n:"TrialMitra ಸಹಾಯವಾಣಿ",h_el:"ಇಮೇಲ್ ಐಡಿ",h_w:"ಈ ಸಹಾಯವಾಣಿ ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡಲು ಅಥವಾ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯನ್ನು ದೃಢೀಕರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ತುರ್ತು ಸ್ಥಿತಿಯಲ್ಲಿ ನಿಮ್ಮ ವೈದ್ಯರು ಅಥವಾ ಸ್ಥಳೀಯ ತುರ್ತು ಸೇವೆಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.",reading:"ಗಟ್ಟಿಯಾಗಿ ಓದಲಾಗುತ್ತಿದೆ…",try:"ಪ್ರಯತ್ನಿಸಿ:",chips:["ಮಧುಮೇಹ","ಆಸ್ತಮಾ","ಸ್ತನ ಕ್ಯಾನ್ಸರ್","ಆರೋಗ್ಯವಂತ ಸ್ವಯಂಸೇವಕ"],d_inc:"ಹೊಂದಿಕೆಯಾಗಬಹುದು, ಒಂದು ವೇಳೆ:",d_exc:"ಹೊಂದಿಕೆಯಾಗದಿರಬಹುದು, ಒಂದು ವೇಳೆ:",d_eligw:"ಈ ಮಾನದಂಡಗಳು ಈ ಕಾಲ್ಪನಿಕ ದಾಖಲೆಗೆ ಮಾತ್ರ ಉದಾಹರಣೆ — ನಿಜವಾದ ಅಧ್ಯಯನದಿಂದಲ್ಲ. ಅರ್ಹತೆಯನ್ನು ನಿಜವಾದ ಅಧ್ಯಯನ ತಂಡ ಮಾತ್ರ ದೃಢೀಕರಿಸಬಹುದು.",n_home:"ಮುಖಪುಟ",n_learn:"ಪ್ರಯೋಗಗಳ ಬಗ್ಗೆ ತಿಳಿಯಿರಿ",n_resources:"ಸಂಪನ್ಮೂಲಗಳು",n_find:"ಪ್ರಯೋಗ ಹುಡುಕಿ",n_check:"ಭಾಗಿದಾರರ ಪರಿಶೀಲನಾಪಟ್ಟಿ",n_cta:"ಪ್ರಯೋಗ ಹುಡುಕಿ",
+seo_h:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳ ಸಂಪನ್ಮೂಲಗಳು",seo_intro:"ಕ್ಲಿನಿಕಲ್ ಸಂಶೋಧನೆ, ನೋಂದಾಯಿತ ಅಧ್ಯಯನಗಳ ಮಾಹಿತಿ, ಭಾಗವಹಿಸುವವರ ಹಕ್ಕುಗಳು ಮತ್ತು ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಕೇಳಬೇಕಾದ ಪ್ರಶ್ನೆಗಳ ಕುರಿತು ಸರಳ ಮಾರ್ಗದರ್ಶಿಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.",seo_trial_h:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",seo_trial_p:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು ಯಾವುವು, ಅವುಗಳನ್ನು ಏಕೆ ನಡೆಸಲಾಗುತ್ತದೆ ಮತ್ತು I–IV ಹಂತಗಳನ್ನು ಸಾಮಾನ್ಯವಾಗಿ ಹೇಗೆ ವಿವರಿಸಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ತಿಳಿಯಿರಿ. ಅಧ್ಯಯನದ ಪ್ರಕಾರಕ್ಕೆ ಅನುಗುಣವಾಗಿ ವಿನ್ಯಾಸ ಬದಲಾಗಬಹುದು.",seo_trial_link:"ಮೂಲಭೂತ ಮಾಹಿತಿ ತಿಳಿಯಿರಿ",seo_registry_h:"ನೋಂದಾಯಿತ ಅಧ್ಯಯನಗಳ ಮಾಹಿತಿ ಹುಡುಕಿ",seo_registry_p:"ರಿಜಿಸ್ಟ್ರಿ ಮಾಹಿತಿಯನ್ನು ಹುಡುಕಲು ಭಾರತದ ಅಧಿಕೃತ ಕ್ಲಿನಿಕಲ್ ಟ್ರಯಲ್ಸ್ ರಿಜಿಸ್ಟ್ರಿ (CTRI) ವೆಬ್‌ಸೈಟ್ ಬಳಸಿ. ಅಧ್ಯಯನದ ನೋಂದಣಿ ಮತ್ತು ಪ್ರಸ್ತುತ ಸ್ಥಿತಿಯನ್ನು ಅಧಿಕೃತ ಮೂಲ ಅಥವಾ ಸಂಶೋಧನಾ ತಂಡದಿಂದ ದೃಢೀಕರಿಸಿ.",seo_registry_link:"ಅಧಿಕೃತ CTRI ತೆರೆಯಿರಿ",seo_rights_h:"ಭಾಗವಹಿಸುವವರ ಹಕ್ಕುಗಳನ್ನು ತಿಳಿಯಿರಿ",seo_rights_p:"ನಿರ್ಧಾರ ಮಾಡುವ ಮೊದಲು ತಿಳಿದ ಒಪ್ಪಿಗೆ, ಸಾಧ್ಯ ಅಪಾಯಗಳು ಮತ್ತು ಪ್ರಯೋಜನಗಳು, ಭೇಟಿಗಳು, ವೆಚ್ಚಗಳು, ಪರ್ಯಾಯಗಳು ಮತ್ತು ಅಧ್ಯಯನ ಸಂಬಂಧಿತ ಗಾಯದ ವ್ಯವಸ್ಥೆಗಳ ಬಗ್ಗೆ ಕೇಳಿ.",seo_rights_link:"ಹಕ್ಕುಗಳ ಬಗ್ಗೆ ಓದಿ",seo_check_h:"ಸಂಶೋಧನಾ ತಂಡಕ್ಕೆ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ",seo_check_p:"ಅರ್ಹತೆ, ಪ್ರಕ್ರಿಯೆಗಳು, ಅವಧಿ, ಈಗಿನ ಔಷಧಗಳು, ಸಂಪರ್ಕ ಮತ್ತು ಅಧ್ಯಯನದಿಂದ ಹಿಂದೆ ಸರಿಯುವ ಬಗ್ಗೆ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಲು ಪರಿಶೀಲನಾಪಟ್ಟಿಯನ್ನು ಬಳಸಿ.",seo_check_link:"ಪರಿಶೀಲನಾಪಟ್ಟಿ ತೆರೆಯಿರಿ",seo_demo_note:"ಪಾರದರ್ಶಕತೆ: ಈ ಮಾದರಿ ಯೋಜನೆಯಲ್ಲಿ ತೋರಿಸಿದ ಪ್ರಯೋಗ ದಾಖಲೆಗಳು ಕಾಲ್ಪನಿಕ ಉದಾಹರಣೆಗಳು; ಅವು ಪರಿಶೀಲಿತ ಅಥವಾ ಲೈವ್ CTRI ದಾಖಲೆಗಳಲ್ಲ. ಆರೋಗ್ಯ ನಿರ್ಧಾರಗಳಿಗೆ ಅವುಗಳನ್ನು ಬಳಸಬೇಡಿ.",
 h1:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು, ಸರಳವಾಗಿ ಅರ್ಥವಾಗುವಂತೆ.",h1p:"ಕ್ಲಿನಿಕಲ್ ಸಂಶೋಧನೆಯನ್ನು ಸರಳ ಭಾಷೆಯಲ್ಲಿ ತಿಳಿಯಿರಿ. ಭಾಗವಹಿಸುವುದು ಎಂದರೇನು ಎಂದು ತಿಳಿಯಿರಿ, ಅಧ್ಯಯನಗಳನ್ನು ಹುಡುಕಿ, ಮತ್ತು ಸಂಶೋಧನಾ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸುವ ಮೊದಲು ಸರಿಯಾದ ಪ್ರಶ್ನೆಗಳನ್ನು ಸಿದ್ಧಪಡಿಸಿ.",
 b_exp:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ನೋಡಿ",b_und:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",b_demo:"ಡೆಮೊ ಪ್ರಾರಂಭಿಸಿ",
 trust:"TrialMitra ಒಂದು ಶೈಕ್ಷಣಿಕ ಮಾದರಿ ಯೋಜನೆ. ಇದು ವೈದ್ಯಕೀಯ ಸಲಹೆ ನೀಡುವುದಿಲ್ಲ ಮತ್ತು ಯಾವುದೇ ಅಧ್ಯಯನಕ್ಕೆ ಅರ್ಹತೆಯ ಖಾತರಿ ನೀಡಲು ಸಾಧ್ಯವಿಲ್ಲ.",
@@ -310,6 +378,18 @@ const TR=[
 const CITY_L={en:{"Bengaluru":"Bengaluru","Chennai":"Chennai","Mumbai":"Mumbai","New Delhi":"New Delhi"},hi:{"Bengaluru":"बेंगलुरु","Chennai":"चेन्नई","Mumbai":"मुंबई","New Delhi":"नई दिल्ली"},kn:{"Bengaluru":"ಬೆಂಗಳೂರು","Chennai":"ಚೆನ್ನೈ","Mumbai":"ಮುಂಬೈ","New Delhi":"ನವದೆಹಲಿ"}};
 let lang="en",checked=new Set(),shown=false,lastIds=[];
 const $=s=>document.querySelector(s),t=k=>L[lang][k];
+const SEO_META={
+ en:{title:"TrialMitra — Clinical Trials, Made Understandable",description:"Understand clinical trials in simple language, learn about trial phases and participant rights, and explore clinical trial information with TrialMitra."},
+ hi:{title:"TrialMitra — क्लिनिकल ट्रायल आसान भाषा में",description:"क्लिनिकल ट्रायल, उनके चरणों, प्रतिभागियों के अधिकारों और अध्ययन की जानकारी को सरल हिंदी में समझें।"},
+ kn:{title:"TrialMitra — ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳನ್ನು ಸರಳವಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಿ",description:"ಕ್ಲಿನಿಕಲ್ ಪ್ರಯೋಗಗಳು, ಹಂತಗಳು, ಭಾಗವಹಿಸುವವರ ಹಕ್ಕುಗಳು ಮತ್ತು ಅಧ್ಯಯನದ ಮಾಹಿತಿಯನ್ನು ಸರಳ ಕನ್ನಡದಲ್ಲಿ ತಿಳಿಯಿರಿ."}
+};
+function updateSeoMetadata(){
+ const m=SEO_META[lang]||SEO_META.en;
+ document.title=m.title;
+ const d=document.querySelector('meta[name="description"]');if(d)d.content=m.description;
+ [ ['meta[property="og:title"]',m.title],['meta[property="og:description"]',m.description],['meta[name="twitter:title"]',m.title],['meta[name="twitter:description"]',m.description] ].forEach(([sel,val])=>{const e=document.querySelector(sel);if(e)e.content=val});
+ const locale={en:"en_IN",hi:"hi_IN",kn:"kn_IN"}[lang]||"en_IN";const ogLocale=document.querySelector('meta[property="og:locale"]');if(ogLocale)ogLocale.content=locale;
+}
 /* Extra search keywords (synonyms, symptoms, transliterations) per trial, all 3 languages */
 const KWX=[
 "diabetic blood sugar glucose insulin type2 t2dm mellitus lifestyle diet walking exercise nutrition weight obesity madhumeha sugar disease मधुमेह शुगर चीनी रक्त शर्करा ग्लूकोज़ इंसुलिन जीवनशैली आहार व्यायाम टहलना ಸಕ್ಕರೆ ಡಯಾಬಿಟಿಸ್ ಇನ್ಸುಲಿನ್ ಜೀವನಶೈಲಿ ಆಹಾರ ವ್ಯಾಯಾಮ",
@@ -379,6 +459,7 @@ function fillSelects(){
 }
 function applyLang(){
  document.documentElement.lang=lang;
+ updateSeoMetadata();
  document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t(e.dataset.i));
  document.querySelectorAll("[data-ph]").forEach(e=>e.placeholder=t(e.dataset.ph));
  $("#srcMain").textContent=t("src");$("#dClose").textContent=t("close");renderChips();
